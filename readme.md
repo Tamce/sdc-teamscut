@@ -1,1 +1,0 @@
-# sdmex teamscut

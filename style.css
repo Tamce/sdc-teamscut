@@ -1,0 +1,78 @@
+* {
+    font-size: 18px;
+}
+/* 分享链接 */
+.tmc-media {
+    display: inline-block;
+    height: 30px;
+    margin: auto 10px;
+    font-size: 24px;
+    color: #333;
+}
+.tmc-media:hover {
+    color: #333;
+}
+/* 包含 logo 及分享标签的 header */
+.tmc-header {
+    margin: 10px 0;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+/* 导航 container */
+.tmc-navbar {
+    background-color: #333;
+    color: #fff;
+}
+a,a:visited,a:hover,a:active {
+    text-decoration: none;
+}
+/* 导航项 */
+.tmc-nav-item {
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    position: relative;
+    padding: 0 35px;
+    margin: 0 12px;
+    cursor: pointer;
+}
+.tmc-nav-item:hover {
+    background-color: #2a8476;
+}
+/* 导航文字 */
+.tmc-nav-item>a {
+    color: #fff;
+}
+.tmc-nav-item:hover>a {
+    color: #feb12e;
+}
+.tmc-nav-item:hover .tmc-dropdown {
+    display: block;
+}
+/* 下拉菜单 */
+.tmc-dropdown {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #fff;
+    left: 0px;
+    text-align: left;
+    padding: 0;
+}
+/* 下拉文字 */
+.tmc-dropdown>a {
+    height: 42px;
+    line-height: 42px;
+    padding: 0 24px;
+    display: block;
+    min-width: max-content;
+    color: #333;
+}
+.tmc-dropdown>a:hover {
+    background-color: #eee;
+}
+/* .tmc-nav-item:hover>a,a:visited,a:hover,a:active {
+    color: #feb12e;
+} */
+
