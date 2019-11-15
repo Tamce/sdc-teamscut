@@ -56,9 +56,12 @@ a,a:visited,a:hover,a:active {
     position: absolute;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background-color: #fff;
+    min-width: 100%;
     left: 0px;
+    top: 35px;
     text-align: left;
     padding: 0;
+    z-index: 10;
 }
 /* 下拉文字 */
 .tmc-dropdown>a {
@@ -72,7 +75,3 @@ a,a:visited,a:hover,a:active {
 .tmc-dropdown>a:hover {
     background-color: #eee;
 }
-/* .tmc-nav-item:hover>a,a:visited,a:hover,a:active {
-    color: #feb12e;
-} */
-

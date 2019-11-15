@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header>
+  <div id="header" class="container-fluid">
     <div class="row tmc-header">
       <div class="col-md-6">
         <a class="logo" href="./index.html"><img src="./assets/logo.png" alt="teamscut" style="height: 70px;"></a>
@@ -77,11 +77,41 @@
             <a href="#">Contacts</a>
           </div>
 
+          <style>
+            .tmc-search {
+              display: inline-block;
+              border-radius: 100%;
+              width: 27px;
+              height: 27px;
+              line-height: 27px;
+              text-align: center;
+              font-size: 13px;
+              background-color: #ccc;
+              color: #333;
+              margin: 4px 12px;
+            }
+          </style>
+          <div class="tmc-search"><i class="fa fa-search" aria-hidden="true"></i></div>
         </div>
       </div>
     </div>
-  </header>
-  <div id="app">Loading...</div>
+  </div>
+  <div id="app" class="container-fluid">Loading...</div>
+  <style>
+    #footer img {
+      margin: 0 12px;
+    }
+  </style>
+  <div id="footer" class="container-fluid" style="background-color: #6F8E82; text-align: center; color: #fff;">
+    <div style="margin: 12px auto;">
+      <img src="./assets/sdme2020.png" alt="sdme" width="auto" height="40">
+      <img src="./assets/expo.png" alt="expo" width="auto" height="40">
+      <img src="./assets/DEWA.png" alt="dewa" width="auto" height="40">
+      <img src="./assets/logo-white.png" alt="tslogo" width="auto" height="40">
+      <img src="./assets/scut.png" alt="scut" width="auto" height="40">
+    </div>
+    <p style="font-size: .7em;">© Copyright  2019-2020   |     All Rights Reserved   |   Team SCUT</p>
+  </div>
   <script>
     function load(page) {
       if (!!page == "") page = "home";
