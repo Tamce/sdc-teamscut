@@ -14,8 +14,8 @@
 <body>
   <div id="header" class="container-fluid">
     <div class="row tmc-header">
-      <div class="col-md-6 col-sm-12">
-        <a class="logo" href="./index.html"><img src="./assets/logo.png" alt="teamscut" style="height: 70px;"></a>
+      <div class="col-md-6 col-sm-12" style="line-height: 70px;">
+        <a class="logo" href="./index.html"><img src="./assets/logo.png" alt="teamscut" style="max-height: 70px;"></a>
         <style>
           /* 菜单按钮 */
           .tmc-icon-bar {
@@ -35,7 +35,7 @@
             padding: 0 12px;
           }
         </style>
-        <div class="visible-sm visible-xs" style="position: fixed; top: 0; right: 15px; z-index: 20; height: 70px;">
+        <div class="visible-sm visible-xs" style="position: fixed; top: 10px; right: 15px; z-index: 20; height: 70px;">
           <button class="tmc-toggle" type="button">
             <span class="tmc-icon-bar"></span>
             <span class="tmc-icon-bar"></span>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="tmc-nav-footer visible-sm visible-xs">
-          <a style="color: #fff;" href="mailto://scut_sdme2020@163.com">scut_sdme2020@163.com</a>
+          <a style="color: #fff; font-size: 15px;" href="mailto://scut_sdme2020@163.com">scut_sdme2020@163.com</a>
           <p>+86 13660195506</p>
           <div>
             <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"><i class="fa fa-instagram fa-1x" haria-hidden="true" ></i></a>
@@ -142,12 +142,13 @@
     $(".tmc-toggle").on("click", function (e) {
       var expanded = Number($(".tmc-navbar").attr("data-expanded"));
       $(".tmc-navbar").animate({
-        right: expanded == 0 ? "0px" : "-50vw"
+        right: expanded == 0 ? "0px" : "-85vw"
       });
       $(".tmc-navbar").attr("data-expanded", 1 - expanded);
     });
     $(".tmc-nav-item>a").on("click", function (e) {
-      $(e.target).next(".tmc-dropdown").slideToggle();
+      $(".tmc-dropdown:visible").slideUp();
+      $(e.target).next(".tmc-dropdown:hidden").slideDown();
     });
     load();
   </script>
