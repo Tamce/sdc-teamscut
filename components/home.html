@@ -7,7 +7,92 @@
   </div>
   <div class="tmc-right" onclick="rollImg(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 </div>
+<div class="tmc-home-body">
+  <div class="container-fluid">
+    <div class="row tmc-section">
+      <div class="col-md-8 tmc-re">
+        <div class="tmc-fade tmc-big" style="left:-.2em;top:-.7em;">What is going on?</div>
+        <img class="tmc-fade" data-delay="400" src="./assets/sdmec1.jpg" alt="">
+      </div>
+      <div class="col-md-4">
+        <img class="tmc-fade tmc-subtitle" style="left: -70px;" src="./assets/title-sdme2020.svg">
+        <div class="tmc-sub"></div>
+        <div class="tmc-fade" data-delay="200">
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <a style="display: block; text-align: right;" href="#">- more information -</a>
+        </div>
+      </div>
+    </div>
+    <div class="row tmc-section">
+      <div class="col-md-8 col-md-push-4 tmc-re">
+        <div class="tmc-fade tmc-big" style="right:-.2em;top:-.7em;">Who are we?</div>
+        <img src="./assets/bubble1.svg" class="tmc-fade" data-delay="1200" style="position: absolute;z-index: 11;width: 39%;top: 10%;right: 36%;">
+        <img src="./assets/whoweare.jpg" class="tmc-fade" data-delay="200">
+      </div>
+      <div class="col-md-4 col-md-pull-8">
+        <img src="./assets/title-team.svg" style="right: -70px;" class="tmc-fade tmc-subtitle">
+        <div class="tmc-sub"></div>
+        <div class="tmc-fade" data-delay="200">
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+          <a style="display: block; text-align: right;" href="#">- more information -</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <style>
+  .tmc-home-body {
+    margin: 48px 10vw;
+    padding: 3em 5vw;
+    background-color: #fff;
+  }
+  .tmc-home-body img {
+    max-width: 100%;
+  }
+
+  .tmc-subtitle {
+    position: absolute;
+    top: 12px;
+    max-height: 65px;
+    z-index: 11;
+  }
+  .tmc-sub {
+    margin-top: 95px;
+    width: 100%;
+  }
+  .tmc-big {
+    position:absolute;
+    font-size:3em;
+    font-weight:600;
+    z-index:11;
+  }
+
+  .tmc-section {
+    margin: 4em auto;
+  }
+  @media screen and (max-width: 991px) {
+    .tmc-subtitle {
+      left: 0 !important;
+      right: 0 !important;
+      position: relative;
+      margin-top: 1.2em;
+    }
+    .tmc-sub {
+      margin-top: 2.4em;
+    }
+    .tmc-big {
+      font-size: 22px;
+    }
+    .tmc-home-body {
+      padding: 0 12px;
+      margin: 12px 3vw;
+    }
+  }
+
   .tmc-img-roller {
     height: 400px;
     overflow: hidden;
@@ -27,13 +112,14 @@
   .tmc-left, .tmc-right {
     position: absolute;
     top: 0;
-    width: 40px;
+    width: 100px;
     height: 400px;
     line-height: 400px;
     font-size: 40px;
     color: rgba(255,255,255,0.4);
     transition: color .2s;
     cursor: pointer;
+    text-align: center;
     z-index: 11;
   }
   .tmc-left:hover, .tmc-right:hover {
@@ -98,5 +184,16 @@
     window.beforeLoad = function () {
       clearInterval(rollerHandle);
     };
+  });
+
+  $(".tmc-fade").each(function (i, e) {
+    var d = $(e).attr("data-delay");
+    if (!d) d = 0;
+    if (d == "slow") d = 500;
+    ScrollReveal().reveal(e, {
+      distance: '24px',
+      duration: 1500,
+      delay: d
+    });
   });
 </script>

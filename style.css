@@ -3,6 +3,12 @@
     --color: #feb12e;
     --color: #43be95;
 }
+p {
+    word-break: break-all;
+}
+.tmc-re {
+    position: relative;
+}
 /* 分享链接 */
 .tmc-media {
     display: inline-block;
