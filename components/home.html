@@ -1,1 +1,102 @@
-<div>Home</div>
+<div style="width: 100%; background-color: #43be95; position: relative;">
+  <div class="tmc-left" onclick="rollImg(-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+  <div class="tmc-img-roller">
+    <div style="background-image: url(./assets/roller/1.jpg);"></div>
+    <div style="background-image: url(./assets/roller/2.png);"></div>
+    <div style="background-image: url(./assets/roller/3.png);"></div>
+  </div>
+  <div class="tmc-right" onclick="rollImg(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+</div>
+<style>
+  .tmc-img-roller {
+    height: 400px;
+    overflow: hidden;
+  }
+  .tmc-img-roller div {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    transition: transform 5s linear;
+  }
+  .tmc-img-roller div:nth-child(1) {
+    display: block;
+    transform: scale(1.0);
+  }
+  .tmc-left, .tmc-right {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 400px;
+    line-height: 400px;
+    font-size: 40px;
+    color: rgba(255,255,255,0.4);
+    transition: color .2s;
+    cursor: pointer;
+    z-index: 11;
+  }
+  .tmc-left:hover, .tmc-right:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  .tmc-left {
+    left: 15%;
+  }
+  .tmc-right {
+    right: 15%;
+  }
+  @media screen and (max-width: 1500px) {
+    .tmc-left {
+      left: 5vw;
+    }
+    .tmc-right {
+      right: 5vw;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .tmc-img-roller {
+      height: 200px;
+    }
+    .tmc-left {
+      line-height: 200px;
+      left: 3vw;
+    }
+    .tmc-right {
+      line-height: 200px;
+      right: 3vw;
+    }
+  }
+</style>
+<script>
+  var imgCur = 0;
+  var imgTot = $(".tmc-img-roller").children().length;
+  var rollDone = true;
+  function rollImg(offset) {
+    if (!rollDone) return;
+    if (!window.rollerHandle) return;
+    if (offset == undefined)
+      offset = 1;
+    // 重置定时器
+    clearInterval(window.rollerHandle);
+    window.rollerHandle = setInterval(rollImg, 3000);
+    rollDone = false;
+    imgCur = (imgCur + offset) % imgTot;
+    $(".tmc-img-roller").children(":visible").fadeOut(200, function () {
+      var cur = $(".tmc-img-roller").children(":nth("+imgCur+")");
+      cur.css("transform", "none");
+      cur.fadeIn(200, function () {
+        rollDone = true;
+        cur.css("transform", "scale(1.5)");
+      });
+    });
+  };
+  $(function () {
+    setTimeout(function () {
+      $(".tmc-img-roller").children(":nth(0)").css("transform", "scale(1.5)");
+    }, 100);
+    window.rollerHandle = setInterval(rollImg, 3000);
+    window.beforeLoad = function () {
+      clearInterval(rollerHandle);
+    };
+  });
+</script>
