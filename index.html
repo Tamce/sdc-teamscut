@@ -10,6 +10,7 @@
   <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+  <script src="./locale.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -48,58 +49,59 @@
         <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"><i class="fa fa-instagram fa-1x" haria-hidden="true" ></i></a>
 				<a class="tmc-media" href="https://twitter.com/2020sdme"><i class="fa fa-twitter fa-1x" aria-hidden="true"></i></a>
 				<a class="tmc-media" href="#"><i class="fa fa-weixin fa-1x" aria-hidden="true"></i></a>
-				<a class="tmc-media" href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+        <a class="tmc-media" href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+        <a href="javascript:toggleLocale();" class="tmc-media"><i class="fa fa-language" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="row tmc-navbar" data-expanded="0">
       <div class="col-md-10 col-md-offset-1" style="text-align: center; height: 100%;">
         <div class="tmc-nav-item">
-          <a href="#">Contest Information</a>
+          <a href="#" data-tr>Contest Information</a>
           <div class="tmc-dropdown">
-            <a href="#">Solar Decathlon</a>
-            <a href="#">2020 Solar Decathlon Middle East</a>
+            <a href="#" data-tr>Solar Decathlon</a>
+            <a href="#" data-tr>2020 Solar Decathlon Middle East</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">About us</a>
+          <a href="#"  data-tr>About us</a>
           <div class="tmc-dropdown">
-            <a href="#">South China University of Technology</a>
-            <a href="#">Team x SCUT</a>
-            <a href="#">Team Members</a>
+            <a href="#"  data-tr>South China University of Technology</a>
+            <a href="#"  data-tr>Team x SCUT</a>
+            <a href="#"  data-tr>Team Members</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">Project</a>
+          <a href="#"  data-tr>Project</a>
           <div class="tmc-dropdown">
-            <a href="#">Work Schedule</a>
-            <a href="#">Concept</a>
+            <a href="#"  data-tr>Work Schedule</a>
+            <a href="#"  data-tr>Concept</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">Activities</a>
+          <a href="#"  data-tr>Activities</a>
           <div class="tmc-dropdown">
-            <a href="#">Media Engagement</a>
-            <a href="#">Offical Activities</a>
-            <a href="#">Offline Activities</a>
+            <a href="#"  data-tr>Media Engagement</a>
+            <a href="#"  data-tr>Offical Activities</a>
+            <a href="#"  data-tr>Offline Activities</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">Former Works</a>
+          <a href="#"  data-tr>Former Works</a>
           <div class="tmc-dropdown">
             <a href="#">SDC 2013</a>
             <a href="#">SDC 2018</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">Support</a>
+          <a href="#"  data-tr>Support</a>
           <div class="tmc-dropdown">
-            <a href="#">Sponsors</a>
-            <a href="#">Media Partners</a>
-            <a href="#">Support TeamSCUT</a>
+            <a href="#"  data-tr>Sponsors</a>
+            <a href="#"  data-tr>Media Partners</a>
+            <a href="#"  data-tr>Support TeamSCUT</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#">Contacts</a>
+          <a href="#"  data-tr>Contacts</a>
         </div>
 
         <div class="tmc-nav-footer visible-sm visible-xs">
@@ -177,6 +179,7 @@
       $(".tmc-dropdown:visible").slideUp();
       $(e.target).next(".tmc-dropdown:hidden").slideDown();
     });
+
     load();
   </script>
 </body>
