@@ -14,7 +14,7 @@
     font-size: 24px;
     color: #333;
 }
-.tmc-media:hover {
+.tmc-media:hover,.tmc-media:focus {
     color: #333;
 }
 .tmc-nav-footer .tmc-media, .tmc-nav-footer .tmc-media:hover {
@@ -155,3 +155,65 @@ a,a:visited,a:hover,a:active,a:focus {
         display: block;
     }
 }
+
+/* 滚动图片容器相关 */
+.tmc-img-roller {
+    height: 400px;
+    overflow: hidden;
+}
+.tmc-img-roller div {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    transition: transform 5s linear;
+}
+.tmc-img-roller div:nth-child(1) {
+    display: block;
+    transform: scale(1.0);
+}
+.tmc-left, .tmc-right {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 400px;
+    line-height: 400px;
+    font-size: 40px;
+    color: rgba(255,255,255,0.4);
+    transition: color .2s;
+    cursor: pointer;
+    text-align: center;
+    z-index: 11;
+}
+.tmc-left:hover, .tmc-right:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.tmc-left {
+    left: 15%;
+}
+.tmc-right {
+    right: 15%;
+}
+@media screen and (max-width: 1500px) {
+    .tmc-left {
+    left: 5vw;
+    }
+    .tmc-right {
+    right: 5vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tmc-img-roller {
+    height: 200px;
+    }
+    .tmc-left {
+    line-height: 200px;
+    left: 3vw;
+    }
+    .tmc-right {
+    line-height: 200px;
+    right: 3vw;
+    }
+}
+/* 滚动图片容器相关结束 */

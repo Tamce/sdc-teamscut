@@ -1,12 +1,13 @@
 <div style="width: 100%; background-color: #43be95; position: relative;">
-  <div class="tmc-left" onclick="rollImg(-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-  <div class="tmc-img-roller">
+  <div class="tmc-left" onclick="rollImgInt(-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+  <div id="tmc-roller" class="tmc-img-roller" data-handler="rollerHandle">
     <div style="background-image: url(./assets/roller/1.jpg);"></div>
     <div style="background-image: url(./assets/roller/2.png);"></div>
     <div style="background-image: url(./assets/roller/3.png);"></div>
   </div>
-  <div class="tmc-right" onclick="rollImg(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+  <div class="tmc-right" onclick="rollImgInt(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 </div>
+
 <div class="tmc-home-body">
   <div class="container-fluid">
     <div class="row tmc-section">
@@ -18,8 +19,8 @@
         <img class="tmc-fade tmc-subtitle" style="left: -30%;" src="./assets/title-sdme2020.svg">
         <div class="tmc-sub"></div>
         <div class="tmc-fade" data-delay="200">
-            <p>Team SCUT is going to participate in 2020 Solar Decathlon Middle East which is an award-winning program that challenges collegiate teams to design, build and operate solar-powered houses that are cost-effective, energy-efficient and attractive. Known as the Decathlon competition, it evaluates each home based on the performance in 10 contests. SDME aims to promote industry-university-research cooperation in the industry and to facilitate innovation and intensive adoption of solar energy technologies.</p>
-          <a style="display: block; text-align: right;" href="#">- more information -</a>
+            <p data-tr-key="tr-home-1">Team SCUT is going to participate in 2020 Solar Decathlon Middle East which is an award-winning program that challenges collegiate teams to design, build and operate solar-powered houses that are cost-effective, energy-efficient and attractive. Known as the Decathlon competition, it evaluates each home based on the performance in 10 contests. SDME aims to promote industry-university-research cooperation in the industry and to facilitate innovation and intensive adoption of solar energy technologies.</p>
+          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
         </div>
       </div>
     </div>
@@ -33,8 +34,8 @@
         <img src="./assets/title-team.svg" style="right: -30%;" class="tmc-fade tmc-subtitle">
         <div class="tmc-sub"></div>
         <div class="tmc-fade" data-delay="200">
-          <p>Team SCUT is a team consist of multiple force including students from College of Architecture and Urban Engineering, College of Material Science and Engineering and College of Communication and Journalism. The team is guided by professional tutors team and supported by varies facilities such as: National Key Laboratory of Subtropical Architectural Science, Digital Laboratory construction, South China University of Technology Institute of Architectural Design and Luminous State Key Laboratory of Materials and Devices.</p>
-          <a style="display: block; text-align: right;" href="#">- more information -</a>
+          <p data-tr-key="tr-home-2">Team SCUT is a team consist of multiple force including students from College of Architecture and Urban Engineering, College of Material Science and Engineering and College of Communication and Journalism. The team is guided by professional tutors team and supported by varies facilities such as: National Key Laboratory of Subtropical Architectural Science, Digital Laboratory construction, South China University of Technology Institute of Architectural Design and Luminous State Key Laboratory of Materials and Devices.</p>
+          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
         </div>
       </div>
     </div>
@@ -52,7 +53,7 @@
         <div class="col-md-5 tmc-fade" data-delay="200">
           <div class="tmc-fade tmc-big" style="position: relative; text-align: right;">What we do.</div>
           <p>Team SCUT is a team consist of multiple force including students from College of Architecture and Urban Engineering, College of Material Science and Engineering and College of Communication and Journalism. The team is guided by professional tutors team and supported by varies facilities such as: National Key Laboratory of Subtropical Architectural Science, Digital Laboratory construction, South China University of Technology Institute of Architectural Design and Luminous State Key Laboratory of Materials and Devices.</p>
-          <a style="display: block; text-align: right;" href="#">- more information -</a>
+          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
         </div>
       </div>
       <div class="row hidden-sm hidden-xs tmc-re" style="margin-top: 48px;">
@@ -138,95 +139,50 @@
       margin: 12px 3vw;
     }
   }
-
-  .tmc-img-roller {
-    height: 400px;
-    overflow: hidden;
-  }
-  .tmc-img-roller div {
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: none;
+  #tmc-roller {
     transition: transform 5s linear;
-  }
-  .tmc-img-roller div:nth-child(1) {
-    display: block;
-    transform: scale(1.0);
-  }
-  .tmc-left, .tmc-right {
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 400px;
-    line-height: 400px;
-    font-size: 40px;
-    color: rgba(255,255,255,0.4);
-    transition: color .2s;
-    cursor: pointer;
-    text-align: center;
-    z-index: 11;
-  }
-  .tmc-left:hover, .tmc-right:hover {
-    color: rgba(255, 255, 255, 1);
-  }
-  .tmc-left {
-    left: 15%;
-  }
-  .tmc-right {
-    right: 15%;
-  }
-  @media screen and (max-width: 1500px) {
-    .tmc-left {
-      left: 5vw;
-    }
-    .tmc-right {
-      right: 5vw;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .tmc-img-roller {
-      height: 200px;
-    }
-    .tmc-left {
-      line-height: 200px;
-      left: 3vw;
-    }
-    .tmc-right {
-      line-height: 200px;
-      right: 3vw;
-    }
   }
 </style>
 <script>
-  var imgCur = 0;
-  var imgTot = $(".tmc-img-roller").children().length;
+  /* 对目标元素 roller 执行切换图片操作，且淡出后执行 outfn，淡入后执行 infn */
+  function rollImg(el, offset, outfn, infn) {
+    var rid = $(el).attr("id");
+    imgCur[rid] = (imgCur[rid] + offset) % imgTot[rid];
+    $(el).children(":visible").fadeOut(200, function () {
+      var cur = $(el).children(":nth("+imgCur[rid]+")");
+      if (typeof outfn == "function")
+        outfn(cur);
+      cur.fadeIn(200, function () {
+        if (typeof infn == "function")
+          infn(cur);
+      });
+    });
+  }
+
+  // 自动滚动且放大的 roller 设置
   var rollDone = true;
-  function rollImg(offset) {
+  function rollImgInt(offset) {
     if (!rollDone) return;
     if (!window.rollerHandle) return;
     if (offset == undefined)
       offset = 1;
     // 重置定时器
     clearInterval(window.rollerHandle);
-    window.rollerHandle = setInterval(rollImg, 3000);
+    window.rollerHandle = setInterval(rollImgInt, 3000);
     rollDone = false;
-    imgCur = (imgCur + offset) % imgTot;
-    $(".tmc-img-roller").children(":visible").fadeOut(200, function () {
-      var cur = $(".tmc-img-roller").children(":nth("+imgCur+")");
+
+    rollImg("#tmc-roller", offset, function(cur) {
       cur.css("transform", "none");
-      cur.fadeIn(200, function () {
-        rollDone = true;
-        cur.css("transform", "scale(1.5)");
-      });
+    },function (cur) {
+      rollDone = true;
+      cur.css("transform", "scale(1.5)");
     });
   };
   $(function () {
     setTimeout(function () {
-      $(".tmc-img-roller").children(":nth(0)").css("transform", "scale(1.5)");
+      $("#tmc-roller").children(":nth(0)").css("transform", "scale(1.5)");
     }, 100);
-    window.rollerHandle = setInterval(rollImg, 3000);
+    window.rollerHandle = setInterval(rollImgInt, 3000);
     window.beforeLoad = function () {
       clearInterval(rollerHandle);
     };
