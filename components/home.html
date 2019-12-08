@@ -81,24 +81,15 @@
     </div>
   </div>
 </div>
-<div class="container-fluid tmc-re" style="background-color: #fff; margin-top: 58px;">
-  <div style="text-align: center; width: 100vw; position: absolute; top: -1.5em;"><span style="color: #feb12e; background-color: #2a8476; display: inline-block; font-size: 2em; padding: 5px 2em;">Sponsorship</span></div>
+<div id="sponsorship" class="container-fluid tmc-re" style="background-color: #fff; margin-top: 58px; text-align: center;">
+  <div style="text-align: center; width: 100vw; position: absolute; top: -1.5em; left: 0;"><span style="color: #feb12e; background-color: #2a8476; display: inline-block; font-size: 2em; padding: 5px 2em;">Sponsorship</span></div>
   <img style="margin-top: 3em; width: 100%;" src="./assets/sponsors.png">
 </div>
 <style>
-  @media screen and (max-width: 1600px) {
-    .tmc-home-body {
-      margin: 48px 10vw 0 10vw !important;
+  @media screen and (min-width: 1300px) {
+    #sponsorship img {
+      max-width: 70%;
     }
-  }
-  .tmc-home-body {
-    margin: 48px auto 0 auto;
-    padding: 3em 5vw;
-    background-color: #fff;
-    max-width: 1300px;
-  }
-  .tmc-home-body img {
-    width: 100%;
   }
 
   .tmc-subtitle {
@@ -134,12 +125,8 @@
     .tmc-big {
       font-size: 22px;
     }
-    .tmc-home-body {
-      padding: 0 12px;
-      margin: 12px 3vw;
-    }
   }
-  #tmc-roller {
+  #tmc-roller div {
     transition: transform 5s linear;
   }
 </style>

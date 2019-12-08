@@ -6,6 +6,11 @@
 .tmc-re {
     position: relative;
 }
+
+* {
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
 /* 分享链接 */
 .tmc-media {
     display: inline-block;
@@ -167,7 +172,6 @@ a,a:visited,a:hover,a:active,a:focus {
     background-repeat: no-repeat;
     background-position: center;
     display: none;
-    transition: transform 5s linear;
 }
 .tmc-img-roller div:nth-child(1) {
     display: block;
@@ -217,3 +221,46 @@ a,a:visited,a:hover,a:active,a:focus {
     }
 }
 /* 滚动图片容器相关结束 */
+
+
+
+  .tmc-home-body p {
+    margin: 18px 0;
+    font-size: 1.2em;
+    text-indent: 2em;
+  }
+  .no-indent {
+    text-indent: 0 !important;
+  }
+  .tmc-home-body h1, .tmc-home-body h2 {
+    margin-left: -33px;
+  }
+  @media screen and (max-width: 1600px) {
+    .tmc-home-body {
+      margin: 48px 10vw 0 10vw;
+    }
+  }
+  .tmc-home-body {
+    margin: 48px auto 0 auto;
+    padding: 3em 5vw;
+    background-color: #fff;
+    max-width: 1300px;
+  }
+  .tmc-home-body img {
+    width: 100%;
+  }
+  @media screen and (max-width: 991px) {
+    .tmc-home-body {
+      padding: 0 12px;
+      margin: 12px 3vw;
+    }
+    .tmc-home-body h1, .tmc-home-body h2 {
+        margin-left: auto;
+    }
+  }
+
+  .tmc-img-text {
+    font-size: 1.1em;
+    margin: 4px auto;
+    display: block;
+  }

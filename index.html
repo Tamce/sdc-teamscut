@@ -13,11 +13,11 @@
   <script src="./common.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body style="overflow-x: hidden;">
   <div id="header" class="container-fluid">
     <div class="row tmc-header">
       <div class="col-md-6 col-sm-12" style="line-height: 70px;">
-        <a class="logo" href="./index.html"><img src="./assets/logo.png" alt="teamscut" style="max-height: 70px;"></a>
+        <a class="logo" href="#home"><img src="./assets/logo.png" alt="teamscut" style="max-height: 70px;"></a>
         <style>
           /* 菜单按钮 */
           .tmc-icon-bar {
@@ -56,52 +56,52 @@
     <div class="row tmc-navbar" data-expanded="0">
       <div class="col-md-10 col-md-offset-1" style="text-align: center; height: 100%;">
         <div class="tmc-nav-item">
-          <a href="#" data-tr>Contest Information</a>
+          <a data-tr>Contest Information</a>
           <div class="tmc-dropdown">
-            <a href="#" data-tr>Solar Decathlon</a>
-            <a href="#" data-tr>2020 Solar Decathlon Middle East</a>
+            <a href="#solar_decathlon" data-tr>Solar Decathlon</a>
+            <a href="#solar_decathlon_me" data-tr>2020 Solar Decathlon Middle East</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>About us</a>
+          <a data-tr>About us</a>
           <div class="tmc-dropdown">
-            <a href="#"  data-tr>South China University of Technology</a>
-            <a href="#"  data-tr>Team x SCUT</a>
-            <a href="#"  data-tr>Team Members</a>
+            <a href="#scut" data-tr>South China University of Technology</a>
+            <a href="#team_scut" data-tr>Team x SCUT</a>
+            <a href="#" data-tr>Team Members</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>Project</a>
+          <a data-tr>Project</a>
           <div class="tmc-dropdown">
-            <a href="#"  data-tr>Work Schedule</a>
-            <a href="#"  data-tr>Concept</a>
+            <a href="#" data-tr>Work Schedule</a>
+            <a href="#" data-tr>Concept</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>Activities</a>
+          <a data-tr>Activities</a>
           <div class="tmc-dropdown">
-            <a href="#"  data-tr>Media Engagement</a>
-            <a href="#"  data-tr>Offical Activities</a>
-            <a href="#"  data-tr>Offline Activities</a>
+            <a href="#" data-tr>Media Engagement</a>
+            <a href="#" data-tr>Offical Activities</a>
+            <a href="#" data-tr>Offline Activities</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>Former Works</a>
+          <a data-tr>Former Works</a>
           <div class="tmc-dropdown">
             <a href="#" data-tr>SDC 2013</a>
             <a href="#" data-tr>SDC 2018</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>Support</a>
+          <a data-tr>Support</a>
           <div class="tmc-dropdown">
-            <a href="#"  data-tr>Sponsors</a>
-            <a href="#"  data-tr>Media Partners</a>
-            <a href="#"  data-tr>Support TeamSCUT</a>
+            <a href="#" data-tr>Sponsors</a>
+            <a href="#" data-tr>Media Partners</a>
+            <a href="#" data-tr>Support TeamSCUT</a>
           </div>
         </div>
         <div class="tmc-nav-item">
-          <a href="#"  data-tr>Contacts</a>
+          <a href="#" data-tr>Contacts</a>
         </div>
 
         <div class="tmc-nav-footer visible-sm visible-xs">
@@ -117,13 +117,10 @@
       </div>
     </div>
   </div>
-  <div id="app" style="background: url('./assets/bg.svg') repeat; min-height: 50vh; margin: 0; padding: 0; position: relative; z-index: 10;">
+  <div id="app" style="background: url('./assets/bg.svg') repeat; background-size: cover; min-height: 50vh; margin: 0; padding: 0; position: relative; z-index: 10;">
     Loading...
   </div>
   <style>
-    #footer img {
-      margin: 0 12px;
-    }
     #bookmark {
       height: 50px;
       position: fixed;
@@ -147,11 +144,7 @@
   </div>
   <div id="footer" class="container-fluid" style="background-color: #6F8E82; text-align: center; color: #fff;">
     <div style="margin: 12px auto;">
-      <img src="./assets/sdme2020.png" alt="sdme" width="auto" height="40">
-      <img src="./assets/expo.png" alt="expo" width="auto" height="40">
-      <img src="./assets/DEWA.png" alt="dewa" width="auto" height="40">
-      <img src="./assets/logo-white.png" alt="tslogo" width="auto" height="40">
-      <img src="./assets/scut.png" alt="scut" width="auto" height="40">
+      <img src="./assets/footer.png" style="max-height: 50px; max-width: 100%;">
     </div>
     <p style="font-size: .7em;">© Copyright  2019-2020   |     All Rights Reserved   |   Team SCUT</p>
   </div>
@@ -164,6 +157,7 @@
       $(".tmc-navbar").attr("data-expanded", 1 - expanded);
     });
     $(".tmc-nav-item>a").on("click", function (e) {
+      if ($(".tmc-toggle:visible").length == 0) return;
       $(".tmc-dropdown:visible").slideUp();
       $(e.target).next(".tmc-dropdown:hidden").slideDown();
     });
