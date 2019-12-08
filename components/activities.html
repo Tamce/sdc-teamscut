@@ -25,8 +25,11 @@
         <div class="thumbnail" data-url="">
           <img src="./assets/sd_us.jpg">
           <div class="caption">
-              <h3>这是标题</h3>
-              <p>这里是描述文字啦啦啦</p>
+            <!-- 在标签上添加 data-tr 属性表示当前元素是有翻译文本的，其翻译文本在 common.js 中设置 -->
+            <h3 data-tr>this is a title</h3>
+            <!-- 在标签上添加 data-tr-key 属性的话，表示当前元素是有翻译文本的，但取其翻译时按 key 所声明的内容去对应翻译（参见 common.js） -->
+            <p data-tr-key="tr-example">this is a desription laaaaa~~~~</p>
+            <!-- 注意，目前默认是认为填入元素的内容是英文，在 common.js 中对应的则是其中文翻译 -->
           </div>
         </div>
       </div>

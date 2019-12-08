@@ -28,7 +28,9 @@ window.dict = {
   "Solar Decathlon in China": "中国太阳能十项全能竞赛",
   "sd-1": "",
   "sd-2": "",
-  "sd-3": ""
+  "sd-3": "",
+  "this is a title": "这是标题",
+  "tr-example": "这是描述文本的翻译啊啊啊啊"
 };
 
 
