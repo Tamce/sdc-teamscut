@@ -1,167 +1,247 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>teamSCUT</title>
-  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
-  <script src="./common.js"></script>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body style="overflow-x: hidden;">
-  <div id="header" class="container-fluid">
-    <div class="row tmc-header">
-      <div class="col-md-6 col-sm-12" style="line-height: 70px;">
-        <a class="logo" href="#home"><img src="./assets/logo.png" alt="teamscut" style="max-height: 70px;"></a>
-        <style>
-          /* 菜单按钮 */
-          .tmc-icon-bar {
-            display: block;
-            width: 22px;
-            height: 2px;
-            border-radius: 1px;
-            border: solid #43be95 2px; 
-          }
-          .tmc-icon-bar+.tmc-icon-bar {
-            margin-top: 4px;
-          }
-          .tmc-toggle {
-            background: transparent;
-            border: transparent;
-            height: 70px;
-            padding: 0 12px;
-          }
-        </style>
-        <div class="visible-sm visible-xs" style="position: absolute; top: 0; right: 15px; z-index: 21; height: 70px;">
-          <button class="tmc-toggle" type="button">
-            <span class="tmc-icon-bar"></span>
-            <span class="tmc-icon-bar"></span>
-            <span class="tmc-icon-bar"></span>
-          </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>teamSCUT</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+    <script src="./common.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body style="overflow-x: hidden;">
+    <div id="header" class="container-fluid">
+      <div class="row tmc-header">
+        <div class="col-md-6 col-sm-12" style="line-height: 70px;">
+          <a class="logo" href="#home"
+            ><img
+              src="./assets/logo.png"
+              alt="teamscut"
+              style="max-height: 70px;"
+          /></a>
+          <style>
+            /* 菜单按钮 */
+            .tmc-icon-bar {
+              display: block;
+              width: 22px;
+              height: 2px;
+              border-radius: 1px;
+              border: solid #43be95 2px;
+            }
+            .tmc-icon-bar + .tmc-icon-bar {
+              margin-top: 4px;
+            }
+            .tmc-toggle {
+              background: transparent;
+              border: transparent;
+              height: 70px;
+              padding: 0 12px;
+            }
+          </style>
+          <div
+            class="visible-sm visible-xs"
+            style="position: absolute; top: 0; right: 15px; z-index: 21; height: 70px;"
+          >
+            <button class="tmc-toggle" type="button">
+              <span class="tmc-icon-bar"></span>
+              <span class="tmc-icon-bar"></span>
+              <span class="tmc-icon-bar"></span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 hidden-xs hidden-sm">
+          <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"
+            ><i class="fa fa-instagram fa-1x" haria-hidden="true"></i
+          ></a>
+          <a class="tmc-media" href="https://twitter.com/2020sdme"
+            ><i class="fa fa-twitter fa-1x" aria-hidden="true"></i
+          ></a>
+          <a class="tmc-media" href="#wechat"
+            ><i class="fa fa-weixin fa-1x" aria-hidden="true"></i
+          ></a>
+          <a
+            class="tmc-media"
+            href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"
+            ><i class="fa fa-facebook fa-1x" aria-hidden="true"></i
+          ></a>
+          <a href="javascript:toggleLocale();" class="tmc-media"
+            ><i class="fa fa-language" aria-hidden="true"></i
+          ></a>
         </div>
       </div>
-      <div class="col-md-6 hidden-xs hidden-sm">
-        <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"><i class="fa fa-instagram fa-1x" haria-hidden="true" ></i></a>
-				<a class="tmc-media" href="https://twitter.com/2020sdme"><i class="fa fa-twitter fa-1x" aria-hidden="true"></i></a>
-				<a class="tmc-media" href="#"><i class="fa fa-weixin fa-1x" aria-hidden="true"></i></a>
-        <a class="tmc-media" href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
-        <a href="javascript:toggleLocale();" class="tmc-media"><i class="fa fa-language" aria-hidden="true"></i></a>
-      </div>
-    </div>
-    <div class="row tmc-navbar" data-expanded="0">
-      <div class="col-md-10 col-md-offset-1" style="text-align: center; height: 100%;">
-        <div class="tmc-nav-item">
-          <a data-tr-zh="赛事信息">Contest Information</a>
-          <div class="tmc-dropdown">
-            <a href="#solar_decathlon" data-tr-zh="太阳能十项全能竞赛">Solar Decathlon</a>
-            <a href="#solar_decathlon_me" data-tr-zh="2020 中东太阳能十项全能竞赛">2020 Solar Decathlon Middle East</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a data-tr-zh="关于我们">About us</a>
-          <div class="tmc-dropdown">
-            <a href="#scut" data-tr-zh="华南理工大学">South China University of Technology</a>
-            <a href="#team_scut" data-tr-zh="华南理工大学队">Team x SCUT</a>
-            <a href="#members" data-tr-zh="队伍成员">Team Members</a>
-            <a href="#mascot" data-tr-zh="吉祥物">Mascot</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a data-tr-zh="项目介绍">Project</a>
-          <div class="tmc-dropdown">
-            <a href="#schedule" data-tr-zh="工作日程">Work Schedule</a>
-            <a href="#concept" data-tr-zh="项目概念">Concept</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a data-tr-zh="博客">Blog</a>
-          <div class="tmc-dropdown">
-            <a href="#activities" data-tr-zh="公共活动">Public Activities</a>
-            <a href="#weekly_share" data-tr-zh="每周分享">Weekly Share</a>
-            <a href="#diary" data-tr-zh="点点的每周日记">Dimdim’s Weekly Diary</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a data-tr-zh="往届成果">Former Works</a>
-          <div class="tmc-dropdown">
-            <a href="#sdc2013" data-tr-zh="2013 中国太阳能十项全能竞赛">SDC 2013</a>
-            <a href="#sdc2018" data-tr-zh="2018 中国太阳能十项全能竞赛">SDC 2018</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a data-tr-zh="支持我们">Support</a>
-          <div class="tmc-dropdown">
-            <a href="#" data-tr-zh="赞助商">Sponsors</a>
-            <a href="#" data-tr-zh="合作媒体">Media Partners</a>
-            <a href="#" data-tr-zh="支持我们">Support TeamSCUT</a>
-          </div>
-        </div>
-        <div class="tmc-nav-item">
-          <a href="#" data-tr-zh="联系我们">Contacts</a>
-        </div>
 
-        <div class="tmc-nav-footer visible-sm visible-xs">
-          <a style="color: #fff; font-size: 15px;" href="mailto://scut_sdme2020@163.com">scut_sdme2020@163.com</a>
-          <p>+86 13660195506</p>
-          <div>
-            <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"><i class="fa fa-instagram fa-1x" haria-hidden="true" ></i></a>
-            <a class="tmc-media" href="https://twitter.com/2020sdme"><i class="fa fa-twitter fa-1x" aria-hidden="true"></i></a>
-            <a class="tmc-media" href="#"><i class="fa fa-weixin fa-1x" aria-hidden="true"></i></a>
-            <a class="tmc-media" href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"><i class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+      <div class="row tmc-navbar" data-expanded="0">
+        <div
+          class="col-md-10 col-md-offset-1"
+          style="text-align: center; height: 100%;"
+        >
+          <div class="tmc-nav-item">
+            <a data-tr-zh="赛事信息">Contest Info</a>
+            <div class="tmc-dropdown">
+              <a href="#solar_decathlon" data-tr-zh="太阳能十项全能竞赛"
+                >Solar Decathlon</a
+              >
+              <a
+                href="#solar_decathlon_me"
+                data-tr-zh="2020 中东太阳能十项全能竞赛"
+                >2020 Solar Decathlon Middle East</a
+              >
+            </div>
+          </div>
+          <div class="tmc-nav-item">
+            <a data-tr-zh="关于我们">About us</a>
+            <div class="tmc-dropdown">
+              <a href="#scut" data-tr-zh="华南理工大学"
+                >South China University of Technology</a
+              >
+              <a href="#team_scut" data-tr-zh="华南理工大学队">Team SCUT</a>
+              <a href="#members" data-tr-zh="队伍成员">Team Members</a>
+              <a href="#mascot" data-tr-zh="吉祥物">Mascot</a>
+            </div>
+          </div>
+          <div class="tmc-nav-item">
+            <a data-tr-zh="项目介绍">Project</a>
+            <div class="tmc-dropdown">
+              <a href="#schedule" data-tr-zh="工作日程">Work Schedule</a>
+              <a href="#concept" data-tr-zh="项目概念">Concept</a>
+            </div>
+          </div>
+          <div class="tmc-nav-item">
+            <a data-tr-zh="博客">Blog</a>
+            <div class="tmc-dropdown">
+              <a href="#activities" data-tr-zh="线下活动">Offline Activities</a>
+              <a href="#online_sharing" data-tr-zh="线上分享">Online Sharing</a>
+              <a href="#diary" data-tr-zh="点点周记">Dimdim’s Weekly</a>
+            </div>
+          </div>
+          <div class="tmc-nav-item">
+            <a data-tr-zh="往届成果">Former Works</a>
+            <div class="tmc-dropdown">
+              <a href="#sdc2013" data-tr-zh="2013 中国太阳能十项全能竞赛"
+                >SDC 2013</a
+              >
+              <a href="#sdc2018" data-tr-zh="2018 中国太阳能十项全能竞赛"
+                >SDC 2018</a
+              >
+            </div>
+          </div>
+          <div class="tmc-nav-item">
+            <a data-tr-zh="联系我们">Contacts</a>
+            <div class="tmc-dropdown">
+              <a href="#" data-tr-zh="赞助商">Sponsors</a>
+              <a href="#" data-tr-zh="合作媒体">Media Partners</a>
+              <a href="#" data-tr-zh="支持Team SCUT">Support Team SCUT</a>
+            </div>
+          </div>
+      
+
+          <div class="tmc-nav-footer visible-sm visible-xs">
+            <a
+              style="color: #fff; font-size: 15px;"
+              href="mailto://scut_sdme2020@163.com"
+              >scut_sdme2020@163.com</a
+            >
+            <p>+86 13660195506</p>
+            <div>
+              <a
+                class="tmc-media"
+                href="https://www.instagram.com/2020sdmexscut/"
+                ><i class="fa fa-instagram fa-1x" haria-hidden="true"></i
+              ></a>
+              <a class="tmc-media" href="https://twitter.com/2020sdme"
+                ><i class="fa fa-twitter fa-1x" aria-hidden="true"></i
+              ></a>
+              <a class="tmc-media" href="#wechat"
+                ><i class="fa fa-weixin fa-1x" aria-hidden="true"></i
+              ></a>
+              <a
+                class="tmc-media"
+                href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"
+                ><i class="fa fa-facebook fa-1x" aria-hidden="true"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="app" style="background: url('./assets/bg.svg') repeat; background-size: cover; min-height: 50vh; margin: 0; padding: 0; position: relative; z-index: 10;">
-    Loading...
-  </div>
-  <style>
-    #bookmark {
-      height: 50px;
-      position: fixed;
-      bottom: 10vh;
-      background-color: #FBE12E;
-      z-index: 19;
-      border-radius: 12px;
-      right: -280px;
-      width: 350px;
-      cursor: pointer;
-      box-shadow: rgba(0,0,0,.25) 0px 4px 6px 0px;
-      transition: right 0.5s;
-    }
-    #bookmark:hover {
-      right: -50px;
-    }
-  </style>
-  <div id="bookmark">
-    <img src="./assets/bookmark.svg" style="height: 100%; position: absolute; left: -5px; top: -4px;">
-    <div style="line-height: 50px;color: #fff;font-weight: 600;font-size: 18px;margin-left: 70px;">Support Team x SCUT!</div>
-  </div>
-  <div id="footer" class="container-fluid" style="background-color: #6F8E82; text-align: center; color: #fff;">
-    <div style="margin: 12px auto;">
-      <img src="./assets/footer.png" style="max-height: 50px; max-width: 100%;">
+    <div
+      id="app"
+      style="background: url('./assets/bg.svg') repeat; background-size: cover; min-height: 50vh; margin: 0; padding: 0; position: relative; z-index: 10;"
+    >
+      Loading...
     </div>
-    <p style="font-size: .7em;">© Copyright  2019-2020   |     All Rights Reserved   |   Team SCUT</p>
-  </div>
-  <script>
-    $(".tmc-toggle").on("click", function (e) {
-      var expanded = Number($(".tmc-navbar").attr("data-expanded"));
-      $(".tmc-navbar").animate({
-        right: expanded == 0 ? "0px" : "-85vw"
+    <style>
+      #bookmark {
+        height: 50px;
+        position: fixed;
+        bottom: 10vh;
+        background-color: #fbe12e;
+        z-index: 19;
+        border-radius: 12px;
+        right: -280px;
+        width: 350px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px 0px;
+        transition: right 0.5s;
+      }
+      #bookmark:hover {
+        right: -50px;
+      }
+    </style>
+    <div id="bookmark">
+      <img
+        src="./assets/bookmark.svg"
+        style="height: 100%; position: absolute; left: -5px; top: -4px;"
+      />
+      <div
+        style="line-height: 50px;color: #fff;font-weight: 600;font-size: 18px;margin-left: 70px;"
+      >
+        Support Team SCUT!
+      </div>
+    </div>
+    <div
+      id="footer"
+      class="container-fluid"
+      style="background-color: #6F8E82; text-align: center; color: #fff;"
+    >
+      <div style="margin: 12px auto;">
+        <img
+          src="./assets/footer.png"
+          style="max-height: 50px; max-width: 100%;"
+        />
+      </div>
+      <p style="font-size: .7em;">
+        © Copyright 2019-2020 | All Rights Reserved | Team SCUT
+      </p>
+    </div>
+    <script>
+      $(".tmc-toggle").on("click", function(e) {
+        var expanded = Number($(".tmc-navbar").attr("data-expanded"));
+        $(".tmc-navbar").animate({
+          right: expanded == 0 ? "0px" : "-85vw"
+        });
+        $(".tmc-navbar").attr("data-expanded", 1 - expanded);
       });
-      $(".tmc-navbar").attr("data-expanded", 1 - expanded);
-    });
-    $(".tmc-nav-item>a").on("click", function (e) {
-      if ($(".tmc-toggle:visible").length == 0) return;
-      $(".tmc-dropdown:visible").slideUp();
-      $(e.target).next(".tmc-dropdown:hidden").slideDown();
-    });
-  </script>
-</body>
+      $(".tmc-nav-item>a").on("click", function(e) {
+        if ($(".tmc-toggle:visible").length == 0) return;
+        $(".tmc-dropdown:visible").slideUp();
+        $(e.target)
+          .next(".tmc-dropdown:hidden")
+          .slideDown();
+      });
+    </script>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 .color-pattle {
     --color: #2a8476;
-    --color: #feb12e;
+    --color: #ecc421;
     --color: #43be95;
 }
 .tmc-re {
@@ -46,6 +46,7 @@
     background-color: #2a8476;
     color: #fff;
     z-index: 20;
+    height: 50px;
 }
 a,a:visited,a:hover,a:active,a:focus {
     text-decoration: none;
@@ -56,6 +57,7 @@ a,a:visited,a:hover,a:active,a:focus {
     font-size: 1.2em;
 }
 
+/* 小屏 */
 @media screen and (max-width: 991px) {
     .tmc-header {
         text-align: left;
@@ -69,7 +71,7 @@ a,a:visited,a:hover,a:active,a:focus {
         margin: 10px auto;
     }
     .tmc-nav-item:hover>a {
-        color: #feb12e;
+        color: #ecc421;
     }
     .tmc-nav-item>a {
         font-size: 22px;
@@ -102,7 +104,7 @@ a,a:visited,a:hover,a:active,a:focus {
         left: 10px;
     }
     .tmc-dropdown>a:hover {
-        color: #feb12e;
+        color: #ecc421;
     }
     .tmc-navbar {
         position: fixed;
@@ -113,20 +115,22 @@ a,a:visited,a:hover,a:active,a:focus {
         top: 0;
     }
 }
+
+/* 大屏 */  
 @media screen and (min-width: 992px) {
     /* 导航项 */
     .tmc-nav-item {
         font-size: 1.2em;
-        height: 35px;
-        line-height: 35px;
+        height: 50px;
+        line-height: 50px;
         display: inline-block;
         position: relative;
-        padding: 0 35px;
-        margin: 0 12px;
+        padding: 0 20px;
+        margin: 0 20px;
         cursor: pointer;
     }
     .tmc-nav-item:hover {
-        background-color: #feb12e;
+        background-color: #ecc421;
     }
     .tmc-nav-item:hover>a {
         color: #000;
@@ -139,7 +143,7 @@ a,a:visited,a:hover,a:active,a:focus {
         background-color: #fff;
         min-width: 100%;
         left: 0px;
-        top: 35px;
+        top: 50px;
         text-align: left;
         padding: 0;
         z-index: 15;
@@ -158,6 +162,7 @@ a,a:visited,a:hover,a:active,a:focus {
     }
     .tmc-nav-item:hover .tmc-dropdown {
         display: block;
+
     }
 }
 
@@ -225,23 +230,32 @@ a,a:visited,a:hover,a:active,a:focus {
 
 
   .tmc-home-body p {
-    margin: 18px 0;
+    margin: 2em 7%;
     font-size: 1.2em;
     text-indent: 2em;
+    text-align: justify; 
   }
   .no-indent {
     text-indent: 0 !important;
   }
   .tmc-home-body h1, .tmc-home-body h2 {
-    margin-left: -33px;
+    margin-left: 3.5%;
   }
+  .tmc-home-body h1{
+      margin-bottom: 1em;
+      font-weight: 700;
+      color: #718e83;
+  }
+  .tmc-home-body h2{
+    font-weight: 500;
+}
   @media screen and (max-width: 1600px) {
     .tmc-home-body {
       margin: 48px 10vw 0 10vw;
     }
   }
   .tmc-home-body {
-    margin: 48px auto 0 auto;
+    margin: 0 auto 0 auto;
     padding: 3em 5vw;
     background-color: #fff;
     max-width: 1300px;
@@ -252,7 +266,7 @@ a,a:visited,a:hover,a:active,a:focus {
   @media screen and (max-width: 991px) {
     .tmc-home-body {
       padding: 0 12px;
-      margin: 12px 3vw;
+      margin: 3.5% 3vw;
     }
     .tmc-home-body h1, .tmc-home-body h2 {
         margin-left: auto;
@@ -263,4 +277,5 @@ a,a:visited,a:hover,a:active,a:focus {
     font-size: 1.1em;
     margin: 4px auto;
     display: block;
+    color: grey;
   }

@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <style>
+      .thumbnail {
+        cursor: pointer;
+      }
+      .thumbnail h3 {
+        font-size: 1.2em; 
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }    
+      .thumbnail p {
+        font-size: 1em; 
+        margin: 0px;
+        color: gray;
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+      }
+      
+    </style>
+
+    <div class="tmc-home-body">
+    <h1 style="margin-left: 0px !important;" data-tr-zh="点点周记">DIMDIM'S WEEKLY</h1>
+      <!-- 每一行都要套一个 .row 的 div，代表大屏幕下的一行 -->
+      <div class="row">
+  
+      <div class="col-md-4">
+          <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/-0KnGsbvm60vY7pU-ZkJgA">
+            <img src="./assets/dubai.jpg"  >
+            <div class="caption">
+                <h3 data-tr-zh="每周分享丨迪拜知多少"> Things About Dubai</h3>
+                <p data-tr-zh="一半海一半沙，除了土豪，迪拜还有什么？">With half sea and half sand, what else does Dubai have? </p>
+            </div>
+          </div>
+        </div><!-- 容器结束 -->
+  
+        <div class="col-md-4">
+          <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/zpJ0WIXdtq3pIFFXCFHCIg">
+            <img src="./assets/middle east architecture1.jpg">
+            <div class="caption">
+                <h3 data-tr-zh="每周分享丨中东传统建筑对自然环境的适应（一）">Adaptation of Traditional Architectures in Middle East to the Nature Environment(1)</h3>
+                <p data-tr-zh="本回且看中东人民如何适应严酷气候。">How do Middle Eastern adapt to hash climate?</p>
+            </div>
+          </div>
+        </div><!-- 容器结束 -->
+
+        <div class="col-md-4">
+          <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/2DwcPrxlU9uz0GYZR8YgCg">
+            <img src="./assets/middle east architecture2.jpg">
+            <div class="caption">
+                <h3 data-tr-zh="每周分享丨中东传统建筑对自然环境的适应（二）">Adaptation of Traditional Architectures in Middle East to the Nature Environment(2)</h3>
+                <p data-tr-zh="地域性建筑是不同社会历史阶段文化积淀的综合纪实。">Regional architecture is a comprehensive record of cultural accumulation in different social and historical stages.</p>
+            </div>
+          </div>
+        </div><!-- 容器结束 -->
+
+  
+      </div> <!-- .row 结束 -->
+    </div>
+  </div>
+  <script>
+    $(".thumbnail").click(function (e) {
+      var url = $(e.currentTarget).attr("data-url");
+      if (!url) return;
+      window.location = url;
+    });
+  </script>
+  
