@@ -25,11 +25,15 @@
         <div class="thumbnail" data-url="">
           <img src="./assets/sd_us.jpg">
           <div class="caption">
-            <!-- 在标签上添加 data-tr 属性表示当前元素是有翻译文本的，其翻译文本在 common.js 中设置 -->
-            <h3 data-tr>this is a title</h3>
-            <!-- 在标签上添加 data-tr-key 属性的话，表示当前元素是有翻译文本的，但取其翻译时按 key 所声明的内容去对应翻译（参见 common.js） -->
-            <p data-tr-key="tr-example">this is a desription laaaaa~~~~</p>
-            <!-- 注意，目前默认是认为填入元素的内容是英文，在 common.js 中对应的则是其中文翻译 -->
+            <h3 data-tr-zh="这是个标题">this is a title</h3>
+            <p>
+              关于中英翻译我实现了两种方法，只要在对应元素设置下面的三个属性的任意一个就表明这个元素是可翻译的，可以直接使用 "data-tr-zh" 属性指定中文文本，但文本比较长的时候也可以单独写到字典中，具体翻译逻辑如下：<br>
+              1. <b>data-tr-zh</b>: 直接声明当前元素对应的中文文本，翻译时这一项的优先级最高；如果存在这一项，则后面的逻辑都不会进行<br>
+              2. <b>data-tr-key</b>: 如果没找到 data-tr-zh 的话，那么看看有没有设置 "data-tr-key" 这个属性，如果设置了的话，那么把这个内容作为 <b>key</b><br>
+              3. <b>data-tr</b>: 最普通的方式，如果上面两项都不满足，那么直接使用元素内的英文文本原文作为 <b>key</b><br>
+              4. 确定了 <b>key</b> 之后，脚本从 common.js 中的字典中按 key 寻找中文文本进行翻译。<br><br>
+              <b style="color:red;">此外，需要注意的是，翻译时仅取元素内文本，因此元素内的 html 标签会丢失，因此在使用翻译功能时需要在最内层元素上设置~</b>
+            </p>
           </div>
         </div>
       </div>
