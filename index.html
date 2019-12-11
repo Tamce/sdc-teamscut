@@ -10,7 +10,7 @@
     <title>teamSCUT</title>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <link
-      href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
     <link
@@ -63,26 +63,25 @@
           </div>
         </div>
         <div class="col-md-6 hidden-xs hidden-sm">
-          <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/"
-            ><i class="fa fa-instagram fa-1x" haria-hidden="true"></i
+          <a class="tmc-media" href="https://www.instagram.com/2020sdmexscut/">
+            <i class="fa fa-instagram fa-1x" haria-hidden="true" data-toggle="tooltip" title="Instagram" data-placement="bottom"></i
           ></a>
           <a class="tmc-media" href="https://twitter.com/2020sdme"
-            ><i class="fa fa-twitter fa-1x" aria-hidden="true"></i
+            ><i class="fa fa-twitter fa-1x" aria-hidden="true" data-toggle="tooltip" title="Twitter" data-placement="bottom"></i
           ></a>
           <a class="tmc-media" href="#wechat"
-            ><i class="fa fa-weixin fa-1x" aria-hidden="true"></i
+            ><i class="fa fa-weixin fa-1x" aria-hidden="true" data-toggle="tooltip" title="Wechat" data-placement="bottom"></i
           ></a>
           <a
             class="tmc-media"
             href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"
-            ><i class="fa fa-facebook fa-1x" aria-hidden="true"></i
+            ><i class="fa fa-facebook fa-1x" aria-hidden="true" data-toggle="tooltip" title="Facebook" data-placement="bottom"></i
           ></a>
           <a href="javascript:toggleLocale();" class="tmc-media"
-            ><i class="fa fa-language" aria-hidden="true"></i
+            ><i class="fa fa-language" aria-hidden="true" data-toggle="tooltip" title="切换语言 / Switch Language" data-placement="bottom"></i
           ></a>
         </div>
       </div>
-
       <div class="row tmc-navbar" data-expanded="0">
         <div
           class="col-md-10 col-md-offset-1"
@@ -179,7 +178,7 @@
     </div>
     <div
       id="app"
-      style="background: url('./assets/bg.svg') repeat; background-size: cover; min-height: 50vh; margin: 0; padding: 0; position: relative; z-index: 10;"
+      style="background: url('./assets/bg.svg') repeat; background-size: cover; margin: 0; padding: 0; position: relative; z-index: 10;"
     >
       Loading...
     </div>
@@ -207,7 +206,7 @@
         style="height: 100%; position: absolute; left: -5px; top: -4px;"
       />
       <div
-        style="line-height: 50px;color: #fff;font-weight: 600;font-size: 18px;margin-left: 70px;"
+        style="line-height: 50px;color: #fff;font-weight: 600;font-size: 18px;margin-left: 70px;" data-tr-zh="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;支持我们！"
       >
         Support Team SCUT!
       </div>
@@ -242,6 +241,7 @@
           .next(".tmc-dropdown:hidden")
           .slideDown();
       });
+      $('[data-toggle="tooltip"]').tooltip();
     </script>
   </body>
 </html>

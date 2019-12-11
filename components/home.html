@@ -252,7 +252,7 @@
     }
   }
   #tmc-roller div {
-    transition: transform 5s linear;
+    transition: transform 8s linear;
   }
 </style>
 <script>
@@ -279,7 +279,7 @@
     if (offset == undefined) offset = 1;
     // 重置定时器
     clearInterval(window.rollerHandle);
-    window.rollerHandle = setInterval(rollImgInt, 3000);
+    window.rollerHandle = setInterval(rollImgInt, 6000);
     rollDone = false;
 
     rollImg(
@@ -300,7 +300,7 @@
         .children(":nth(0)")
         .css("transform", "scale(1.5)");
     }, 100);
-    window.rollerHandle = setInterval(rollImgInt, 3000);
+    window.rollerHandle = setInterval(rollImgInt, 6000);
     window.beforeLoad = function() {
       clearInterval(rollerHandle);
     };

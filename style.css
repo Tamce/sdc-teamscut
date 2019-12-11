@@ -168,7 +168,7 @@ a,a:visited,a:hover,a:active,a:focus {
 
 /* 滚动图片容器相关 */
 .tmc-img-roller {
-    height: 400px;
+    height: 60vh;
     overflow: hidden;
 }
 .tmc-img-roller div {
@@ -186,8 +186,8 @@ a,a:visited,a:hover,a:active,a:focus {
     position: absolute;
     top: 0;
     width: 100px;
-    height: 400px;
-    line-height: 400px;
+    height: 60vh;
+    line-height: 60vh;
     font-size: 40px;
     color: rgba(255,255,255,0.4);
     transition: color .2s;
@@ -259,6 +259,7 @@ a,a:visited,a:hover,a:active,a:focus {
     padding: 3em 5vw;
     background-color: #fff;
     max-width: 1300px;
+    min-height: calc(100vh - 240px);
   }
   .tmc-home-body img {
     width: 100%;
