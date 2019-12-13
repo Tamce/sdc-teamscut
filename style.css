@@ -43,7 +43,7 @@
 }
 /* 导航 container */
 .tmc-navbar {
-    background-color: #2a8476;
+    background-color: #b8c8ac;
     color: #fff;
     z-index: 20;
     height: 50px;
@@ -71,7 +71,7 @@ a,a:visited,a:hover,a:active,a:focus {
         margin: 10px auto;
     }
     .tmc-nav-item:hover>a {
-        color: #ecc421;
+        color: #79a699;
     }
     .tmc-nav-item>a {
         font-size: 22px;
@@ -104,7 +104,7 @@ a,a:visited,a:hover,a:active,a:focus {
         left: 10px;
     }
     .tmc-dropdown>a:hover {
-        color: #ecc421;
+        color: #79a699;
     }
     .tmc-navbar {
         position: fixed;
@@ -130,7 +130,7 @@ a,a:visited,a:hover,a:active,a:focus {
         cursor: pointer;
     }
     .tmc-nav-item:hover {
-        background-color: #ecc421;
+        background-color: #79a699;
     }
     .tmc-nav-item:hover>a {
         color: #000;
