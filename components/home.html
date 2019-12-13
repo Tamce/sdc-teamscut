@@ -184,7 +184,7 @@ button.home:active::before {
       <div class="tmc-re" style="height: 6em;">
         <img src="./assets/timeline.svg" style="width: 100vw; position: absolute; left: calc(-50vw + 50%); top: 4em;" />
       </div>
-      <div class="row tmc-re" style="margin-top: 1em;">
+      <div class="row tmc-re" style="margin-top: 2em;">
         <div class="col-md-6" style="margin-top: 1em;">
           <a href="#sdc2013"><button class="home tmc-big" style="text-align: center;">
             2013 SDC E-CONCAVE
@@ -205,8 +205,9 @@ button.home:active::before {
   style="background-color: #fff; margin-top: 58px; text-align: center;">
   <div style="text-align: center; width: 100vw; position: absolute; top: -1.5em; left: 0;">
     <span style="color: #ffffff; background-color: #79a699; display: inline-block; font-size: 2em; padding: 5px 2em;">SPONSORSHOP</span>
+    <iframe src="./components/email.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
   </div>
-  <img style="margin-top: 3em; width: 100%;" src="" />
+
 </div>
 <style>
   @media screen and (min-width: 1300px) {
@@ -282,7 +283,7 @@ button.home:active::before {
     if (offset == undefined) offset = 1;
     // 重置定时器
     clearInterval(window.rollerHandle);
-    window.rollerHandle = setInterval(rollImgInt, 6000);
+    window.rollerHandle = setInterval(rollImgInt, 3000);
     rollDone = false;
 
     rollImg(
@@ -293,7 +294,7 @@ button.home:active::before {
       },
       function (cur) {
         rollDone = true;
-        cur.css("transform", "scale(1.5)");
+        cur.css("transform", "scale(1)");
       }
     );
   }
@@ -301,9 +302,9 @@ button.home:active::before {
     setTimeout(function () {
       $("#tmc-roller")
         .children(":nth(0)")
-        .css("transform", "scale(1.5)");
+        .css("transform", "scale(1)");
     }, 100);
-    window.rollerHandle = setInterval(rollImgInt, 6000);
+    window.rollerHandle = setInterval(rollImgInt, 3000);
     window.beforeLoad = function () {
       clearInterval(rollerHandle);
     };
