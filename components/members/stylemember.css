@@ -203,7 +203,7 @@ main {
 		height: calc(var(--cardH) * 8 - 1.5em);
 	}
 	.cards {
-		grid-template: repeat(18, var(--cardH)) / repeat(4, var(--cardW)); /* 大屏行列数 */
+		grid-template: repeat(21, var(--cardH)) / repeat(4, var(--cardW)); /* 大屏行列数 */
 	}
 }
 
