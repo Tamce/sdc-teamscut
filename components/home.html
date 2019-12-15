@@ -1,6 +1,5 @@
 <style> 
 /*button style*/
-@import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -47,7 +46,7 @@ button.home::before {
   background: #7ea699; /*按钮侧面背景色*/
   border-radius: inherit;
   box-shadow: 0 0 0 2px #7ea699, 0.5em 0.5em 0.8em 0 #7ea699;  /*按钮侧面边框色， 按钮投影色*/
-  -webkit-transform: translate3d(0, 0em, -1em); 中间值为按钮侧面高度*/
+  -webkit-transform: translate3d(0, 0em, -1em); /* 中间值为按钮侧面高度*/
           transform: translate3d(0, 0em, -1em); /*中间值按钮侧面高度*/
   transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
@@ -73,6 +72,70 @@ button.home:active::before {
   transform: translate3d(0, 0, -1em);
   transform: translate3d(0, 0, -1em);
 }
+
+/* 滚动图片容器相关 */
+.tmc-img-roller {
+    height: calc(100vh - 140px);
+    overflow: hidden;
+}
+.tmc-img-roller div {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+}
+.tmc-img-roller div:nth-child(1) {
+    display: block;
+    transform: scale(1.0);
+}
+.tmc-left, .tmc-right {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: calc(100vh - 140px);
+    line-height: calc(100vh - 140px);
+    font-size: 40px;
+    color: rgba(255,255,255,0.4);
+    transition: color .2s;
+    cursor: pointer;
+    text-align: center;
+    z-index: 11;
+}
+.tmc-left:hover, .tmc-right:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.tmc-left {
+    left: 5%;
+    text-align: left;
+}
+.tmc-right {
+    right: 5%;
+    text-align: right;
+}
+@media screen and (max-width: 1500px) {
+    .tmc-left {
+    left: 5vw;
+    }
+    .tmc-right {
+    right: 5vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tmc-img-roller {
+    height: 200px;
+    }
+    .tmc-left {
+    line-height: 200px;
+    left: 3vw;
+    }
+    .tmc-right {
+    line-height: 200px;
+    right: 3vw;
+    }
+}
+/* 滚动图片容器相关结束 */
+
 </style>
 
 
@@ -206,7 +269,7 @@ button.home:active::before {
   <div style="text-align: center; width: 100vw; position: relative; top: -1.5em; left: 0;">
     <span style="color: #ffffff; background-color: #79a699; display: inline-block; font-size: 2em; padding: 5px 2em;">CONTACTS</span>
     <div></div>
-    <iframe src="./components/support.html" style="width: 100%; height: 100%;" frameborder="0" marginheight="500px"></iframe>
+    <iframe src="./components/support.html" style="width: 100%; height: 80vh;" frameborder="0"></iframe>
   </div>
 
 </div>

@@ -89,9 +89,12 @@ window.toggleLocale = function(nochange) {
   $("[data-tr]").map(function(id, el) {
     tr(el);
   });
+  $($("iframe").contents()).find("[data-tr]").map(function(id, el) {
+    tr(el);
+  });
 };
-window.reloadLocale = function() {
-  $("[data-tr]").map(function(id, el) {
+window.reloadLocaleScope = function(scope) {
+  $("[data-tr]", scope).map(function(id, el) {
     if (!!$(el).attr("data-tr-inited")) return;
     if (!!$(el).attr("data-tr-key")) {
       return;
@@ -105,13 +108,17 @@ window.reloadLocale = function() {
 
     $(el).attr("data-tr-inited", "true");
   });
-  $("[data-tr-key],[data-tr-zh]").map(function(i, el) {
+  $("[data-tr-key],[data-tr-zh]", scope).map(function(i, el) {
     if (!!$(el).attr("data-tr-inited")) return;
     $(el).attr("data-tr", $(el).text());
     $(el).attr("data-tr-inited", "true");
   });
   toggleLocale(true);
 };
+window.reloadLocale = function () {
+  reloadLocaleScope(document);
+  reloadLocaleScope($("iframe").contents());
+}
 
 // 初始化 roller
 var imgCur = {};
@@ -132,6 +139,7 @@ function load(page) {
   $("#app").load("./components/" + page + ".html", null, function() {
     reloadLocale();
     reloadRoller();
+    $("iframe").on('load', reloadLocale);
     // 加载完毕，如果导航栏处于打开状态，收起之
     var expanded = Number($(".tmc-navbar").attr("data-expanded"));
     if (expanded == 0) return;

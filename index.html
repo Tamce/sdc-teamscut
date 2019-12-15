@@ -10,6 +10,7 @@
   <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300">
   <script src="./common.js"></script>
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -39,7 +40,7 @@
             padding: 0 12px;
           }
         </style>
-        <div class="visible-sm visible-xs" style="position: absolute; top: 0; right: 15px; z-index: 21; height: 70px;">
+        <div class="visible-sm visible-xs" style="position: absolute; top: 0; right: 15px; height: 70px;">
           <button class="tmc-toggle" type="button">
             <span class="tmc-icon-bar"></span>
             <span class="tmc-icon-bar"></span>
@@ -59,11 +60,16 @@
           <i class="fa fa-facebook fa-1x" aria-hidden="true" data-toggle="tooltip" title="Facebook"
             data-placement="bottom"></i>
         </a>
-        <a href="javascript:toggleLocale();" class="tmc-media"><i class="fa fa-language" aria-hidden="true"
-            data-toggle="tooltip" title="切换语言 / Switch Language" data-placement="bottom"></i></a>
+        <a href="javascript:toggleLocale();" class="tmc-media"><i class="fa fa-globe" aria-hidden="true"
+            data-toggle="tooltip" title="切换语言 / Switch Language" data-placement="bottom"></i><span style="font-size: 20px; margin-bottom: 2px; margin-left: 5px;" data-tr-zh="En">中</span></a>
       </div>
     </div>
-    <div class="row tmc-navbar" data-expanded="0" >
+    <div class="row tmc-navbar" data-expanded="0">
+      <div class="visible-sm visible-xs" style="position: absolute; top: 0; right: 50px; height: 70px; font-size: 38px;">
+        <button class="tmc-toggle" type="button">
+          &times;
+        </button>
+      </div>
       <div class="col-md-10 col-md-offset-1" style="text-align: center; height: 100%;">
           <div class="tmc-nav-item">
             <a data-tr-zh="赛事信息">Contest Info</a>
@@ -123,6 +129,7 @@
             <a class="tmc-media" href="#wechat"><i class="fa fa-weixin fa-1x" aria-hidden="true"></i></a>
             <a class="tmc-media" href="https://www.facebook.com/2020sdmexscut/?modal=admin_todo_tour"><i
                 class="fa fa-facebook fa-1x" aria-hidden="true"></i></a>
+            <a href="javascript:toggleLocale();" class="tmc-media"><i class="fa fa-globe" aria-hidden="true"></i><span style="font-size: 20px; margin-bottom: 2px; margin-left: 5px;" data-tr-zh="En">中</span></a>
           </div>
         </div>
       </div>
@@ -149,6 +156,13 @@
 
     #bookmark:hover {
       right: -50px;
+    }
+
+    .tmc-navabs {
+      position: fixed;
+      width: 100vw;
+      top: 0;
+      left: 0;
     }
   </style>
   <div id="bookmark">
@@ -181,6 +195,14 @@
         .slideDown();
     });
     $('[data-toggle="tooltip"]').tooltip();
+    window.onscroll = function (e) {
+      var offset = $("body, html").scrollTop();
+      if (offset > 200) {
+        $(".tmc-navbar").addClass("tmc-navabs");
+      } else {
+        $(".tmc-navbar").removeClass("tmc-navabs");
+      }
+    }
   </script>
 </body>
 </html>

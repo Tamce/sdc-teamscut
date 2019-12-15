@@ -107,12 +107,26 @@ a,a:visited,a:hover,a:active,a:focus {
         color: #79a699;
     }
     .tmc-navbar {
-        position: fixed;
+        position: fixed !important;
         right: -85vw;
-        width: 85vw;
+        left: auto !important;
+        width: 85vw !important;
         padding: 70px 12px 12px 12px;
         height: 100vh;
         top: 0;
+    }
+    .tmc-header {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        padding: 10px 15px;
+        background-color: #fff;
+        margin: 0;
+        height: 90px;
+        z-index: 20;
+    }
+    #header {
+        height: 90px;
     }
 }
 
@@ -164,69 +178,6 @@ a,a:visited,a:hover,a:active,a:focus {
         display: block;
     }
 }
-
-/* 滚动图片容器相关 */
-.tmc-img-roller {
-    height: 60vh;
-    overflow: hidden;
-}
-.tmc-img-roller div {
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: none;
-}
-.tmc-img-roller div:nth-child(1) {
-    display: block;
-    transform: scale(1.0);
-}
-.tmc-left, .tmc-right {
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 60vh;
-    line-height: 60vh;
-    font-size: 40px;
-    color: rgba(255,255,255,0.4);
-    transition: color .2s;
-    cursor: pointer;
-    text-align: center;
-    z-index: 11;
-}
-.tmc-left:hover, .tmc-right:hover {
-    color: rgba(255, 255, 255, 1);
-}
-.tmc-left {
-    left: 15%;
-}
-.tmc-right {
-    right: 15%;
-}
-@media screen and (max-width: 1500px) {
-    .tmc-left {
-    left: 5vw;
-    }
-    .tmc-right {
-    right: 5vw;
-    }
-}
-@media screen and (max-width: 600px) {
-    .tmc-img-roller {
-    height: 200px;
-    }
-    .tmc-left {
-    line-height: 200px;
-    left: 3vw;
-    }
-    .tmc-right {
-    line-height: 200px;
-    right: 3vw;
-    }
-}
-/* 滚动图片容器相关结束 */
-
-
 
   .tmc-home-body p {
     margin: 2em 7%;
