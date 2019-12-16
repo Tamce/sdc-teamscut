@@ -27,7 +27,7 @@
 
     <div class="col-md-4">
         <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/-r3MPLtQvkeOj4GykdyL6g">
-          <img src="./assets/Architectural Culture Festival.jpg"  >
+          <img src="./assets/activities/Architectural Culture Festival.jpg"  >
           <div class="caption">
               <h3 data-tr-zh="特别策划丨绿色创意文化节"> Architectural Culture Festival</h3>
               <p class="no-indent" data-tr-zh="打造属于你自己的“绿色建筑”。">Build your own "eco-architecture."</p>
@@ -37,7 +37,7 @@
 
       <div class="col-md-4">
         <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg">
-          <img src="./assets/changqi.jpg">
+          <img src="./assets/activities/changqi.jpg">
           <div class="caption">
               <h3 data-tr-zh="特别策划丨长岐的绿色小屋">A Green House in Changqi</h3>
               <p class="no-indent" data-tr-zh="太阳能绿色生活体验馆——“长崎的绿色小屋”。">Solar eco-life experience —— "a green house in Changqi."</p>
@@ -45,37 +45,19 @@
         </div>
       </div><!-- 容器结束 -->
       
-      <!-- 每一个容器的结构为：.col-md-4 > thumbnail，在其之下放 img 和 div.caption 即可 
+
+
       <div class="col-md-4">
-        (在 .thumbnail 的 data-url 属性设置当前容器点击后跳转的链接)
-        <div class="thumbnail" data-url="">
-          <img src="./assets/sd_us.jpg">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/I7MPS_jV_uSwNhGzNG6ndg">
+        <img src="./assets/activities/nansha.jpg">
           <div class="caption">
-            <h3 data-tr-zh="这是个标题">this is a title</h3>
-            <p>
-              关于中英翻译我实现了两种方法，只要在对应元素设置下面的三个属性的任意一个就表明这个元素是可翻译的，可以直接使用 "data-tr-zh" 属性指定中文文本，但文本比较长的时候也可以单独写到字典中，具体翻译逻辑如下：<br>
-              1. <b>data-tr-zh</b>: 直接声明当前元素对应的中文文本，翻译时这一项的优先级最高；如果存在这一项，则后面的逻辑都不会进行<br>
-              2. <b>data-tr-key</b>: 如果没找到 data-tr-zh 的话，那么看看有没有设置 "data-tr-key" 这个属性，如果设置了的话，那么把这个内容作为 <b>key</b><br>
-              3. <b>data-tr</b>: 最普通的方式，如果上面两项都不满足，那么直接使用元素内的英文文本原文作为 <b>key</b><br>
-              4. 确定了 <b>key</b> 之后，脚本从 common.js 中的字典中按 key 寻找中文文本进行翻译。<br><br>
-              <b style="color:red;">此外，需要注意的是，翻译时仅取元素内文本，因此元素内的 html 标签会丢失，因此在使用翻译功能时需要在最内层元素上设置~</b>
-            </p>
+              <h3 data-tr-zh="特别策划｜绿「筑/竹」南沙">Green 「Building/Bamboo」 in Nansha</h3>
+              <p class="no-indent" data-tr-zh="绿「筑/竹」南沙·回顾。">Review of Green 「Building/Bamboo」 in Nansha.</p>
           </div>
         </div>
       </div>
 
-      (容器模板)
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img src="./assets/sd_us.jpg">
-          <div class="caption">
-              <h3>这是标题</h3>
-              <p>这里是描述文字啦啦啦</p>
-          </div>
-        </div>
-      </div>
 
-    以上就是一个容器的示例 -->
 
     </div> <!-- .row 结束 -->
   </div>
