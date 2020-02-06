@@ -190,15 +190,17 @@ a,a:visited,a:hover,a:active,a:focus {
     text-indent: 0 !important;
   }
   .tmc-home-body h1, .tmc-home-body h2 {
-    margin-left: 3.5%;
+    margin-left: 7%;
   }
   .tmc-home-body h1{
       margin-bottom: 1em;
       font-weight: 700;
       color: #718e83;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+
   }
   .tmc-home-body h2{
-    font-weight: 500;
+    font-weight: 700;
 }
   @media screen and (max-width: 1600px) {
     .tmc-home-body {
