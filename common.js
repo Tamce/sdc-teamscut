@@ -20,7 +20,10 @@ window.dict = {
   "Media Partners": "合作媒体",
   "Support TeamSCUT": "支持我们",
   "Contacts": "联系我们",
-  "- more information -": "- 详情 -",
+  "Group Architecture Design": "建筑设计组",
+  "Group Contruction Tech": "建造技术组",
+  "Group Equipment": "设备性能组",
+  "Group Communication": "宣传运营组",
   "tr-home-1":
     "华南理工大学队即将参与在2020举行的中东国际太阳能十项全能竞赛（Solar Decathlon Middle Ease，SDME）是以全球高校为参赛单位的太阳能建筑科技竞赛。竞赛目的是借助世界顶尖研发、设计团队的技术与创意，将太阳能、节能与建筑设计以一体化的新方式紧密结合，设计、建造并运行一座高效节能、由吸引力的太阳能房屋，并希望通过比赛加快太阳能国际化的产学研融合与交流，推进相关技术创新、发展和商业化。",
   "tr-home-2":
