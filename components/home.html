@@ -1,4 +1,4 @@
-<style> 
+<style>
 /*button style*/
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ button {
 button.home {
   font-weight: 600;
   color: white; /*字体颜色*/
-  padding: 0.5em 1em; 
+  padding: 0.5em 1em;
   background: #b8c8ac; /*未hover时按钮背景色*/
   border: 2px solid #7ea699; /*按钮上表面边框色*/
   border-radius: 5px;
@@ -80,7 +80,7 @@ button.home:active::before {
 }
 .tmc-img-roller div {
     height: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: none;
@@ -123,7 +123,7 @@ button.home:active::before {
 }
 @media screen and (max-width: 600px) {
     .tmc-img-roller {
-    height: 200px;
+      height: 200px;
     }
     .tmc-left {
     line-height: 200px;
@@ -157,6 +157,14 @@ button.home:active::before {
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
   </div>
 </div>
+<script>
+  window.localeChanged = function () {
+    if (document.body.clientWidth > 600) {
+      $(".tmc-img-roller").css("height", "calc(100vh - "+$("#header").height()+"px)");
+    }
+  }
+  window.localeChanged();
+</script>
 
 <div class="tmc-home-body">
   <div class="container-fluid">

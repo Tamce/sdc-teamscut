@@ -119,7 +119,7 @@ window.dict = {
   "tr-visit-5": "沙滩/泳池得分（填充区域）及其组成：温度得分（红线），云量得分（蓝线），以及降水得分（绿线）。",
   "tr-sponsor-1": "作为本次竞赛中国大陆唯一的参赛团队,今年,我们将跨出国门,走向世界,在更高的平台上展现来自中国团队的技术与实力:我们将协同跨学科专业技术与设计团队,采用可持续的被动技术和新进的主动技术,一体化结合工学与美学,设计与建造具有高效节能、有社会积极效应的太阳能房屋。在此过程中我们需要相关的技术、产品与资金的支持。为此,我们希望有志于推动国际太阳能绿色建筑发展的相关政府部门、技术产品企业和社会热心人士能够给予我们帮助!",
   "tr-sponsor-2": "根据赞助商所赞助的折合价值总额，我们将赞助商分级为特级、一级、二级、三级赞助商，并作出以下回馈项目：",
-  
+
 
 
 
@@ -138,7 +138,7 @@ window.dict = {
 
 
 };
-  
+
 
 
 // 翻译组件
@@ -169,6 +169,9 @@ window.toggleLocale = function(nochange) {
   $($("iframe").contents()).find("[data-tr]").map(function(id, el) {
     tr(el);
   });
+  if (typeof window.localeChanged == "function") {
+    window.localeChanged();
+  }
 };
 window.reloadLocaleScope = function(scope) {
   $("[data-tr]", scope).map(function(id, el) {
