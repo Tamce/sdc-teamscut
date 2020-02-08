@@ -35,8 +35,9 @@
 
 /* 包含 logo 及分享标签的 header */
 .tmc-header {
-    margin: 10px 0;
-    height: 70px;
+    margin: 0 -15px;
+    height: 90px;
+    padding: 10px 0;
     line-height: 70px;
     text-align: center;
     position: relative;
@@ -46,7 +47,6 @@
     background-color: #b8c8ac;
     color: #fff;
     z-index: 20;
-    /* height: 50px; */
 }
 a,a:visited,a:hover,a:active,a:focus {
     text-decoration: none;
@@ -130,17 +130,39 @@ a,a:visited,a:hover,a:active,a:focus {
     }
 }
 
+@media screen and (min-width: 992px) and (max-width: 1599px) {
+    .tmc-nav-item {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+    .tmc-navbar .col-md-12 {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .tmc-nav-item {
+        font-size: .8em !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .tmc-nav-item {
+        margin: 0 .2em;
+        font-size: 1.2em;
+    }
+}
+
 /* 大屏 */
 @media screen and (min-width: 992px) {
     /* 导航项 */
     .tmc-nav-item {
-        font-size: 1.2em;
         height: 50px;
         line-height: 50px;
         display: inline-block;
         position: relative;
         padding: 0 20px;
-        margin: 0 20px;
         cursor: pointer;
     }
     .tmc-nav-item:hover {
