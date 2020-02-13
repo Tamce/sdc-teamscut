@@ -4,27 +4,37 @@
     cursor: hand;
     cursor: pointer;
   }
+
+  .icon-nav-item {
+    display: inline;
+    float: left;
+    padding: 5px;
+  }
+
+
 </style>
 
 <div class="container-fulid">
   <div class="tmc-home-body">
     <div class="row" style="text-align: center; margin-bottom: 15px;">
       <div id="concept-nav" class="icon-nav">
-          <div class="col-md-2 icon-nav-item" data-to="climate"><i class="fa fa-cloud fa-3x"></i><p data-tr-zh="气候应对">Climate</p><p>Adapting</p></div>
-          <div class="col-md-2 icon-nav-item" data-to=""><i class="fa fa-home fa-3x"></i><p data-tr-zh="建筑设计">Architecture</p><p>Design</p></div>
-          <div class="col-md-2 icon-nav-item" data-to=""><i class="fa fa-plug fa-3x"></i><p data-tr-zh="技术整合">Technique</p><p>Intergration</p></div>
-          <div class="col-md-2 icon-nav-item" data-to=""><i class="fa fa-gear fa-3x"></i><p data-tr-zh="结构选型">Structure</p><p>Form</p></div>
-          <div class="col-md-2 icon-nav-item" data-to=""><i class="fa fa-th fa-3x"></i><p data-tr-zh="围护体系">Enclosure</p><p>System</p></div>
-          <div class="col-md-2 icon-nav-item" data-to=""><i class="fa fa-wrench fa-3x"></i><p data-tr-zh="施工建造">Construction </p></div>
+          <div class="icon-nav-item" data-to="climate"><i class="fa fa-cloud fa-3x"></i><p data-tr-zh="气候应对">Climate</p><p>Adapting</p></div>
+          <div class="icon-nav-item" data-to=""><i class="fa fa-home fa-3x"></i><p data-tr-zh="建筑设计">Architecture</p><p>Design</p></div>
+          <div class="icon-nav-item" data-to=""><i class="fa fa-plug fa-3x"></i><p data-tr-zh="技术整合">Technique</p><p>Intergration</p></div>
+          <div class="icon-nav-item" data-to=""><i class="fa fa-gear fa-3x"></i><p data-tr-zh="结构选型">Structure</p><p>Form</p></div>
+          <div class="icon-nav-item" data-to=""><i class="fa fa-th fa-3x"></i><p data-tr-zh="围护体系">Enclosure</p><p>System</p></div>
+          <div class="icon-nav-item" data-to=""><i class="fa fa-wrench fa-3x"></i><p data-tr-zh="施工建造">Construction </p></div>
       </div>
     </div>
 
     <div id="concept-content">
     </div>
+
+
   </div>
 </div>
 <script>
-  $("#concept-content").load("./components/concept/home.html");
+  $("#concept-content").load("./components/concept/overview.html");
   $("#concept-nav").children("div").click(function (el) {
     $("#concept-content").load("./components/concept/" + $(el.currentTarget).attr("data-to") + ".html");
   });

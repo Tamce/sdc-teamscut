@@ -19,7 +19,7 @@ button {
     font-family: inherit;
     width: 100%;
 }
-button.cards {
+button.detail {
     font-weight: 600;
     color: white; /*字体颜色*/
     padding: 5px; 
@@ -29,7 +29,7 @@ button.cards {
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
 }
-button.cards::before {
+button.detail::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -44,21 +44,21 @@ button.cards::before {
     -webkit-transform: translate3d(0, 0em, -1em); /* 中间值为按钮侧面高度*/
             transform: translate3d(0, 0em, -1em); /*中间值按钮侧面高度*/
 }
-button.cards:hover {
+button.detail:hover {
     background: #7ea699; /*按钮hover时背景色*/
 }
-button.cards:hover::before {
+button.detail:hover::before {
     box-shadow: 0 0 0 2px #7ea699; /*按钮hover时侧面边框色，投影色*/
 }
-button.cards:active {
+button.detail:active {
     background: #7ea699; /*按钮按下时背景色*/
 }
-button.cards:active::before {
+button.detail:active::before {
     box-shadow: 0 0 0 2px #2f4840,;  /*按钮按下时侧面边框色，投影色*/
 }
 
 
-.row {
+.row-max {
     margin: 15px -15px;
 }
 
@@ -101,4 +101,65 @@ p {
 
 .icon-nav-item i:hover {
     color: #79a699;
+}
+
+
+
+/* 小屏 */
+@media screen and (max-width: 991px) {
+    #concept-nav .icon-nav-item {
+        width: 33.3%;
+    }
+
+    #concept-nav {
+        padding: 5px;
+    }
+
+    .fa-3x {
+        font-size: 30px;
+    }
+
+    .icon-nav {
+        height: 180px;
+    }
+
+    /*按钮位置和宽度*/
+    button.detail {
+        text-align: center; 
+        width: 50%; 
+        display: block; 
+        position: relative; 
+        left: 15px; 
+        bottom: 15px;
+        margin-top: 15px;
+    }    
+
+    h1 {
+        font-size: 24px !important;
+    }
+
+    h2 {
+        font-size: 14px !important;
+    }
+}
+
+  /* 大屏 */
+@media screen and (min-width: 992px) {
+    #concept-nav .icon-nav-item {
+        width: 16.6%;
+    }
+
+    #concept-nav {
+        padding: 15px;
+    }
+
+    /*按钮位置和宽度*/
+    button.detail {
+        text-align: center; 
+        width: 25%; 
+        display: block; 
+        position: absolute; 
+        left: 15px; 
+        bottom: 15px;
+    }
 }
