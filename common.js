@@ -200,25 +200,11 @@ window.reloadLocale = function () {
   reloadLocaleScope($("iframe").contents());
 }
 
-// 初始化 roller
-var imgCur = {};
-var imgTot = {};
-function reloadRoller() {
-  $(".tmc-img-roller").map(function(i, el) {
-    var rid = $(el).attr("id");
-    if (!rid) console.error("cnm 忘记给 roller 设 id 了", el);
-    if (!window.imgCur[rid]) window.imgCur[rid] = 0;
-    window.imgTot[rid] = $(el).children().length;
-  });
-}
-// 初始化结束
-
 // 前端路由加载器
 function load(page) {
   if (!!page == "") page = "home";
   $("#app").load("./components/" + page + ".html", null, function() {
     reloadLocale();
-    reloadRoller();
     $("iframe").on('load', reloadLocale);
     // 加载完毕，如果导航栏处于打开状态，收起之
     var expanded = Number($(".tmc-navbar").attr("data-expanded"));
@@ -241,6 +227,6 @@ window.onhashchange = function(e) {
 
 // 在页面载入完成后执行各组件的初始化
 $(function() {
-  // load 完成后会自动重新载入 roller 和 locale，这里就不用手动重载入了
+  // load 完成后会自动载入 locale，这里就不用手动重载入了
   load(window.location.hash.substr(1));
 });

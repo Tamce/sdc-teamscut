@@ -10,7 +10,6 @@
   <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300">
   <script src="./common.js"></script>
   <link rel="stylesheet" href="./style.css" />
@@ -49,6 +48,11 @@
             border: transparent;
             height: 70px;
             padding: 0 12px;
+          }
+          @media screen and (max-width: 991px) {
+            #app {
+              margin-top: 70px !important;
+            }
           }
         </style>
 
@@ -169,11 +173,12 @@
     }
   </style>
   <div id="bookmark">
-    <img class="animated bounce infinite" src="./assets/bookmark.svg" style="height: 100%; position: absolute; left: -5px; top: -4px;" />
+    <img id="bookmark-img" src="./assets/bookmark.svg" style="height: 100%; position: absolute; left: -5px; top: -4px;" />
     <div style="line-height: 50px;color: #fff;font-weight: 600;font-size: 18px;margin-left: 70px;"
       ><a href="#support" data-tr-zh="赞助我们！" style="text-decoration: none; color: white;">Support Team SCUT!</a>
       </div>
   </div>
+  <script>$('#bookmark').hover(function(){$('#bookmark-img').addClass('bounce');}, function(){$('#bookmark-img').removeClass('bounce');});</script>
   <div id="footer" class="container-fluid" style="background-color: #6F8E82; text-align: center; color: #fff;">
     <div style="margin: 12px auto;">
       <img src="./assets/footer.png" style="max-height: 50px; max-width: 100%;" />
@@ -198,14 +203,6 @@
         .slideDown();
     });
     $('[data-toggle="tooltip"]').tooltip();
-    // window.onscroll = function (e) {
-    //   var offset = $("body, html").scrollTop();
-    //   if (offset > 200) {
-    //     $(".tmc-navbar").addClass("tmc-navabs");
-    //   } else {
-    //     $(".tmc-navbar").removeClass("tmc-navabs");
-    //   }
-    // }
   </script>
   <div class="hidden">
     <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1278393095&web_id=1278393095"></script>

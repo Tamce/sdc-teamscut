@@ -77,17 +77,20 @@ button.home:active::before {
 .tmc-img-roller {
     height: calc(100vh - 140px);
     overflow: hidden;
+    position: relative;
 }
-.tmc-img-roller div {
+.tmc-img-roller a {
     height: 100%;
+    width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: absolute;
+    top: 0;
     display: none;
 }
-.tmc-img-roller div:nth-child(1) {
-    display: block;
-    transform: scale(1.0);
+.tmc-img-roller a:nth-child(1) {
+  display: block;
 }
 .tmc-left, .tmc-right {
     position: absolute;
@@ -145,13 +148,13 @@ button.home:active::before {
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
   </div>
   <div id="tmc-roller" class="tmc-img-roller" data-handler="rollerHandle">
-    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg"><div style="background-image: url(./assets/roller/0.jpg);"></div></a>
-    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg"><div style="background-image: url(./assets/roller/1.jpeg);"></div></a>
-    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg"><div style="background-image: url(./assets/roller/2.jpg);"></div></a>
-    <a href="#sdc2013"><div style="background-image: url(./assets/roller/3.png);"></div></a>
-    <a href="#sdc2018"><div style="background-image: url(./assets/roller/4.jpg);"></div></a>
-    <a href="https://mp.weixin.qq.com/s/I7MPS_jV_uSwNhGzNG6ndg"><div style="background-image: url(./assets/roller/5.jpg);"></div></a>
-    <a href="#"><div style="background-image: url(./assets/roller/6.jpg);"></div></a>
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/0.jpg);"></a>
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/1.jpeg);"></a>
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/2.jpg);"></a>
+    <a href="#sdc2013" style="background-image: url(./assets/roller/3.png);"></a>
+    <a href="#sdc2018" style="background-image: url(./assets/roller/4.jpg);"></a>
+    <a href="https://mp.weixin.qq.com/s/I7MPS_jV_uSwNhGzNG6ndg" style="background-image: url(./assets/roller/5.jpg);"></a>
+    <a href="#" style="background-image: url(./assets/roller/6.jpg);"></a>
   </div>
   <div class="tmc-right" onclick="rollImgInt(1)">
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -335,54 +338,46 @@ button.home:active::before {
   }
 </style>
 <script>
-  /* 对目标元素 roller 执行切换图片操作，且淡出后执行 outfn，淡入后执行 infn */
-  function rollImg(el, offset, outfn, infn) {
-    var rid = $(el).attr("id");
-    imgCur[rid] = (imgCur[rid] + offset) % imgTot[rid];
-    $(el)
-      .children(":visible")
-      .fadeOut(200, function () {
-        var cur = $(el).children(":nth(" + imgCur[rid] + ")");
-        if (typeof outfn == "function") outfn(cur);
-        cur.fadeIn(200, function () {
-          if (typeof infn == "function") infn(cur);
-        });
-      });
-  }
-
-  // 自动滚动且放大的 roller 设置
+  // roller 相关
+  var ROLL_DT = 3000;
+  var ROLL_TIME = 700;
   var rollDone = true;
+  var cur = 0;
+  var total = 0;
   function rollImgInt(offset) {
     if (!rollDone) return;
     if (!window.rollerHandle) return;
     if (offset == undefined) offset = 1;
     // 重置定时器
     clearInterval(window.rollerHandle);
-    window.rollerHandle = setInterval(rollImgInt, 3000);
+    window.rollerHandle = setInterval(rollImgInt, ROLL_DT);
     rollDone = false;
 
-    rollImg(
-      "#tmc-roller",
-      offset,
-      function (cur) {
-        cur.css("transform", "none");
-      },
-      function (cur) {
-        rollDone = true;
-        cur.css("transform", "scale(1)");
-      }
-    );
+    // 执行 roll 动作
+    let next = (cur + offset) % total;
+    next = $(".tmc-img-roller").children()[next];
+    let current = $(".tmc-img-roller").children()[cur];
+    if (offset > 0) {
+      $(next).css('left', '100vw');
+      $(next).css('display', 'block');
+      $(current).animate({'left': '-100vw'}, ROLL_TIME, function () { $(this).hide(); });
+      $(next).animate({'left': '0'}, ROLL_TIME);
+    } else {
+      $(next).css('left', '-100vw');
+      $(next).css('display', 'block');
+      $(next).animate({'left': '0'}, ROLL_TIME);
+      $(current).animate({'left': '100vw'}, ROLL_TIME, function () { $(this).hide(); });
+    }
+    $(current).css('margin-left', null);
+    cur = (cur + offset) % total;
+    rollDone = true;
   }
   $(function () {
-    setTimeout(function () {
-      $("#tmc-roller")
-        .children(":nth(0)")
-        .css("transform", "scale(1)");
-    }, 100);
     window.rollerHandle = setInterval(rollImgInt, 3000);
     window.beforeLoad = function () {
       clearInterval(rollerHandle);
     };
+    window.total = $(".tmc-img-roller").children().length;
   });
 
   $(".tmc-fade").each(function (i, e) {
