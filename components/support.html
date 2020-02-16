@@ -25,7 +25,32 @@
     validateMessage();
 
     if (nameSuccess && emailSuccess && messageSuccess) {
-      $(".form").slideUp();
+      console.log("Send Email");
+      $("#contact-send").attr("disabled", "disabled");
+      $("#contact-send").text("Sending...");
+      $.post({
+        url: "https://service-qrq5zwtk-1252769415.gz.apigw.tencentcs.com/test/sdme_sendmail",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({
+          "name": $("#contact-name").val(),
+          "email": $("#contact-email").val(),
+          "message": $("#contact-message").val()}),
+        complete: function (e) {
+          $("#contact-send").text("SEND");
+          $("#contact-send").attr("disabled", null);
+          if (e.status == 200) {
+            console.log("send success");
+            $("#contact-name").val("");
+            $("#contact-email").val("");
+            $("#contact-message").val("");
+            alert("Successful!\n发送成功！");
+          } else {
+            console.log("send failed");
+            alert("Send failed. Please try again later.\n发送失败，请稍后重试。");
+          }
+        }
+      });
     } else if (!nameSuccess) $("#contact-name").focus();
     else if (!emailSuccess) $("#contact-email").focus();
     else if (!messageSuccess) $("#contact-message").focus();
@@ -79,14 +104,14 @@
     border-radius: 3px;
     padding: 1.25em;
   }
-  
+
   h3 {
     font-size: 1.98em;
     margin-bottom: .8em;
     margin-top: .4em;
     font-weight: 100;
   }
-  
+
   .btn-primary {
     box-shadow: 0;
     border: none;
@@ -107,17 +132,17 @@
     margin-bottom: .55em;
     display: inherit;
   }
-  
+
   .btn-primary:hover {
     background-color: #1ABC9C;
   }
-  
+
   .form-group {
     position: relative;
     opacity: 1;
     transition: .6s;
   }
-  
+
   .input-field-icon {
     color: #bfc9ca;
     font-size: 18px;
@@ -126,7 +151,7 @@
     bottom: 12px;
     transition: .6s;
   }
-  
+
   .form-control {
     transition: opacity .6s;
     opacity: 1;
@@ -140,7 +165,7 @@
     height: 42px;
     -webkit-appearance: none;
   }
-  
+
   input,
   textarea {
     transition: all 800ms;
@@ -157,60 +182,60 @@
     color: #34495e;
     margin-top: 1.25em;
   }
-  
+
   .has-error input,
   .has-error textarea {
     color: #e74c3c;
     border-color: #e74c3c;
   }
-  
+
   .has-error .input-field-icon {
     color: #e74c3c;
   }
-  
+
   .has-success input,
   .has-success textarea {
     color: #2ecc71;
     border-color: #2ecc71;
   }
-  
+
   .has-success .input-field-icon {
     color: #2ecc71;
   }
-  
+
   input:focus,
   textarea:focus {
     border-color: #48c9b0;
     color: #34495e;
   }
-  
+
   input:focus+.input-field-icon {
     color: #34495e;
   }
-  
+
   textarea.form-control {
     height: 120px;
     transition: .6s;
   }
-  
+
   textarea.form-control:focus {
     height: 200px;
     border-color: #48c9b0;
   }
-  
+
   .social {
     display: block;
     margin: auto;
     width: 250px;
   }
-  
+
   .social li {
     display: inline-block;
     list-style: none;
     margin: auto;
     margin-right: 10px;
   }
-  
+
   .social li a {
     display: block;
     text-decoration: none;
@@ -223,24 +248,24 @@
     text-align: center;
     transition: all .4s;
   }
-  
+
   .social li a:hover {
     background: #999;
     color: white;
   }
-  
+
   .social li a span {
     margin-top: 4px;
     text-align: center;
   }
-  
+
   @media (max-width: 600px) {
     .form {
       width: 90%;
       margin-top: 12%;
     }
   }
-  
+
   body {
     margin: 0;
   }
@@ -273,7 +298,7 @@
         <div class="form-group">
           <textarea class="form-control" value="" placeholder="Enter your message" id="contact-message" rows="1"></textarea>
         </div>
-        <button id="contact-send" class="btn btn-primary btn-lg btn-block" style="width: 100px;">Send</button>
+        <button id="contact-send" class="btn btn-primary btn-lg btn-block" style="width: 130px;">Send</button>
       </div>
     </div>
   </div>
