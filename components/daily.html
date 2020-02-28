@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <style>
+        .thumbnail {
+        cursor: pointer;
+        }
+        .thumbnail h3 {
+        font-size: 1.2em; 
+        margin-top: 0px;
+        margin-bottom: 10px;
+        }    
+        .thumbnail p {
+        font-size: 1em; 
+        margin: 0px;
+        color: gray;
+        }
+        .thumbnail img {
+        width: 100%;
+        height: 100%;
+        }
+
+    </style>
+
+    <div class="tmc-home-body">
+    <h1 class="animated bounceInLeft" style="margin-left: 0px !important;" data-tr-zh="环保日常">Green Daily</h1>
+        <!-- 每一行都要套一个 .row 的 div，代表大屏幕下的一行 -->
+        <div class="row">
+
+        <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.25s; animation-duration: 1.25s;">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/gJHTyGIqseDMHMfB1dTSwQ">
+            <img src="./assets/daily/1.jpg"  >
+            <div class="caption">
+                <h3 data-tr-zh="GreenDaily | 节约用电篇 vol 1.0">GreenDaily | Power Saving vol 1.0</h3>
+                <p class="no-indent" data-tr-zh="缓解气候变暖、减轻污染，我们竟然可以做出这么大贡献！">we can make  a huge contribution to mitigating climate change and reducing pollution! </p>
+            </div>
+        </div>
+        </div><!-- 容器结束 -->
+
+
+
+
+        </div> <!-- .row 结束 -->
+
+
+
+    </div>
+</div>
+<script>
+    $(".thumbnail").click(function (e) {
+        var url = $(e.currentTarget).attr("data-url");
+        if (!url) return;
+        window.location = url;
+    });
+</script>
