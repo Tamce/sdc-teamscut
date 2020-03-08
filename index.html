@@ -196,6 +196,10 @@
       });
       $(".tmc-navbar").attr("data-expanded", 1 - expanded);
     });
+    $(".tmc-nav-item").on("click", function (e) {
+      var href = $(e.target).children("a").attr("href");
+      if (!!href) window.location = href;
+    });
     $(".tmc-nav-item>a").on("click", function (e) {
       if ($(".tmc-toggle:visible").length == 0) return;
       $(".tmc-dropdown:visible").slideUp();

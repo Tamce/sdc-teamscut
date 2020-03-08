@@ -34,8 +34,12 @@
   </div>
 </div>
 <script>
-  $("#concept-content").load("./components/concept/overview.html");
+  $("#concept-content").load("./components/concept/overview.html", function () {
+    window.reloadLocaleScope($("#concept-content"));
+  });
   $("#concept-nav").children("div").click(function (el) {
-    $("#concept-content").load("./components/concept/" + $(el.currentTarget).attr("data-to") + ".html");
+    $("#concept-content").load("./components/concept/" + $(el.currentTarget).attr("data-to") + ".html", function () {
+      window.reloadLocaleScope($("#concept-content"));
+    });
   });
 </script>
