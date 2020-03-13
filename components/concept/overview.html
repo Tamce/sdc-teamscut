@@ -1,3 +1,50 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  position: relative;
+}
+
+.box .details {
+  position: absolute;
+  top:10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0, .7);
+  transform: scaleY(0);
+  transition: transform .5s;
+}
+
+.box .details .content {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.box:hover .details {
+  transform: scaleY(1);
+}
+
+
+
+.box .details p{
+  font-size: 30px !important;
+  color: white;
+}
+
+.box .details p:hover{
+  color: #e2b31f;
+}
+</style>
+
+
 <div class="container-fluid">
     <h1 class="animated bounceInLeft" data-tr-zh="方案概况">Project Overview</h1>
     <h2 data-tr-zh="日常工作">Daily Works</h2>
@@ -5,10 +52,19 @@
       <img src="./assets/overview/schedule.jpg" style="width: 100%;">
     </div>
 
+
     <h2 data-tr-zh="生活在O-House的一家">The Family Lives in the O-House</h2>
-    <div style="text-align: center; margin: 30px 7%;">
-    <a href="https://mp.weixin.qq.com/s/DpzZD06FhUbyTA9onuGcYA"> <img src="./assets/concept/live.jpg" style="width: 100%;"></a> 
+    <div class="box" style="text-align: center; margin: 30px 7%;">
+      <div class="imgbox" >
+        <img src="./assets/concept/live.jpg" style="width: 100%;">
+        </div>
+        <div class="details">
+          <div class="content">
+            <a href="https://mp.weixin.qq.com/s/DpzZD06FhUbyTA9onuGcYA"><p data-tr-zh="-更多详情-">-more details-</p></a> 
+          </div>
+        </div>
     </div>
+
     <!-- <h2 data-tr-zh="整体概念">General Concept</h2> -->
     <!-- <div style="text-align: center; margin: 30px 7%;">
       <img src="./assets/overview/1.jpg" style="width: 100%;">
