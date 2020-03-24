@@ -1,3 +1,9 @@
+@font-face {
+  src: url(fonts/STXIHEI.TTF);
+  font-family: STXIHEI;
+}
+
+
 .color-pattle {
     --color: #2a8476;
     --color: #ecc421;
@@ -8,7 +14,8 @@
 }
 
 * {
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: STXIHEI;
+    /* font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */
 }
 
 /* 分享链接 */
@@ -217,8 +224,8 @@ a,a:visited,a:hover,a:active,a:focus {
   .tmc-home-body h1{
       margin-bottom: 1em;
       font-weight: 700;
-      color: #718e83;
-      font-family: Arial Black, Gadget, sans-serif;
+      color: #476d54;
+      font-family: STXIHEI;
 
   }
   .tmc-home-body h2{
