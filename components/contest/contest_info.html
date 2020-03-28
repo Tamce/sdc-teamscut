@@ -1361,7 +1361,7 @@
     function hideInfo(site) {
         document.getElementById(site).style.display = "none";
         document.getElementById('sd').style.display = "block";
-        $(".num", "#" + site).each(function (i, el) {
+        $(".num").each(function (i, el) {
             $(el).text($(el).attr("data-num"));
         });
     }
