@@ -226,6 +226,7 @@ window.onhashchange = function(e) {
   // 用于给各个单独的组件取消注册一些定时器之类的
   if (typeof window.beforeLoad == "function") {
     window.beforeLoad();
+    window.beforeLoad = undefined;
   }
   load(hash);
 };
