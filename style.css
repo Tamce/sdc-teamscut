@@ -1,6 +1,6 @@
 @font-face {
-  src: url(fonts/STXIHEI.TTF);
-  font-family: STXIHEI;
+  src: url(/fonts/STXIHEI.TTF);
+  font-family: stxihei;
 }
 
 
@@ -13,9 +13,12 @@
     position: relative;
 }
 
-* {
-    font-family: STXIHEI;
-    /* font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; */
+.zh {
+    font-family: "Microsoft YaHei","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
+}
+
+.en {
+    font-family: stxihei,"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
 }
 
 /* 分享链接 */

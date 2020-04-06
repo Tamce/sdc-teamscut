@@ -168,6 +168,13 @@ window.toggleLocale = function(nochange) {
   if (!nochange) {
     window.zh = !window.zh;
   }
+  if (window.zh) {
+    $("body").removeClass("en");
+    $("body").addClass("zh");
+  } else {
+    $("body").removeClass("zh");
+    $("body").addClass("en");
+  }
   $("[data-tr]").map(function(id, el) {
     tr(el);
   });
