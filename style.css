@@ -46,8 +46,8 @@
 /* 包含 logo 及分享标签的 header */
 .tmc-header {
     margin: 0 -15px;
-    height: 90px;
-    padding: 10px 0;
+    /* height: 90px; */
+    padding: 0 0;
     line-height: 70px;
     text-align: center;
     position: relative;
