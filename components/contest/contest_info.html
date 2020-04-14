@@ -353,7 +353,7 @@
         font-weight: 500;
         width: 100%;
     }
-    .card-font, .card-back {
+    .card-front, .card-back {
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
@@ -363,14 +363,14 @@
         transition: transform .6s linear;
         box-shadow: 1px 1px 20px rgb(155, 155, 155);
     }
-    .card-font {
+    .card-front {
         transform: perspective(600px) rotateY(0deg);
     }
     .card-back {
         background: white;
         transform: perspective(600px) rotateY(180deg);
     }
-    .rec-card:hover > .card-font {
+    .rec-card:hover > .card-front {
         transform: perspective(600px) rotateY(-180deg);
     }
     .rec-card:hover > .card-back {
@@ -1015,7 +1015,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/architecture.png" >
                             <div class="contest-name" data-tr-zh="建筑设计">ARCHITECTURE</div>
                         </div>
@@ -1037,7 +1037,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/engineer.png" >
                             <div class="contest-name" data-tr-zh="工程与建造">
                                 <div>ENGINEERING &</div>
@@ -1062,7 +1062,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/energy.png" >
                             <div class="contest-name" data-tr-zh="能耗管理">ENERGY MANAGEMENT</div>
                         </div>
@@ -1084,7 +1084,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/energy2.png" >
                             <div class="contest-name" data-tr-zh="能耗效率">ENERGY EFFICIENCY</div>
                         </div>
@@ -1106,7 +1106,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/comfort.png" >
                             <div class="contest-name" data-tr-zh="舒适度">COMFORT CONDITIONS</div>
                         </div>
@@ -1130,7 +1130,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/house.png" >
                             <div class="contest-name" data-tr-zh="房屋功能">HOUSE FUNCTIONING</div>
                         </div>
@@ -1152,7 +1152,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/transport.png" >
                             <div class="contest-name" data-tr-zh="可持续运输">
                                 <div>SUSTAINBLE</div>
@@ -1177,7 +1177,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/sustain.png" >
                             <div class="contest-name" data-tr-zh="可持续发展">SUSTAINBILITY</div>
                         </div>
@@ -1199,7 +1199,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/communication.png" >
                             <div class="contest-name" data-tr-zh="宣传与商务">COMMUNICATION</div>
                         </div>
@@ -1220,7 +1220,7 @@
                 <div class="col-md-2">
                     <div class="rec-card" >
                         <img class="fix-logo" src="/assets/contest-info/fix.png" >
-                        <div class="card-font">
+                        <div class="card-front">
                             <img class="contest-logo" src="/assets/contest-info/innovation2.png" >
                             <div class="contest-name" data-tr-zh="创新">INNOVATION</div>
                         </div>

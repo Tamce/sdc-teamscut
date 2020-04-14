@@ -1,0 +1,447 @@
+<style>
+    .main{
+        margin: auto;
+        background-color: white;
+        height: 100vh;
+        width :1320px;
+    }
+    .photos-wall{
+        position: relative;
+    }
+    .main .photos-wall .nav-box {
+        float: left;
+        margin-left: 5px;
+        width: 595px;
+        height: 240px;
+        position: relative;
+    }
+    .main .photos-wall .nav-box .member-info{
+        position: absolute;
+        right: 0px;
+    }
+    .main .photos-wall .nav-box .nav-outer{
+        position: absolute;
+        text-align: justify;
+    }
+    .tab-content {
+        position: absolute;
+    }
+    .tab-item {
+        font-size:14px;
+        
+        margin: 5px;
+    }
+    .photo-wrap{
+        cursor: pointer;
+        position: relative;
+        /* height: 100%; */
+        float: left;
+        height: 110px;
+        width: 110px;
+        /* max-width: 50px; */
+        /* max-height: 50px; */
+        margin: 5px;
+        /* background-color: red; */
+    }
+
+    .photo {
+        width: 110px;
+        height: 110px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .card-front, .card-back {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        /* overflow: hidden; */
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: transform .6s linear;
+        /* box-shadow: 1px 1px 5px rgb(155, 155, 155); */
+    }
+    .card-front {
+        transform: perspective(600px) rotateY(0deg);
+    }
+    .card-back {
+        transform: perspective(600px) rotateY(180deg);
+    }
+    .photo-wrap:hover > .card-front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+    .photo-wrap:hover > .card-back {
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+
+    /* p4翻转卡牌结束 */   
+</style>
+
+
+
+<div class="main">
+    <div class="photos-wall">
+            <div class="nav-box">
+                <div class="nav-outer">
+                    <div class="school"></div>
+                    <div class="school"></div>
+                    <div class="tab-content">
+                        <p class="tab-item" data-tr-zh="指导老师">MENTORS</p>
+                        <p class="tab-item" data-tr-zh="项目负责">MANAGER</p>
+                        <p class="tab-item" data-tr-zh="建筑设计">DESIGN</p>
+                        <p class="tab-item" data-tr-zh="技术设备">EQUIPMENT</p>
+                        <p class="tab-item" data-tr-zh="结构工程">ENGINEERING</p>
+                        <p class="tab-item" data-tr-zh="环境性能">ENVIRONMENT</p>
+                        <p class="tab-item" data-tr-zh="宣传运营">PUBLICITY</p>
+                        <p class="tab-item" data-tr-zh="后勤物流">LOGISTICS</p>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <div>
+                        <div class="logos">
+                            <img src="./components/members/logo-new.png" alt="" style="max-height:240px;">
+                        </div>
+                        <div class="describe"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png" alt="HMX"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" alt="HMX"></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/CRP.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/CRP2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/CWX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/CWX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/CYL.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/CYL2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+
+
+
+
+        <!-- 第一行结束 -->
+
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <!-- 第二行结束 -->
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <!-- 第三行结束 -->
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <!-- 第四行结束 -->
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <!-- 第五行结束 -->
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <div class="photo-wrap">
+            <div class="card-front"><img class="photo" src="./components/members/new/HMX.png"></div>
+            <div class="card-back"><img class="photo" src="./components/members/new/HMX2.png" ></div>
+        </div>
+        <!-- 第六行结束 -->
+    </div>
+
+
+</div>
+
+
+
+<script>
+    var desc = {
+        "CYF":["./components/members/new/CYF.png","./components/members/new/CYF2.png","Yanfei Cai","Civil Engineering","Postgraduate","Engineering Tectonic"],
+        "ZYX":["./components/members/new/ZYX.png","./components/members/new/ZYX2.png","Yixuan Zeng","Architecture","Undergraduatee","Engineering Tectonic"],
+        "CMX":["./components/members/new/CMX.png","./components/members/new/CMX2.png","Mingxi Chen","Urban Planning","Undergraduate","Communication"],
+        "CRP":["./components/members/new/CRP.png","./components/members/new/CRP2.png","Rangpeng Chen","Architecture","Postgraduate","Engineering Tectonic"],
+        "CYL":["./components/members/new/CYL.png","./components/members/new/CYL2.png","","Yonglan Chen","Advertising","","Undergraduate","Communication"],
+        "CZL":["./components/members/new/CZL.png","./components/members/new/CZL2.png","Zilang Chen","Urban Planning","Undergraduate","Engineering Tectonic"],
+        "CWX":["./components/members/new/CWX.png","./components/members/new/CWX2.png","Wenxiu Chi","Landscape Architecture","Doctoral Student","Architecture Design"],
+
+        
+
+        "DMH":["./components/members/new/DMH.png","./components/members/new/DMH2.png","Meihui Deng","Landscape Architecture","Undergraduate","Communication"],
+        "DSH":["./components/members/new/DSH.png","./components/members/new/DSH2.png","Sihua Deng","Urban Planning","Undergraduate","Architecture Design"],
+        "DYL":["./components/members/new/DYL.png","./components/members/new/DYL2.png","Yilin Deng","Landscape Architecture","Undergraduate","Communication"],
+        "DBY":["./components/members/new/DBY.png","./components/members/new/DBY2.png","Binyun Du","Power Engineering","Postgraduate","Equipment Performance"],
+        
+        "FJH":["./components/members/new/FJH.png","./components/members/new/FJH2.png","Jinghao Fu","Civil Engineering","Postgraduate","Engineering Tectonic"],
+
+        "GXY":["./components/members/new/GXY.png","./components/members/new/GXY2.png","Xinyue Gu","Urban Planning","Undergraduate","Communication"],
+        "GQQ":["./components/members/new/GQQ.png","./components/members/new/GQQ2.png","Qianqian Guo","Civil Engineering","Postgraduate","Engineering Tectonic"],
+
+        "HLZ":["./components/members/new/HLZ.png","./components/members/new/HLZ2.png","Linzhi He","Architecture","Postgraduate","Engineering Tectonic"],
+        "HBY":["./components/members/new/HBY.png","./components/members/new/HBY2.png","Boyuan Hu","Architecture","Undergraduate","Engineering Tectonic"],
+        "HYW":["./components/members/new/HYW.png","./components/members/new/HYW2.png","Yaowen Hu","Architecture","Undergraduate","Engineering Tectonic"],
+        "HH":["./components/members/new/HH.png","./components/members/new/HH2.png","Hao Huang","Urban Planning","Undergraduate","Engineering Tectonic"],
+        "HMX":["./components/members/new/HMX.png","./components/members/new/HMX2.png","Mingxuan Huang","Landscape Architecture","Undergraduate","Communication"],
+        "HYQ":["./components/members/new/HYQ.png","./components/members/new/HYQ2.png","Yanqi Huang","Architecture","Undergraduate","Architecture Design"],
+        "HZH":["./components/members/new/HZH.png","./components/members/new/HZH2.png","Zhanhui Huang","Architecture","Undergraduate","Engineering Tectonic"],
+        
+        
+        "JYY":["./components/members/new/JYY.png","./components/members/new/JYY2.png","Yiyan Jiang","Architecture","Undergraduate","Architecture Design"],
+        "JYZ":["./components/members/new/JYZ.png","./components/members/new/JYZ2.png","Yizhi Jiang","Polymers Engineering","Undergraduate","Communication"],
+        "JYQ":["./components/members/new/JYQ.png","./components/members/new/JYQ2.png","Yuqin Jiao","Architecture","Undergraduate","Equipment Performance"],
+
+        
+        "LZF":["./components/members/new/LZF.png","./components/members/new/LZF2.png","Zhifeng Li","Power Engineering","Postgraduate","Equipment Performance"],
+        "LMK":["./components/members/new/LMK.png","./components/members/new/LMK2.png","Mingkai Li","Urban Planning","Undergraduate","Engineering Tectonic"],
+        "LHW":["./components/members/new/LHW.png","./components/members/new/LHW2.png","Huawen Liang","Environmental Engineering","Undergraduate","Engineering Tectonic"],
+        "LSX":["./components/members/new/LSX.png","./components/members/new/LSX2.png","Shuxian Liang","Architecture","Postgraduate","Architecture Design"],
+        "LYW":["./components/members/new/LYW.png","./components/members/new/LYW2.png","Yingwei Liang","Architecture","Undergraduate","Equipment Performance"],
+        "LPS":["./components/members/new/LPS.png","./components/members/new/LPS2.png","Pangshu Lin","Water Supply and Sewerage","Undergraduate","Engineering Tectonic"],
+        "LYD":["./components/members/new/LYD.png","./components/members/new/LYD2.png","Yudong Lin","Urban Planning","Undergraduate","Engineering Tectonic"],
+        "LKT":["./components/members/new/LKT.png","./components/members/new/LKT2.png","Kaitong Lin","Accounting","Undergraduate","Communication"],
+        "LJY":["./components/members/new/LJY.png","./components/members/new/LJY2.png","Jingyi Liu","Architecture Tech and Science","Postgraduate","Equipment Performance"],
+        "LTJ":["./components/members/new/LTJ.png","./components/members/new/LTJ2.png","Tianjiao Liu","Advertising","Undergraduate","Communication"],
+        "LWY":["./components/members/new/LWY.png","./components/members/new/LWY2.png","Wangyang Liu","Architecture","Undergraduate","Communication"],
+        "LWJ":["./components/members/new/LWJ.png","./components/members/new/LWJ2.png","Wenjing Liu","Architecture","Postgraduate","Equipment Performance"],   
+        "LY":["./components/members/new/LY.png","./components/members/new/LY2.png","Yu Lu","Civil Engineering","Undergraduate","Engineering Tectonic"],     
+        "LYL":["./components/members/new/LYL.png","./components/members/new/LYL2.png","Yilin Lu","Architecture","Urban Planning","Architecture Design"],
+            
+        "MH":["./components/members/new/MH.png","./components/members/new/MH2.png","Han Meng","Landscape Architecture","Postgraduate","Architecture Design"],
+        "PYT":["./components/members/new/PYT.png","./components/members/new/PYT2.png","Yuting Pan","Landscape Architecture","Undergraduate","Communication"],
+        "PCY":["./components/members/new/PCY.png","./components/members/new/PCY2.png","Pengcheng yao","Urban Planning","Undergraduate","Architecture Design"],
+        "PCZ":["./components/members/new/PCZ.png","./components/members/new/PCZ2.png","Chengzhe Piao","Architecture","Postgraduate","Architecture Design"],
+        
+        "SN":["./components/members/new/SN.png","./components/members/new/SN2.png","Nuo Shi","Architecture","Undergraduate","Architecture Design"],
+        
+        "TZX":["./components/members/new/TZX.png","./components/members/new/TZX2.png","Zhixian Tan","Architecture","Undergraduate","Engineering Tectonic"],
+        "TYZ":["./components/members/new/TYZ.png","./components/members/new/TYZ2.png","Yizhou Tang","Architecture","Undergraduate","Architecture Design"],
+        "TXZ":["./components/members/new/TXZ.png","./components/members/new/TXZ2.png","Xuezhu Tian","Architecture","Undergraduate","Communication"],
+
+        "WH":["./components/members/new/WH.png","./components/members/new/WH2.png","Hao Wang","Architecture","Undergraduate","Architecture Design"],
+        "WD":["./components/members/new/WD.png","./components/members/new/WD2.png","Dan Wang","Architecture","Postgraduate","Communication"],
+        "WJY":["./components/members/new/WJY.png","./components/members/new/WJY2.png","Jiaying Wang","Landscape Architecture","Undergraduate","Engineering Tectonic"],
+        "WQ":["./components/members/new/WQ.png","./components/members/new/WQ2.png","Qiong Wang","Architecture","Undergraduate","Engineering Tectonic"],
+        "WRJX":["./components/members/new/WRJX.png","./components/members/new/WRJX2.png","Ruojinxi Wang","Architecture","Undergraduate","Equipment Performance"],
+        "WTK":["./components/members/new/WTK.png","./components/members/new/WTK2.png","Tukun Wang","Architecture","Undergraduate","Equipment Performance"],
+        "WJL":["./components/members/new/WJL.png","./components/members/new/WJL2.png","Jinglin Wu","Architecture","Undergraduate","Communication"],
+
+        "XRY":["./components/members/new/XRY.png","./components/members/new/XRY2.png","Ruiying Xie","Landscape Architecture","Undergraduate","Architecture Design"],
+        "XWW":["./components/members/new/XWW.png","./components/members/new/XWW2.png","Wenwen Xiu","Architecture","Undergraduate","Architecture Design"],
+        "XF":["./components/members/new/XF.png","./components/members/new/XF2.png","Fei Xu","Architecture","Undergraduate","Engineering Tectonic"],
+        "XLZ":["./components/members/new/XLZ.png","./components/members/new/XLZ2.png","Linzhi Xu","Architecture","Undergraduate","Architecture Design"],
+        
+        "YJ":["./components/members/new/YJ.png","./components/members/new/YJ2.png","Jin Yan","Architecture","Undergraduate","Architecture Design"],
+        "YGW":["./components/members/new/YGW.png","./components/members/new/YGW2.png","Guowei Ye","Civil Engineering","Undergraduate","Engineering Tectonic"],
+        "YXC":["./components/members/new/YXC.png","./components/members/new/YXC2.png","Xincheng Ye","Civil Engineering","Undergraduate","Engineering Tectonic"],
+        "YJJ":["./components/members/new/YJJ.png","./components/members/new/YJJ2.png","Jingjing Yuan","Architecture","Undergraduate","Engineering Tectonic"],
+
+        "ZWJ":["./components/members/new/ZWJ.png","./components/members/new/ZWJ2.png","Weijie Zhang","Architecture","Undergraduate","Communication"],
+        "ZWH":["./components/members/new/ZWH.png","./components/members/new/ZWH2.png","Wenhao Zhang","Architecture","Doctoral Student","Engineering Tectonic"],
+        "ZWC":["./components/members/new/ZWC.png","./components/members/new/ZWC2.png","Wenchu Zhang","Urban Planning","Undergraduate","Communication"],
+        "ZYQ":["./components/members/new/ZYQ.png","./components/members/new/ZYQ2.png","Yueqi Zhang","Landscape Architecture","Undergraduate","Communication"],
+        "ZKX":["./components/members/new/ZKX.png","./components/members/new/ZKX2.png","Kaixiang Zheng","Civil Engineering","Postgraduate","Engineering Tectonic"],
+        "ZXQ":["./components/members/new/ZXQ.png","./components/members/new/ZXQ2.png","Xiangqing Zheng","Architecture","Undergraduate","Architecture Design"],
+        "ZJY":["./components/members/new/ZJY.png","./components/members/new/ZJY2.png","Jiaye Zhong","Urban Planning","Undergraduate","Architecture Design"],
+        "ZZR":["./components/members/new/ZZR.png","./components/members/new/ZZR2.png","Zhongrui Zhou","Architecture Tech and Science","Postgraduate","Equipment Performance"],
+        "ZJX":["./components/members/new/ZJX.png","./components/members/new/ZJX2.png","Jiaxue Zhu","Urban Planning","Undergraduate","Architecture Design"],
+        "ZYY":["./components/members/new/ZZR.png","./components/members/new/ZZR2.png","Yeyou Zhuang","Architecture","Water Supply and Sewerage","Engineering Tectonic"],
+    }
+
+</script>
