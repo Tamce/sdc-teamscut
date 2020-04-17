@@ -12,6 +12,7 @@
         align-items: center;
     }
     .p2 .icon {
+        position: relative;
         margin-top: 20px;
         width: 100px;
         height: 100px;
@@ -22,64 +23,230 @@
         font-size: 50px;
         color: #6f8777;
     }
+    .p2 .icon-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
     .p2 .icon-name {
         font-size: 20px;
         margin-top: 20px;
         color: white;
     }
 
+    /* 第四页滚动post */
+    .p4 .col-md-4 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .post-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-top: 2em;
+    }
+    .post-slider .prev{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 70px;
+        font-size: 10em;
+        color: #dde3e0;
+        z-index: 1000;
+    }
+    .post-slider .next{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 70px;
+        font-size: 10em;
+        color: #dde3e0;
+        z-index: 1000;
+    }
+    .post-slider .post-wrapper {
+        width:80%;
+        height: 100%;
+        padding: 20px;
+        margin: 0px auto;
+        /* overflow: hidden; */
 
+    }
+    a, a:link, a:hover {
+        text-decoration: none;
+        color: #626262;
+    }
+
+    .card {
+        box-shadow: 1px 1px 20px rgb(155, 155, 155);
+        /* border-radius: 10px; */
+        overflow: hidden;
+        padding: 10px;
+        background-color: white;
+        color: black;
+    }
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .card-info {
+        margin-top: 10px;
+        text-align: justify;
+    }
+    .card-details{
+        margin-top: 30px;
+        text-align: right;
+        font-weight: 500;
+    }
+    .card:hover {
+        box-shadow: 1px 1px 30px rgb(120, 120, 120);
+        transform: translateY(-20px);
+        transition: all .5s ease;
+    }
+    /* 第三页结束 */
 </style>
 
 <div class="p1">
-    <div class="row">
+    <div class="row" style="position: relative; height: auto;">
         <div class="col-md-6">
             <div  style="margin-left: 50px; margin-top: 30px;">
-                <img src="./assets/about/team1.png" alt="" width="900px">
+                <img src="./assets/about/team1.png" alt="" width="100%">
             </div>
 
         </div>
-        <div class="col-md-6" >
-            <div style="position: relative; height: 800px;">
-                <div class="title" style="position: absolute; top:45%; right: 0; text-align: right; font-size: 70px; color: #6f8777; margin-right: 35px;" data-tr-zh="团队资历">Team Profiles</div>
-                <div class="text" style="border-top: 1px solid black;position: absolute; top:60%; right: 0; width: 90%; text-align: justify; padding-top: 30px; font-size: 16px; margin-right: -15px;">
-                    <p style="margin-right: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur voluptatum eligendi minima perspiciatis delectus maxime, quibusdam ex quasi recusandae ad quia incidunt nihil, assumenda eum reprehenderit quam facilis quisquam, quaerat rem ab officia mollitia? Quis illo voluptate illum, neque est omnis ab? Aliquam adipisci distinctio reprehenderit, asperiores hic, corporis nihil ipsa provident culpa quam numquam doloremque, quibusdam quos commodi? Eos doloribus magni ab ipsum dolore? Repellat, enim, eaque dicta sit cumque fugit illum consequatur, asperiores veritatis fugiat placeat cum accusantium inventore a nulla? Eligendi sunt maiores hic tempore unde non atque quod doloremque, repudiandae eius corrupti iste eum laudantium fuga.</p>
-                </div>
-            </div>
-        </div> 
+
+        <div class="text" style="width: 45%; text-align: justify; padding-top: 20px; font-size: 20px; position: absolute; bottom: 0px; right: 0px;">
+            <div class="title" style="text-align: right; font-size: 70px; color: #6f8777; margin-right: 50px;" data-tr-zh="团队资历">Team Profiles</div>
+            <div class="line" style="width: 100%; border-top: 1px solid black;"></div>
+            <p style="margin-right: 50px; margin-top: 20px;" data-tr-zh="TeamSCUT 曾于 2018 年与 2013 年两次参与国际太阳能十项全能竞赛中国赛区，分别获得总分冠军与亚军的好成绩。本次参赛团队整合了来自建筑学院、土木与交通学院、电力学院、环境与能源学院、新闻与传播学院、计算机学院、工商管理学院等的人才与资源，再起征程！作为本届竞赛中国大陆唯一的参赛团队，在学校与学院的大力支持下，我们以亚热带建筑科学国家重点实验室的科研力量与人才为依托，跨出国门，走向世界，在更高的平台上展现来自中国团队的技术与实力。">
+                The south China university of technology team is composed of many forces, including the state key laboratory of subtropical building science, the digital construction laboratory, the south China university of technology architectural design and research institute co., LTD., and the state key laboratory of luminescent materials and equipment. Our cooperation with many organizations has provided us with a good foundation for scientific research, technology and hardware equipment, which are the strong conditions for the successful implementation of our team's projects.
+            </p>
+        </div>
+
+
     </div>
 
-<div class="p2">
+<div class="p2" style="margin-top: 50px;">
     <div class="row" >
         <div class="icon-bar" >
-            <div class="col-md-3 icon-bar-item">
-                <div class="icon">15</div>
+            <div class="col-md-3 icon-bar-item" onmouseover="showInfo('icon1')" onmouseout="hideInfo('icon1')">
+                <div class="icon"><img src="./assets/about/icon1.png" alt="" class="icon-img" id="icon1">15</div>
+                
                 <div class="icon-name" data-tr-zh="学科领域">Subject</div>
             </div>
-            <div class="col-md-3 icon-bar-item">
-                <div class="icon">8</div>
+            <div class="col-md-3 icon-bar-item" onmouseover="showInfo('icon2')" onmouseout="hideInfo('icon2')">
+                <div class="icon"><img src="./assets/about/icon2.png" alt="" class="icon-img" id="icon2">8</div>
                 <div class="icon-name" data-tr-zh="指导老师">Tutors</div>
             </div>
-            <div class="col-md-3 icon-bar-item">
-                <div class="icon">24</div>
+            <div class="col-md-3 icon-bar-item" onmouseover="showInfo('icon3')" onmouseout="hideInfo('icon3')">
+                <div class="icon"><img src="./assets/about/icon3.png" alt="" class="icon-img" id="icon3">24</div>
                 <div class="icon-name" data-tr-zh="相关顾问">Consultants</div>
             </div>
-            <div class="col-md-3 icon-bar-item">
-                <div class="icon">1</div>
+            <div class="col-md-3 icon-bar-item" onmouseover="showInfo('icon4')" onmouseout="hideInfo('icon4')">
+                <div class="icon"><img src="./assets/about/icon4.png" alt="" class="icon-img" id="icon4">1</div>
                 <div class="icon-name" data-tr-zh="国家重点实验室">National key laboratory</div>
             </div>   
         </div>
     </div>
 </div>
 
-<div class="p3" style="height: 1000px; margin-top: 150px;">
+<div class="p3 container-fluid" id="member-div" style="height: 1000px; margin-top: 150px; ">
     <iframe id="member-iframe" src="./components/members/new_members.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
 </div>
 
-<div class="p4" style="height: 800px; background-color: #6f8777;">
+<div class="p4" style="height: 700px; width: 100%; background-color: #6f8777; margin-top: 100px; margin-bottom: 300px;">
+    <div class="post-slider">
+        <i class="fa fa-angle-left prev"></i>
+        <i class="fa fa-angle-right next"></i>
+        <div class="post-wrapper">
+            <div class="post col-md-4" style="position: relative; height: 700px;">
+                <div style="position: absolute; bottom: 0px;">
+                    <img src="./assets/about/weareback.png" alt="" width="90%">
+                    <div class="p4-title" style="width: 200%; font-size: 50px; color: white; margin-top: 20px; margin-bottom: 40px;"  data-tr-zh="TeamSCUT x 点点" >TeamSCUT x Dimdim</div>
+                </div>
+
+            </div>
+            <div class="post col-md-4">
+                <a href="https://mp.weixin.qq.com/s/paf8JQBQEn6hGmaawd82aQ" class="card-container">
+                    <div class="card" style="margin-top: -100px;">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/card1.png" width="100%">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title" data-tr-zh="微信表情包vol.01">WeChat emojis vol.01 </div>
+                            <div class="card-title" data-tr-zh="点点之日常">Everyday of Dimdim</div>
+                            <div class="card-info" data-tr-zh="Hello！这里是和大家初次见面的点点，喜欢绿色、新鲜的空气和一切圆圆的东西，偶尔变身换个心情。">Hello! Here is the first time foe Dimdim to meet you. I like green, fresh air and everything round , occasionally change the mood.</div>
+                            <div class="card-details" data-tr-zh="详情">Details</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="post col-md-4" style="position: relative;  height: 700px;">
+                <img src="/assets/about/dimdim.png" alt="" width="60%" style="position: absolute; left: 50%; transform: translateX(-50%);top: -200px;">
+                <a href="https://mp.weixin.qq.com/s/uKsLBy2cLfYZi1vRkSLY8A" class="card-container">
+                    
+                    <div class="card" style="margin-top:200px;">
+                        <div class="card-body" >
+                            <div class="card-title" data-tr-zh="微信表情包vol.02">WeChat emojis vol.02 </div>
+                            <div class="card-title" data-tr-zh="点点之新春">Spring Festival of Dimdim</div>
+                            <div class="card-info" data-tr-zh="听说红色的春节和绿色的点点更配哦！">It is said that the red Spring Festival matches the green Dimdim better!</div>
+                            <div class="card-details" data-tr-zh="详情">Details</div>
+                        </div>
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/card2.png" width="100%">
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="" class="card-container">
+                    <div class="card">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/cardn.png" width="100%">
+                        </div>
+                        <div class="card-body" >
+                            <div class="card-title">To be continue... </div>
+                            <div class="card-title"></div>
+                            <div class="card-info"></div>
+                            <div class="card-details"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
 </div>
 
+
 </div>
+
+<script>
+// hover显示相应赛区信息
+function showInfo(site) {
+    document.getElementById(site).style.display = "none";
+}
+
+function hideInfo(site) {
+    document.getElementById(site).style.display = "block";
+}
+// hover显示相应赛区信息结束
+
+// 滚动组件
+$('.post-wrapper').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: $('.next'),
+    prevArrow: $('.prev'),
+});
+// 滚动组件结束
+</script>
