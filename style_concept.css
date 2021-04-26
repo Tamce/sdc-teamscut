@@ -1,0 +1,165 @@
+/*button style*/
+* {
+    box-sizing: border-box;
+}
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+}
+button.detail {
+    font-weight: 600;
+    color: white; /*字体颜色*/
+    padding: 5px; 
+    background: #b8c8ac; /*未hover时按钮背景色*/
+    border: 1.5px solid #7ea699; /*按钮上表面边框色*/
+    border-radius: 5px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+button.detail::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #7ea699; /*按钮侧面背景色*/
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #7ea699;  /*按钮侧面边框色， 按钮投影色*/
+    -webkit-transform: translate3d(0, 0em, -1em); /* 中间值为按钮侧面高度*/
+            transform: translate3d(0, 0em, -1em); /*中间值按钮侧面高度*/
+}
+button.detail:hover {
+    background: #7ea699; /*按钮hover时背景色*/
+}
+button.detail:hover::before {
+    box-shadow: 0 0 0 2px #7ea699; /*按钮hover时侧面边框色，投影色*/
+}
+button.detail:active {
+    background: #7ea699; /*按钮按下时背景色*/
+}
+button.detail:active::before {
+    box-shadow: 0 0 0 2px #2f4840,;  /*按钮按下时侧面边框色，投影色*/
+}
+
+
+.row-max {
+    margin: 15px -15px;
+}
+
+
+/*icon-nav相关*/
+ul {
+    list-style: none;
+    display: block;
+    text-align: center;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+p {
+    display: block;
+    font-size: 10px !important;
+    text-align: center !important;
+    margin: 2px !important;
+}
+
+.p1 {
+    text-align: left;
+    font-size: 8px !important;
+}
+
+
+/*icon-nav图表及字体颜色*/
+.icon-nav-item i, .icon-nav-item p{
+    color:#b8c8ac;
+}
+.icon-nav {
+    height: 110px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.icon-nav-item i:hover {
+    color: #79a699;
+}
+
+
+
+/* 小屏 */
+@media screen and (max-width: 991px) {
+    #concept-nav .icon-nav-item {
+        width: 33.3%;
+    }
+
+    #concept-nav {
+        padding: 5px;
+    }
+
+    .fa-3x {
+        font-size: 30px;
+    }
+
+    .icon-nav {
+        height: 180px;
+    }
+
+    /*按钮位置和宽度*/
+    button.detail {
+        text-align: center; 
+        width: 50%; 
+        display: block; 
+        position: relative; 
+        left: 15px; 
+        bottom: 15px;
+        margin-top: 15px;
+    }    
+
+    h1 {
+        font-size: 24px !important;
+    }
+
+    h2 {
+        font-size: 14px !important;
+    }
+}
+
+  /* 大屏 */
+@media screen and (min-width: 992px) {
+    #concept-nav .icon-nav-item {
+        width: 16.6%;
+    }
+
+    #concept-nav {
+        padding: 15px;
+    }
+
+    /*按钮位置和宽度*/
+    button.detail {
+        text-align: center; 
+        width: 25%; 
+        display: block; 
+        position: absolute; 
+        left: 15px; 
+        bottom: 15px;
+    }
+}

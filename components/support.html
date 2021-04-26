@@ -1,0 +1,304 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  .form {
+    width: 400px;
+    background: white;
+    border-radius: 3px;
+    padding: 1.25em;
+  }
+
+  h3 {
+    font-size: 1.98em;
+    margin-bottom: .8em;
+    margin-top: .4em;
+    font-weight: 100;
+  }
+
+  .btn-primary {
+    box-shadow: 0;
+    border: none;
+    background-color: #7ea699;
+    border-color: #7ea699;
+    color: #ffffff;
+    outline: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: all .5s;
+    padding: 10px 19px;
+    font-size: 17px;
+    line-height: 1.471;
+    width: 30%;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 1.44em;
+    margin-bottom: .55em;
+    display: inherit;
+  }
+
+  .btn-primary:hover {
+    background-color: #1ABC9C;
+  }
+
+  .form-group {
+    position: relative;
+    opacity: 1;
+    transition: .6s;
+  }
+
+  .input-field-icon {
+    color: #bfc9ca;
+    font-size: 18px;
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    transition: .6s;
+  }
+
+  .form-control {
+    transition: opacity .6s;
+    opacity: 1;
+    border: 0;
+    border-bottom: 2px solid #bdc3c7;
+    border-radius: 0;
+    background: white;
+    font-size: 15px;
+    line-height: 1.467;
+    padding: 4px;
+    height: 42px;
+    -webkit-appearance: none;
+  }
+
+  input,
+  textarea {
+    transition: all 800ms;
+    font-family: "Roboto";
+    resize: none;
+    /* removes the resize handle */
+    overflow: auto;
+    /* removes default scrolling bars in IE */
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 4px;
+    color: #34495e;
+    margin-top: 1.25em;
+  }
+
+  .has-error input,
+  .has-error textarea {
+    color: #e74c3c;
+    border-color: #e74c3c;
+  }
+
+  .has-error .input-field-icon {
+    color: #e74c3c;
+  }
+
+  .has-success input,
+  .has-success textarea {
+    color: #2ecc71;
+    border-color: #2ecc71;
+  }
+
+  .has-success .input-field-icon {
+    color: #2ecc71;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #48c9b0;
+    color: #34495e;
+  }
+
+  input:focus+.input-field-icon {
+    color: #34495e;
+  }
+
+  textarea.form-control {
+    height: 120px;
+    transition: .6s;
+  }
+
+  textarea.form-control:focus {
+    height: 200px;
+    border-color: #48c9b0;
+  }
+
+  .social {
+    display: block;
+    margin: auto;
+    width: 250px;
+  }
+
+  .social li {
+    display: inline-block;
+    list-style: none;
+    margin: auto;
+    margin-right: 10px;
+  }
+
+  .social li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+    border: 2px solid #999;
+    border-radius: 100%;
+    font-size: 26px;
+    width: 34px;
+    padding: 3px;
+    text-align: center;
+    transition: all .4s;
+  }
+
+  .social li a:hover {
+    background: #999;
+    color: white;
+  }
+
+  .social li a span {
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .form {
+      width: 90%;
+      margin-top: 12%;
+    }
+  }
+
+  body {
+    margin: 0;
+  }
+</style>
+
+<div class="container-fluid" style="min-height: 100%; min-height: calc(100vh - 240px); background-color: #f5f5f5; text-align: center; padding: 24px 0;">
+  <div class="center-block">
+    <div class="col-md-6 col-md-push-6">
+      <!-- <h3 style="font-weight: 600;" data-tr-zh="微信公众号:">Wechat Official Account：</h3>
+      <p style="font-size: 1.5em;"><i class="fa fa-weixin" aria-hidden="true"></i> 2020SDME×TeamSCUT</p> -->
+      <h3 style="font-weight: 600; margin-top: 0px;" data-tr-zh="团队邮箱:">Team Mailbox：</h3>
+      <p style="font-size: 1.5em;"><i class="fa fa-envelope" aria-hidden="true"></i> scut_sdme2020@163.com</p>
+      <h3 style="font-weight: 600; margin-top: 2em;" data-tr-zh="-合作联络-">Sponsorship Contact</h3>
+      <p style="font-size: 1.5em;"><i class="fa fa-phone" aria-hidden="true"></i><span data-tr-zh="   张文豪">   Wenhao Zhang</span> +86 13660195506</p>
+      <p style="font-size: 1.5em;"><i class="fa fa-envelope" aria-hidden="true"></i> germanhouge@teamscut.com</p>
+      <h3 style="font-weight: 600; margin-top: 2em;" data-tr-zh="-指导老师联络-">Adiviser Contact</h3>
+      <p style="font-size: 1.5em;"><i class="fa fa-phone" aria-hidden="true"></i><span data-tr-zh="   肖毅强">   Yiqiang Xiao</span> +86 13926041501</p>
+      <!-- <p style="font-size: 1.5em;"><i class="fa fa-envelope" aria-hidden="true"></i> business@teamscut.com</p> -->
+    </div>
+    <div class="col-md-6 col-md-pull-6">
+      <div class="form" style="display: inline-block; margin-bottom: 24px;">
+        <h3>Contact Us</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" value="" placeholder="Enter your name" id="contact-name" />
+          <label class="input-field-icon icon-user" for="login-name"></label>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" value="" placeholder="Enter your email" id="contact-email" />
+          <label class="input-field-icon icon-email" for="login-email"></label>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" value="" placeholder="Enter your message" id="contact-message" rows="1"></textarea>
+        </div>
+        <button id="contact-send" class="btn btn-primary btn-lg btn-block" style="width: 130px;">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var nameSuccess = false,
+    emailSuccess = false,
+    messageSuccess = false;
+  var $elements = $("input, textarea");
+  $elements.on("focus", function() {
+    var $selected = $(this);
+    $elements.each(function() {
+      var $this = $(this);
+      if ($this !== $selected)
+        $(this).parent().css("opacity", 0.5);
+    });
+    $selected.parent().css("opacity", 1);
+  });
+
+  $("#contact-name").on("blur", validateName);
+  $("#contact-email").on("blur", validateEmail);
+  $("#contact-message").on("blur", validateMessage);
+
+  $("#contact-send").on("click", function() {
+    validateName();
+    validateEmail();
+    validateMessage();
+
+    if (nameSuccess && emailSuccess && messageSuccess) {
+      console.log("Send Email");
+      $("#contact-send").attr("disabled", "disabled");
+      $("#contact-send").text("Sending...");
+      $.post({
+        url: "https://service-qrq5zwtk-1252769415.gz.apigw.tencentcs.com/test/sdme_sendmail",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({
+          "name": $("#contact-name").val(),
+          "email": $("#contact-email").val(),
+          "message": $("#contact-message").val()}),
+        complete: function (e) {
+          $("#contact-send").text("SEND");
+          $("#contact-send").attr("disabled", null);
+          if (e.status == 200) {
+            console.log("send success");
+            $("#contact-name").val("");
+            $("#contact-email").val("");
+            $("#contact-message").val("");
+            alert("Successful!\n发送成功！");
+          } else {
+            console.log("send failed");
+            alert("Send failed. Please try again later.\n发送失败，请稍后重试。");
+          }
+        }
+      });
+    } else if (!nameSuccess) $("#contact-name").focus();
+    else if (!emailSuccess) $("#contact-email").focus();
+    else if (!messageSuccess) $("#contact-message").focus();
+  });
+
+  function validateName() {
+    var $name = $("#contact-name");
+    var text = $name.val().trim();
+    if (text.length < 2) {
+      $name.parent().removeClass("has-success").addClass("has-error");
+      nameSuccess = false;
+    } else {
+      $name.parent().removeClass("has-error").addClass("has-success");
+      nameSuccess = true;
+    }
+  }
+
+  function validateEmail() {
+    var $email = $("#contact-email");
+    var text = $email.val().trim();
+    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+    var match = pattern.test(text);
+    if (match) {
+      $email.parent().removeClass("has-error").addClass("has-success");
+      emailSuccess = true;
+    } else {
+      $email.parent().removeClass("has-success").addClass("has-error");
+      emailSuccess = false;
+    }
+  }
+
+  function validateMessage() {
+    var $message = $("#contact-message");
+    var text = $message.val().trim();
+
+    if (text.length > 1) {
+      $message.parent().removeClass("has-error").addClass("has-success");
+      messageSuccess = true;
+    } else {
+      $message.parent().removeClass("has-success").addClass("has-error");
+      messageSuccess = false;
+    }
+  }
+</script>

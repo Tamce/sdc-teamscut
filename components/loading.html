@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>loading</title>
+<style>
+@charset "utf-8";
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+main{
+	text-align: center;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-content: center;
+}
+body {
+	width: 100%;
+	height: 100vh;
+	background-color: #79a699;
+}
+.name {
+	margin-top: 10px;
+	font-size: 4vh;
+	font-family: cousine;
+	font-weight: 700;
+	color: transparent;
+	text-align: center;
+	animation: text 2s ease forwards 3.5s;
+}
+#logo {
+	animation: fill 2s ease forwards 3.5s;
+}
+
+#logo path:nth-child(1) {
+	stroke-dasharray:1200px;
+	stroke-dashoffset:1200px;
+	animation: line-anim 5s ease forwards;
+
+}
+#logo path:nth-child(2) {
+	stroke-dasharray:700px;
+	stroke-dashoffset:700px;
+	animation: line-anim 4s ease forwards 0.3s;
+
+}
+
+#logo path:nth-child(3) {
+	stroke-dasharray:400px;
+	stroke-dashoffset:400px;
+	animation: line-anim 3s ease forwards 0.6s;
+
+}
+
+@keyframes line-anim{
+	to{
+		stroke-dashoffset: 0;
+	}
+}
+
+
+
+@keyframes fill{
+	from{
+		fill: transparent;
+	}
+	to{
+		fill: #2f4840;
+	}
+}
+
+@keyframes text{
+	frome{
+		color: transparent;
+	}
+	to{
+		color:#2f4840;
+	}
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+<div style="text-align: center"><svg id="logo" width="215" height="215" viewBox="0 0 215 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M107.5 203.493C160.516 203.493 203.493 160.516 203.493 107.5C203.493 54.4843 160.516 11.5065 107.5 11.5065C90.7496 11.5065 74.995 15.7988 61.283 23.3449L57.0863 15.3713C72.0477 7.16644 89.2255 2.5 107.5 2.5C165.49 2.5 212.5 49.5101 212.5 107.5C212.5 165.49 165.49 212.5 107.5 212.5C49.5101 212.5 2.5 165.49 2.5 107.5C2.5 99.6224 3.36706 91.9502 5.01008 84.5725L13.7606 86.7274C12.2843 93.4186 11.5065 100.37 11.5065 107.5C11.5065 160.516 54.4843 203.493 107.5 203.493Z" stroke="#ffffff" stroke-width="3"/>
+<path d="M128.508 166.993C152.977 158.338 170.509 134.99 170.509 107.541C170.509 72.7246 142.3 44.4983 107.5 44.4983C72.6996 44.4983 44.4906 72.7246 44.4906 107.541C44.4906 120.934 48.6675 133.357 55.7883 143.57L48.6562 149.065C40.3683 137.329 35.5 123.007 35.5 107.541C35.5 67.7525 67.7368 35.5 107.5 35.5C147.263 35.5 179.5 67.7525 179.5 107.541C179.5 139.247 159.027 166.174 130.583 175.8L128.508 166.993Z" stroke="#ffffff" stroke-width="3"/>
+<path d="M130.583 91.6166C125.533 84.2906 117.079 79.4823 107.5 79.4823C92.0263 79.4823 79.4823 92.0263 79.4823 107.5C79.4823 122.974 92.0263 135.518 107.5 135.518C122.974 135.518 135.518 122.974 135.518 107.5C135.518 107.313 135.516 107.126 135.512 106.939L144.352 104.17C144.45 105.266 144.5 106.377 144.5 107.5C144.5 127.935 127.935 144.5 107.5 144.5C87.0655 144.5 70.5 127.935 70.5 107.5C70.5 87.0655 87.0655 70.5 107.5 70.5C120.023 70.5 131.095 76.7197 137.792 86.2483L130.583 91.6166Z" stroke="#ffffff" stroke-width="3"/>
+</svg>
+</div>
+
+<div class="name" style="font-size: 4vh;">Team SCUT</div>
+<div class="name" style="font-size: 2vh;">2020 Solar Decathlon Middle East<br><br>Loading...</div>
+</main>
+</body>
+</html>
+

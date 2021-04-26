@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <style>
+    .thumbnail {
+      cursor: pointer;
+    }
+    .thumbnail h3 {
+      font-size: 1.2em; 
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }    
+    .thumbnail p {
+      font-size: 1em; 
+      margin: 0px;
+      color: gray;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+    }
+    
+  </style>
+
+  <div class="tmc-home-body">
+  <h1 class="animated bounceInLeft" style="margin-left: 0px !important;" data-tr-zh="线下活动">Offline Activities</h1>
+    <!-- 每一行都要套一个 .row 的 div，代表大屏幕下的一行 -->
+    <div class="row">
+
+    <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.25s; animation-duration: 1.25s;">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/-r3MPLtQvkeOj4GykdyL6g">
+          <img src="./assets/activities/Architectural Culture Festival.jpg"  >
+          <div class="caption">
+              <h3 data-tr-zh="特别策划丨绿色创意文化节"> Architectural Culture Festival</h3>
+              <p class="no-indent" data-tr-zh="打造属于你自己的“绿色建筑”。">Build your own "eco-architecture."</p>
+          </div>
+        </div>
+      </div><!-- 容器结束 -->
+
+      <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.5s; animation-duration: 1.25s;">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg">
+          <img src="./assets/activities/changqi.jpg">
+          <div class="caption">
+              <h3 data-tr-zh="特别策划丨长岐的绿色小屋">A Green House in Changqi</h3>
+              <p class="no-indent" data-tr-zh="太阳能绿色生活体验馆——“长崎的绿色小屋”。">Solar eco-life experience —— "a green house in Changqi."</p>
+          </div>
+        </div>
+      </div><!-- 容器结束 -->
+      
+
+
+      <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.75s; animation-duration: 1.25s;">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/I7MPS_jV_uSwNhGzNG6ndg">
+        <img src="./assets/activities/nansha.jpg">
+          <div class="caption">
+              <h3 data-tr-zh="特别策划｜绿「筑/竹」南沙">Green 「Building/Bamboo」 in Nansha</h3>
+              <p class="no-indent" data-tr-zh="绿「筑/竹」南沙·回顾。">Review of Green 「Building/Bamboo」 in Nansha.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div> <!-- .row 结束 -->
+
+    <div class="row">
+
+      <div class="col-md-4 animated fadeInUp" style="animation-delay: 1s; animation-duration: 1.25s;">
+        <div class="thumbnail" data-url="https://mp.weixin.qq.com/s/k1sMQie8O6lqhb7qptoN-A">
+          <img src="./assets/dimdim/dimdim6.jpg"  >
+          <div class="caption">
+              <h3 data-tr-zh="新春策划｜点点给大家派红包啦！">Planning in Spring Festival | Dimdim is sending you red envelopes！</h3>
+              <p class="no-indent" data-tr-zh="限量1000个！">Limited to 1000 red envelopes！</p>
+          </div>
+        </div>
+      </div><!-- 容器结束 -->
+
+    </div><!-- .row 结束 -->
+
+  </div>
+</div>
+<script>
+  $(".thumbnail").click(function (e) {
+    var url = $(e.currentTarget).attr("data-url");
+    if (!url) return;
+    window.location = url;
+  });
+</script>

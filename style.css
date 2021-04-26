@@ -1,14 +1,24 @@
+@font-face {
+  src: url(/fonts/STXIHEI.TTF);
+  font-family: stxihei;
+}
+
+
 .color-pattle {
     --color: #2a8476;
-    --color: #feb12e;
+    --color: #ecc421;
     --color: #43be95;
 }
 .tmc-re {
     position: relative;
 }
 
-* {
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+.zh {
+    font-family: "Microsoft YaHei","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
+}
+
+.en {
+    font-family: stxihei,"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
 }
 
 /* 分享链接 */
@@ -35,15 +45,16 @@
 
 /* 包含 logo 及分享标签的 header */
 .tmc-header {
-    margin: 10px 0;
-    height: 70px;
+    margin: 0 -15px;
+    /* height: 90px; */
+    padding: 0 0;
     line-height: 70px;
     text-align: center;
     position: relative;
 }
 /* 导航 container */
 .tmc-navbar {
-    background-color: #2a8476;
+    background-color: #b8c8ac;
     color: #fff;
     z-index: 20;
 }
@@ -56,6 +67,7 @@ a,a:visited,a:hover,a:active,a:focus {
     font-size: 1.2em;
 }
 
+/* 小屏 */
 @media screen and (max-width: 991px) {
     .tmc-header {
         text-align: left;
@@ -69,7 +81,7 @@ a,a:visited,a:hover,a:active,a:focus {
         margin: 10px auto;
     }
     .tmc-nav-item:hover>a {
-        color: #feb12e;
+        color: #79a699;
     }
     .tmc-nav-item>a {
         font-size: 22px;
@@ -102,31 +114,69 @@ a,a:visited,a:hover,a:active,a:focus {
         left: 10px;
     }
     .tmc-dropdown>a:hover {
-        color: #feb12e;
+        color: #79a699;
     }
     .tmc-navbar {
-        position: fixed;
+        position: fixed !important;
         right: -85vw;
-        width: 85vw;
+        left: auto !important;
+        width: 85vw !important;
         padding: 70px 12px 12px 12px;
         height: 100vh;
         top: 0;
     }
+    .tmc-header {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        padding: 0 15px;
+        background-color: #fff;
+        margin: 0;
+        height: 70px;
+        z-index: 20;
+    }
+    #header {
+        height: 70px;
+    }
 }
+
+@media screen and (min-width: 992px) and (max-width: 1599px) {
+    .tmc-nav-item {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+    .tmc-navbar .col-md-12 {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .tmc-nav-item {
+        font-size: .8em !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .tmc-nav-item {
+        margin: 0 .2em;
+        font-size: 1.2em;
+    }
+}
+
+/* 大屏 */
 @media screen and (min-width: 992px) {
     /* 导航项 */
     .tmc-nav-item {
-        font-size: 1.2em;
-        height: 35px;
-        line-height: 35px;
+        height: 50px;
+        line-height: 50px;
         display: inline-block;
         position: relative;
-        padding: 0 35px;
-        margin: 0 12px;
+        padding: 0 60px;
         cursor: pointer;
     }
     .tmc-nav-item:hover {
-        background-color: #feb12e;
+        background-color: #79a699;
     }
     .tmc-nav-item:hover>a {
         color: #000;
@@ -137,9 +187,10 @@ a,a:visited,a:hover,a:active,a:focus {
         position: absolute;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         background-color: #fff;
-        min-width: 100%;
+        width: 100%;
+        min-width: max-content;
         left: 0px;
-        top: 35px;
+        top: 50px;
         text-align: left;
         padding: 0;
         z-index: 15;
@@ -161,90 +212,39 @@ a,a:visited,a:hover,a:active,a:focus {
     }
 }
 
-/* 滚动图片容器相关 */
-.tmc-img-roller {
-    height: 400px;
-    overflow: hidden;
-}
-.tmc-img-roller div {
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: none;
-}
-.tmc-img-roller div:nth-child(1) {
-    display: block;
-    transform: scale(1.0);
-}
-.tmc-left, .tmc-right {
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 400px;
-    line-height: 400px;
-    font-size: 40px;
-    color: rgba(255,255,255,0.4);
-    transition: color .2s;
-    cursor: pointer;
-    text-align: center;
-    z-index: 11;
-}
-.tmc-left:hover, .tmc-right:hover {
-    color: rgba(255, 255, 255, 1);
-}
-.tmc-left {
-    left: 15%;
-}
-.tmc-right {
-    right: 15%;
-}
-@media screen and (max-width: 1500px) {
-    .tmc-left {
-    left: 5vw;
-    }
-    .tmc-right {
-    right: 5vw;
-    }
-}
-@media screen and (max-width: 600px) {
-    .tmc-img-roller {
-    height: 200px;
-    }
-    .tmc-left {
-    line-height: 200px;
-    left: 3vw;
-    }
-    .tmc-right {
-    line-height: 200px;
-    right: 3vw;
-    }
-}
-/* 滚动图片容器相关结束 */
-
-
-
   .tmc-home-body p {
-    margin: 18px 0;
+    margin: 2em 7%;
     font-size: 1.2em;
-    text-indent: 2em;
+    text-indent: 0em;
+    text-align: justify;
   }
   .no-indent {
     text-indent: 0 !important;
   }
   .tmc-home-body h1, .tmc-home-body h2 {
-    margin-left: -33px;
+    margin-left: 7%;
   }
+  .tmc-home-body h1{
+      margin-bottom: 1em;
+      font-weight: 700;
+      color: #476d54;
+      font-family: STXIHEI;
+
+  }
+  .tmc-home-body h2{
+    font-weight: 700;
+}
   @media screen and (max-width: 1600px) {
     .tmc-home-body {
       margin: 48px 10vw 0 10vw;
     }
   }
   .tmc-home-body {
-    margin: 48px auto 0 auto;
+    margin: 0 auto 0 auto;
     padding: 3em 5vw;
     background-color: #fff;
     max-width: 1300px;
+    min-height: calc(100vh - 240px);
   }
   .tmc-home-body img {
     width: 100%;
@@ -252,7 +252,7 @@ a,a:visited,a:hover,a:active,a:focus {
   @media screen and (max-width: 991px) {
     .tmc-home-body {
       padding: 0 12px;
-      margin: 12px 3vw;
+      margin: 3.5% 3vw;
     }
     .tmc-home-body h1, .tmc-home-body h2 {
         margin-left: auto;
@@ -263,4 +263,75 @@ a,a:visited,a:hover,a:active,a:focus {
     font-size: 1.1em;
     margin: 4px auto;
     display: block;
+    color: grey;
   }
+
+
+@-webkit-keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}

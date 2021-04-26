@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -rf ~/.qshell/qupload
+qshell qupload upload.conf

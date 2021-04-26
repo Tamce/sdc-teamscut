@@ -1,0 +1,348 @@
+<style>
+    .rank-main {
+        background-color: #6f8777;
+        position: absolute;
+        width: 23%;
+        height: 100%; 
+        margin-left: 100px;
+    }
+    .rank-title {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .rank-title .rank-logo {
+        width: 80px;
+    }
+    .rank-title .rank-text {
+        font-size: 40px;
+        width: 300%;
+        justify-content: left !important;
+        text-align: left;
+        text-decoration: none;
+    }
+    .rank-box{
+        position: relative;
+
+    }
+    .rank-logo {
+        width: 70px;
+        margin: 30px;
+    }
+    .text-group {
+        margin-top: 40px;
+    }
+    .rank-text {
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        color: white;
+    }
+    .rank-hidden{
+        display: none;   
+    }
+
+    .rank-hidden .rank-text {
+        text-decoration: none;
+        color: black;
+    }
+    .hover-bg {
+        background-color: white;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        box-shadow: 1px 1px 20px rgb(100, 100, 100);
+        border-radius: 3px;
+    }
+    /* p1结束 */
+
+
+    .p2 .title {
+        font-size: 50px;
+        color: #6d8778;
+        text-align: right;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-right: 10px;
+    }
+
+    .p2 .info {
+        position: absolute;
+        right: 0px;
+        margin-right: 10px;
+        width: 40%;
+        font-size: 20px;
+        text-align: justify;
+    }
+    .p2 .info .text-info {
+        color: black;
+    }
+
+
+    .scroll-img {
+        width: 200%;
+        margin-top: 100px;
+        position: absolute;
+        right: 0px;
+        margin-right: 10px;
+        box-shadow: 1px 1px 15px rgb(155, 155, 155);
+    }
+    /* 第二页结束 */
+
+
+    .p3 .col-md-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .logotext {
+        margin-top: 10px;
+        font-weight: 800;
+        color: #505050;
+    }
+
+    /* 第三页滚动post */
+    .post-slider {
+        width: 100%;
+        position: relative;
+        margin-top: 2em;
+    }
+    .post-slider .prev{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50px;
+        font-size: 5em;
+        color: white;
+        z-index: 1000;
+    }
+    .post-slider .next{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 50px;
+        font-size: 5em;
+        color: white;
+        z-index: 1000;
+    }
+    .post-slider .post-wrapper {
+        width: 120%;
+        height: auto;
+        padding: 20px;
+        margin: 0px auto;
+        overflow: hidden;
+        z-index: -9999;
+        margin-left: -100px;
+
+    }
+    a, a:link, a:hover {
+        text-decoration: none;
+        color: #626262;
+    }
+
+    .card {
+        overflow: hidden;
+        padding: 10px;
+        background-color: white;
+    }
+
+    /* 第三页结束 */
+
+
+
+</style>
+
+<div class="p1" style="width: 100%; height: 900px; position: relative;">
+    <div class="rank-main" >
+        <div class="rank-title">
+            <div class="rank-box row" style=" display: flex; justify-content: center; align-items: center;">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank.png" alt="" ></div>
+                <div class="col-md-8" style="margin-left: 15px;">
+                    <div class="rank-text">SDC2018 LONG-PLAN</div>
+                    <div class="rank-text">The 1st Prize</div>
+                </div>
+            </div>           
+        </div>
+        <div class="rank-box row rank" onmouseover="showInfo('bg1')" onmouseout="hideInfo('bg1')">
+            <div class="rank-shown" id="bg1bg1">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank1.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第一名">First price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg1">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank1.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10;">
+                    <div class="rank-text" data-tr-zh="工程设计">Engineering design</div>
+                    <div class="rank-text" data-tr-zh="创新能力">Innovation</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+        <div class="rank-box row rank" onmouseover="showInfo('bg2')" onmouseout="hideInfo('bg2')">
+            <div class="rank-shown" id="bg2bg2">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank2.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第二名">Second price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg2">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank2.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10;">
+                    <div class="rank-text" data-tr-zh="工程设计">Market potential</div>
+                    <div class="rank-text" data-tr-zh="建筑设计">Architecture Design</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+        <div class="rank-box row rank" onmouseover="showInfo('bg3')" onmouseout="hideInfo('bg3')">
+            <div class="rank-shown" id="bg3bg3">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank3.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第四名">Fourth price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg3">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank3.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10;">
+                    <div class="rank-text" data-tr-zh="宣传推广">Comunication</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+
+    </div>
+    <img src="/assets/about/sdc2018.jpg" alt="" width="100%" style="position: absolute; top: 50%; transform: translateY(-50%); z-index: -9999;">
+</div>
+
+<div class="p2" style="margin-top: 100px; margin-bottom: 100px; position: relative;">
+    
+    <div class="container" style="position: relative; height: 900px; width: 100%;">
+        <img src="/assets/about/sdc2018s.jpg" alt="" style="height: 100%; position: absolute; left: 0px;">
+        <ul id="vertical" style="width: 100%; position: relative;">
+            <li data-thumb = "/assets/about/sdc2018s1.jpg" data-src = "/assets/about/sdc2018s1.jpg">
+                <div class="title" data-tr-zh="空间理念">Space Philosophy</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="三条带与三个核心——是长屋对 建筑空间理论的实验与实践。面 宽 4.8 米，进深 18 米的狭长型住 宅空间原型被形成边界分明的集 成墙、服务带与生活带，同时置 入三个生态核心。在悠长的进深 里精密规划设备空间和生活空间 的适宜尺度。">
+                        Three belts with three ecological cores——It is the experiment and practice of long house on architectural space theory.The narrow and long residential homestead,which with a width of 4.8 meters and a depth of 18 meters, is further divided to form a welldefined integrated wall,service belt and living belt with three ecological cores.To precisely plan the appropriate dimensions of equipment space and living space in a long depth.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2018s1.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+            <li data-thumb = "/assets/about/sdc2018s2.jpg" data-src = "/assets/about/sdc2018s2.jpg">
+                <div class="title" data-tr-zh="小型预制建造体系">Structure System</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="小型模块化装配式建造体系允许 长屋在各类复杂场所实施快速而 低影响的建造。在竞赛过程中， 团队用2天完成预制模块的组 装，14 天完成整体施工。">
+                        The modular, prefabricated construction system allows longhouses to implement fast, low-impact construction in complex spaces. The team completed the assembly of the prefabricated modules in 2 days and completed the overall construction in 14 days.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2018s2.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+            <li data-thumb = "/assets/about/sdc2018s3.jpg" data-src = "/assets/about/sdc2018s3.jpg">
+                <div class="title" data-tr-zh="被动式生态技术">Passive Ecological Technology</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="建筑空间形态与被动式通风采光 设计有效统一，绿色生态处理技 术的整合，增强了被动式设计的 效应，有效提升建筑空间的整体 舒适度。">
+                        The morphological unification of active and passive technologies allows green building technology to be effectively implemented in residential buildings.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2018s3.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+            <li data-thumb = "/assets/about/sdc2018s4.jpg" data-src = "/assets/about/sdc2018s4.jpg">
+                <div class="title" data-tr-zh="设备系统全能整合">Integration System</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="建 筑 设 备 系 统 集 成 了 暖 通、 光 伏、电力、给排水、智能家居、 绿色生态等技术系统，结合房屋 空间特点进行有效整合与控制， 系统整合以适宜性为目标，提供 一套高效舒适的解决方案。">
+                        Building equipment system integrates HVAC, photovoltaic, electric power, water supply and drainage, smart home, green ecology and other technical systems, combining with the characteristics of housing space for effective integration and control, system integration to suitability as the goal, to provide a set of efficient and comfortable solutions.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2018s4.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<div class="p3">
+    <div class="post-slider">
+        <i class="fa fa-angle-left prev"></i>
+        <i class="fa fa-angle-right next"></i>
+        <div class="post-wrapper">
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlonme.com" class="card-container">
+                    <div class="card"  data-target="#read-more1">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201801.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlon.gov/index.html" class="card-container">
+                    <div class="card"  data-target="#read-more2">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201802.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="http://www.sdchina.org.cn/" class="card-container">
+                    <div class="card"  data-target="#read-more3">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201803.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlonme.com" class="card-container">
+                    <div class="card"  data-target="#read-more4">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201804.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // hover改变信息
+    function showInfo(el) {
+        document.getElementById(el ).style.display = "block";
+        document.getElementById(el + el).style.display = "none";
+    }
+    
+    function hideInfo(el) {
+        document.getElementById(el).style.display = "none";
+        document.getElementById(el + el).style.display = "block";
+    }
+    // hover改变信息结束
+    
+    // 滚动组件
+    $('.post-wrapper').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $('.next'),
+        prevArrow: $('.prev'),
+    });
+    // 滚动组件结束
+
+
+    // 垂直滚动组件
+    $(document).ready(function() {
+        $('#vertical').lightSlider();
+    })
+    
+</script>

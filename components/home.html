@@ -1,89 +1,290 @@
-<div style="width: 100%; background-color: #43be95; position: relative;">
-  <div class="tmc-left" onclick="rollImgInt(-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-  <div id="tmc-roller" class="tmc-img-roller" data-handler="rollerHandle">
-    <div style="background-image: url(./assets/roller/1.jpg);"></div>
-    <div style="background-image: url(./assets/roller/2.png);"></div>
-    <div style="background-image: url(./assets/roller/3.png);"></div>
+<style>
+/*button style*/
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+button.home {
+  font-weight: 600;
+  color: white; /*字体颜色*/
+  padding: 0.5em 1em;
+  background: #b8c8ac; /*未hover时按钮背景色*/
+  border: 2px solid #7ea699; /*按钮上表面边框色*/
+  border-radius: 5px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.home::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #7ea699; /*按钮侧面背景色*/
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #7ea699, 0.5em 0.5em 0.8em 0 #7ea699;  /*按钮侧面边框色， 按钮投影色*/
+  -webkit-transform: translate3d(0, 0em, -1em); /* 中间值为按钮侧面高度*/
+          transform: translate3d(0, 0em, -1em); /*中间值按钮侧面高度*/
+  transition: box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+button.home:hover {
+  background: #7ea699; /*按钮hover时背景色*/
+  transform: translate(0, 0.2em);
+  transform: translate(0, 0.2em);
+}
+button.home:hover::before {
+  box-shadow: 0 0 0 2px #7ea699, 0.2em 0.2em 0.2em 0 #7ea699; /*按钮hover时侧面边框色，投影色*/
+  transform: translate3d(0, 0em, -1em);
+  transform: translate3d(0, 0em, -1em);
+}
+button.home:active {
+  background: #7ea699; /*按钮按下时背景色*/
+  transform: translate(0em, 0.2em);
+  transform: translate(0em, 0.2em);
+}
+button.home:active::before {
+  box-shadow: 0 0 0 2px #2f4840, 0 0 #718e6d;  /*按钮按下时侧面边框色，投影色*/
+  transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+
+/* 滚动图片容器相关 */
+.tmc-img-roller {
+    height: calc(100vh - 140px);
+    overflow: hidden;
+    position: relative;
+}
+.tmc-img-roller a {
+    height: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.tmc-img-roller a:nth-child(1) {
+  display: block;
+}
+.tmc-left, .tmc-right {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: calc(100vh - 140px);
+    line-height: calc(100vh - 140px);
+    font-size: 40px;
+    color: rgba(255,255,255,0.4);
+    transition: color .2s;
+    cursor: pointer;
+    text-align: center;
+    z-index: 11;
+}
+.tmc-left:hover, .tmc-right:hover {
+    color: rgba(255, 255, 255, 1);
+}
+.tmc-left {
+    left: 5%;
+    text-align: left;
+}
+.tmc-right {
+    right: 5%;
+    text-align: right;
+}
+@media screen and (max-width: 1500px) {
+    .tmc-left {
+    left: 5vw;
+    }
+    .tmc-right {
+    right: 5vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tmc-img-roller {
+      height: 200px;
+    }
+    .tmc-left {
+    line-height: 200px;
+    left: 3vw;
+    }
+    .tmc-right {
+    line-height: 200px;
+    right: 3vw;
+    }
+}
+/* 滚动图片容器相关结束 */
+
+</style>
+
+
+
+<div style="width: 100%; background-color: #79a699; position: relative;">
+  <div class="tmc-left" onclick="rollImgInt(-1)">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
   </div>
-  <div class="tmc-right" onclick="rollImgInt(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+  <div id="tmc-roller" class="tmc-img-roller" data-handler="rollerHandle">
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/00.jpg);"></a>
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/01.jpeg);"></a>
+    <a href="https://mp.weixin.qq.com/s/a7X7vDZTMge9qVZ2x4kmAg" style="background-image: url(./assets/roller/02.jpg);"></a>
+    <a href="#sdc2013" style="background-image: url(./assets/roller/03.png);"></a>
+    <a href="#sdc2018" style="background-image: url(./assets/roller/04.jpg);"></a>
+    <a href="https://mp.weixin.qq.com/s/I7MPS_jV_uSwNhGzNG6ndg" style="background-image: url(./assets/roller/05.jpg);"></a>
+    <a href="#" style="background-image: url(./assets/roller/06.jpg);"></a>
+  </div>
+  <div class="tmc-right" onclick="rollImgInt(1)">
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </div>
 </div>
+<script>
+  window.localeChanged = function () {
+    if (document.body.clientWidth > 600) {
+      $(".tmc-img-roller").css("height", "calc(100vh - "+$("#header").height()+"px)");
+    }
+  }
+  window.localeChanged();
+</script>
 
 <div class="tmc-home-body">
   <div class="container-fluid">
     <div class="row tmc-section">
-      <div class="col-md-8 tmc-re">
-        <div class="tmc-fade tmc-big" style="left:-.2em;top:-.7em;">What is going on?</div>
-        <img class="tmc-fade" data-delay="400" src="./assets/sdmec1.jpg" alt="">
+      <div class="col-md-8 tmc-re" style="margin-top: 1em;">
+        <img class="tmc-fade" data-delay="400" src="./assets/contest-info/sdmec1.jpg" alt="" />
       </div>
-      <div class="col-md-4">
-        <img class="tmc-fade tmc-subtitle" style="left: -30%;" src="./assets/title-sdme2020.svg">
-        <div class="tmc-sub"></div>
-        <div class="tmc-fade" data-delay="200">
-            <p data-tr-key="tr-home-1">Team SCUT is going to participate in 2020 Solar Decathlon Middle East which is an award-winning program that challenges collegiate teams to design, build and operate solar-powered houses that are cost-effective, energy-efficient and attractive. Known as the Decathlon competition, it evaluates each home based on the performance in 10 contests. SDME aims to promote industry-university-research cooperation in the industry and to facilitate innovation and intensive adoption of solar energy technologies.</p>
-          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
+      <div class="col-md-4" style="margin-top: 1em;">
+        <!--<img class="tmc-fade tmc-subtitle" style="left: -30%;" src="./assets/title-sdme2020.svg" />-->
+        <a class="tmc-fade" data-delay="200" href="#solar_decathlon_me" ><button class="home tmc-big" style="text-align: center; width: 86%; margin-left: 7%;">
+          2020 Solar Decathlon Middle East
+        </button></a>
+        <div class="tmc-fade" data-delay="300">
+          <p class="no-indent" data-tr-key="tr-home-1" style="text-align: justify;">
+            Team SCUT is going to participate in 2020 Solar Decathlon Middle
+            East which is an award-winning program that challenges collegiate
+            teams to design, build and operate solar-powered houses that are
+            cost-effective, energy-efficient and attractive. SDME aims to promote
+            industry-university-research cooperation in the industry and to
+            facilitate innovation and intensive adoption of solar energy
+            technologies.
+          </p>
         </div>
       </div>
     </div>
     <div class="row tmc-section">
-      <div class="col-md-8 col-md-push-4 tmc-re">
-        <div class="tmc-fade tmc-big" style="right:-.2em;top:-.7em;">Who are we?</div>
-        <img src="./assets/bubble1.svg" class="tmc-fade" data-delay="1200" style="position: absolute;z-index: 11;width: 39%;top: 10%;right: 36%;">
-        <img src="./assets/whoweare.jpg" class="tmc-fade" data-delay="200">
+      <div class="col-md-8 col-md-push-4 tmc-re" style="margin-top: 1em;">
+        <img src="./assets/whoweare2.jpg" class="tmc-fade" data-delay="400" />
       </div>
-      <div class="col-md-4 col-md-pull-8">
-        <img src="./assets/title-team.svg" style="right: -30%;" class="tmc-fade tmc-subtitle">
-        <div class="tmc-sub"></div>
-        <div class="tmc-fade" data-delay="200">
-          <p data-tr-key="tr-home-2">Team SCUT is a team consist of multiple force including students from College of Architecture and Urban Engineering, College of Material Science and Engineering and College of Communication and Journalism. The team is guided by professional tutors team and supported by varies facilities such as: National Key Laboratory of Subtropical Architectural Science, Digital Laboratory construction, South China University of Technology Institute of Architectural Design and Luminous State Key Laboratory of Materials and Devices.</p>
-          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
+      <div class="col-md-4 col-md-pull-8" style="margin-top: 1em;">
+        <a class="tmc-fade" data-delay="200" href="#members"><button class="home tmc-big" style="text-align: center; width: 86%; margin-left: 7%;">Team SCUT</button></a>
+        <div class="tmc-fade" data-delay="300">
+          <p class="no-indent" data-tr-key="tr-home-2">
+            Team SCUT is a team consist of multiple force including students
+            from College of Architecture and Urban Engineering, College of
+            Material Science and Engineering and College of Communication and
+            Journalism. The team is guided by professional tutors team and
+            supported by varies facilities such as: National Key Laboratory of
+            Subtropical Architectural Science, Digital Laboratory construction,
+            South China University of Technology Institute of Architectural
+            Design and Luminous State Key Laboratory of Materials and Devices.
+          </p>
         </div>
       </div>
     </div>
     <div class="tmc-section">
       <div class="row">
         <div class="col-md-7">
-          <img src="./assets/title-whatwedo.svg" class="tmc-fade" data-delay="1800" class="tmc-fade">
+          <img src="./assets/title-whatwedo.png" class="tmc-fade" data-delay="1800" class="tmc-fade" />
         </div>
         <div class="visible-sm visible-xs tmc-re">
-          <img src="./assets/circle.svg" class="tmc-fade" data-delay="1400" style="position: absolute;width: 7%;left: 25%;top: -8%;">
-          <img src="./assets/circle.svg" class="tmc-fade" data-delay="1200" style="position: absolute;width: 3%;left: 31%;top: 19%;">
-          <img src="./assets/bubble2.svg" class="tmc-fade" data-delay="400" style="width:23%;position:absolute;right:13%;top:-20%;">
-          <img src="./assets/whatwedo.svg" class="tmc-fade">
+          <img src="./assets/circle.svg" class="tmc-fade" data-delay="1400"
+            style="position: absolute;width: 7%;left: 25%;top: -8%;" />
+          <img src="./assets/circle.svg" class="tmc-fade" data-delay="1000"
+            style="position: absolute;width: 3%;left: 31%;top: 19%;" />
+          <img src="./assets/bubble2.svg" class="tmc-fade" data-delay="400"
+            style="width:23%;position:absolute;right:13%;top:-20%;" />
+          <img src="./assets/whatwedo.svg" class="tmc-fade" />
         </div>
         <div class="col-md-5 tmc-fade" data-delay="200">
-          <div class="tmc-fade tmc-big" style="position: relative; text-align: right;">What we do.</div>
-          <p>Team SCUT is a team consist of multiple force including students from College of Architecture and Urban Engineering, College of Material Science and Engineering and College of Communication and Journalism. The team is guided by professional tutors team and supported by varies facilities such as: National Key Laboratory of Subtropical Architectural Science, Digital Laboratory construction, South China University of Technology Institute of Architectural Design and Luminous State Key Laboratory of Materials and Devices.</p>
-          <a style="display: block; text-align: right;" href="#" data-tr>- more information -</a>
+            <a class="tmc-fade" data-delay="200" href="#"><button class="home tmc-big" style="text-align: center; width: 86%; margin-left: 7%;">
+              O-House
+          </button></a>
+          <p class="no-indent" data-tr-key="tr-home-3">
+            As the only team participating in this competition in mainland
+            China, this year, we will go abroad to the world and show the
+            technology and strength of the Chinese team on a higher platform:
+            for the high temperature, high humidity and dusty environmental
+            conditions in the Middle East, on the one hand, we will refer to the
+            climate adaptability strategy of traditional buildings in the Middle
+            East to design our passive technology, such as learning The Middle
+            East's wind tower technology and atrium ventilation technology,
+            etc. On the other hand, we will integrate the existing green
+            building and artificial intelligence technology with modern
+            cutting-edge technology, and adopt the rapid construction technology
+            of prefabricated housing to build an efficient and sustainable
+            housing that really adapts to the Middle East.
+          </p>
         </div>
       </div>
       <div class="row hidden-sm hidden-xs tmc-re" style="margin-top: 48px;">
-        <img src="./assets/circle.svg" class="tmc-fade" data-delay="1400" style="position: absolute;width: 7%;left: 25%;top: -8%;">
-        <img src="./assets/circle.svg" class="tmc-fade" data-delay="1200" style="position: absolute;width: 3%;left: 31%;top: 19%;">
-        <img src="./assets/bubble2.svg" class="tmc-fade" data-delay="400" style="width:23%;position:absolute;right:13%;top:-20%;">
-        <img src="./assets/whatwedo.svg" class="tmc-fade" data-delay="200">
+        <img src="./assets/circle.svg" class="tmc-fade" data-delay="1400"
+          style="position: absolute;width: 7%;left: 25%;top: -8%;" />
+        <img src="./assets/circle.svg" class="tmc-fade" data-delay="1200"
+          style="position: absolute;width: 3%;left: 31%;top: 19%;" />
+        <img src="./assets/bubble2.svg" class="tmc-fade" data-delay="400"
+          style="width:23%;position:absolute;right:13%;top:-20%;" />
+        <img src="./assets/whatwedo.svg" class="tmc-fade" data-delay="200" />
       </div>
     </div>
     <div class="tmc-section">
       <div class="tmc-re" style="height: 6em;">
-        <div class="tmc-big" style="right: 2em;">Works we did.</div>
-        <img src="./assets/timeline.svg" style="width: 100vw; position: absolute; left: calc(-50vw + 50%); top: 4em;">
+        <img class="tmc-fade" data-delay="200" src="./assets/timeline.svg" style="width: 100vw; position: absolute; left: calc(-50vw + 50%); top: 4em;" />
       </div>
-      <div class="row tmc-re">
-        <div class="col-md-6">
-          <h3>SDC 2013</h3>
-          <img src="./assets/sdc2013.svg">
+      <div class="row tmc-re" style="margin-top: 2em;">
+        <div class="col-md-6 tmc-fade" data-delay="600" style="margin-top: 1em;">
+          <a href="#sdc2013"><button class="home tmc-big" style="text-align: center;">
+            2013 SDC E-CONCAVE
+        </button></a>
+          <img src="./assets/sdc2013.png" style="margin-top: 2em;">
         </div>
-        <div class="col-md-6">
-          <h3>SDC 2018</h3>
-          <img src="./assets/sdc2018.svg">
+        <div class="col-md-6 tmc-fade" data-delay="1000" style="margin-top: 1em;">
+          <a href="#sdc2018"><button class="home tmc-big" style="text-align: center;">
+            2018 SDC Long Plan
+        </button></a>
+          <img src="./assets/sdc2018.png" style="margin-top: 2em;">
         </div>
       </div>
     </div>
   </div>
 </div>
-<div id="sponsorship" class="container-fluid tmc-re" style="background-color: #fff; margin-top: 58px; text-align: center;">
-  <div style="text-align: center; width: 100vw; position: absolute; top: -1.5em; left: 0;"><span style="color: #feb12e; background-color: #2a8476; display: inline-block; font-size: 2em; padding: 5px 2em;">Sponsorship</span></div>
-  <img style="margin-top: 3em; width: 100%;" src="./assets/sponsors.png">
+<div id="sponsorship" class="tmc-re" style="background-color: #fff; margin-top: 58px; text-align: center;">
+  <div style="text-align: center; width: 100vw; position: relative; top: -1.5em; left: 0;">
+    <span style="color: #ffffff; background-color: #79a699; width: 100%; display: inline-block; font-size: 2em; padding: 5px 2em;">CONTACT</span>
+    <iframe src="./components/support.html" style="width: 100%; height: 56vh;" frameborder="0"></iframe>
+  </div>
+
 </div>
 <style>
   @media screen and (min-width: 1300px) {
@@ -98,20 +299,22 @@
     max-height: 65px;
     z-index: 11;
   }
+
   .tmc-sub {
     margin-top: 95px;
     width: 100%;
   }
+
   .tmc-big {
-    position:absolute;
-    font-size:3em;
-    font-weight:600;
-    z-index:11;
+    font-size: 1.5em;
+    font-weight: 600;
+    z-index: 11;
   }
 
   .tmc-section {
     margin: 4em auto;
   }
+
   @media screen and (max-width: 991px) {
     .tmc-subtitle {
       left: 0 !important;
@@ -119,60 +322,62 @@
       position: relative;
       margin-top: 1.2em;
     }
+
     .tmc-sub {
       margin-top: 2.4em;
     }
+
     .tmc-big {
       font-size: 22px;
+      color: white;
     }
   }
+
   #tmc-roller div {
-    transition: transform 5s linear;
+    transition: transform 8s linear;
   }
 </style>
 <script>
-  /* 对目标元素 roller 执行切换图片操作，且淡出后执行 outfn，淡入后执行 infn */
-  function rollImg(el, offset, outfn, infn) {
-    var rid = $(el).attr("id");
-    imgCur[rid] = (imgCur[rid] + offset) % imgTot[rid];
-    $(el).children(":visible").fadeOut(200, function () {
-      var cur = $(el).children(":nth("+imgCur[rid]+")");
-      if (typeof outfn == "function")
-        outfn(cur);
-      cur.fadeIn(200, function () {
-        if (typeof infn == "function")
-          infn(cur);
-      });
-    });
-  }
-
-  // 自动滚动且放大的 roller 设置
+  // roller 相关
+  var ROLL_DT = 3000;
+  var ROLL_TIME = 700;
   var rollDone = true;
+  var cur = 0;
+  var total = 0;
   function rollImgInt(offset) {
     if (!rollDone) return;
     if (!window.rollerHandle) return;
-    if (offset == undefined)
-      offset = 1;
+    if (offset == undefined) offset = 1;
     // 重置定时器
     clearInterval(window.rollerHandle);
-    window.rollerHandle = setInterval(rollImgInt, 3000);
+    window.rollerHandle = setInterval(rollImgInt, ROLL_DT);
     rollDone = false;
 
-    rollImg("#tmc-roller", offset, function(cur) {
-      cur.css("transform", "none");
-    },function (cur) {
-      rollDone = true;
-      cur.css("transform", "scale(1.5)");
-    });
-  };
+    // 执行 roll 动作
+    let next = (cur + offset) % total;
+    next = $(".tmc-img-roller").children()[next];
+    let current = $(".tmc-img-roller").children()[cur];
+    if (offset > 0) {
+      $(next).css('left', '100vw');
+      $(next).css('display', 'block');
+      $(current).animate({'left': '-100vw'}, ROLL_TIME, function () { $(this).hide(); });
+      $(next).animate({'left': '0'}, ROLL_TIME);
+    } else {
+      $(next).css('left', '-100vw');
+      $(next).css('display', 'block');
+      $(next).animate({'left': '0'}, ROLL_TIME);
+      $(current).animate({'left': '100vw'}, ROLL_TIME, function () { $(this).hide(); });
+    }
+    $(current).css('margin-left', null);
+    cur = (cur + offset) % total;
+    rollDone = true;
+  }
   $(function () {
-    setTimeout(function () {
-      $("#tmc-roller").children(":nth(0)").css("transform", "scale(1.5)");
-    }, 100);
     window.rollerHandle = setInterval(rollImgInt, 3000);
     window.beforeLoad = function () {
       clearInterval(rollerHandle);
     };
+    window.total = $(".tmc-img-roller").children().length;
   });
 
   $(".tmc-fade").each(function (i, e) {
@@ -180,7 +385,7 @@
     if (!d) d = 0;
     if (d == "slow") d = 500;
     ScrollReveal().reveal(e, {
-      distance: '24px',
+      distance: "24px",
       duration: 1500,
       delay: d
     });

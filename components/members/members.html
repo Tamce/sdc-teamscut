@@ -1,14 +1,17 @@
-
 <link rel="stylesheet" type="text/css" href="stylemember.css">
 <script>
 window.addEventListener("resize",scrollGrid);
 window.addEventListener("scroll",scrollGrid);
+
 function scrollGrid() {
 	let bodyHeight = document.body.offsetHeight,
-		mainHeight = document.querySelector("main").offsetHeight,
-		cards = document.querySelector(".cards"),
-		transY = (window.pageYOffset / (mainHeight - bodyHeight)) * -100;
-	
+	mainHeight = document.querySelector("main").offsetHeight,
+	cards = document.querySelector(".cards"),
+	transY = (window.pageYOffset / (mainHeight - bodyHeight)) * -17; //数字设置可滚动范围
+	if (transY < 0) {
+		transY = -1 * transY;
+	}
+
 	cards.style.setProperty("--scroll", "-" + transY + "%");
 }
 window.onload = scrollGrid;
@@ -17,595 +20,1551 @@ window.onload = scrollGrid;
 	<main>
 		<div class="cards">
 			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong></h2>
-					  <h3>Zhang Wenhao</h3>Group Construction Tech 
-					  <img class="mp" src="ZWH.png" alt="ZWH" >
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong></h2>
+						<h3 data-tr-zh="汪 昊">Wang Hao</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/WH.png" alt="wh">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Wellcome to our site!</div>
+						<img class="mp2" src="./components/members/old/WH2.png" alt="wh2">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Doctoral Student</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
 					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Welcome to our site!</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
+					<div class="card shadow"></div>
+				  </a>
+			  <!--汪昊-->
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong></h2>
-					  <h3>Liang Yingwei</h3>Group Equipment
-					  <img class="mp" src="LYW.png" alt="lyw">
+					  <h3 data-tr-zh="张 文 豪">Zhang Wenhao</h3><span data-tr-zh="建 造 技 术 组 ">Group Construction Tech</span>
+					  <img class="mp" src="./components/members/old/ZWH.png" alt="ZWH" >
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Welcome to our site!</div>
+
+					  <img class="mp2" src="./components/members/old/ZWH2.png" alt="zwh2">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Nice to meet you!</div>
+						<div class="hidden"data-tr-zh="建筑学 博士研究生">Architecture Doctoral Student</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--张文豪-->
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong></h2>
-					  <h3>Wang Hao</h3>Group Architecture design
-					  <img class="mp" src="WH.png" alt="wh">
+					  <h3 data-tr-zh="梁 英 伟">Liang Yingwei</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+					  <img class="mp" src="./components/members/old/LYW.png" alt="lyw">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
+						<div class="hidden">Nice to meet you!</div>
+					  <img class="mp2" src="./components/members/old/LYW2.png" alt="lyw2">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hello!</div>
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--梁英伟-->
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="邓 美 慧">Deng Meihui</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/DMH2.png" alt="DMH">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Nice to meet you!&nbsp;</div>
+						<img class="mp2" src="./components/members/old/DMH.png" alt="dmh2">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="风景园林 本科生">Landscape Achitectrue Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--邓美惠-->
+
+			  <a class="stack" href="#">
+				<div class="card top">
+				  <div class="contents">
+					<h2>Team <strong>SCUT</strong>
+					</h2>
+					<h3 data-="梁 淑 贤">Liang Shuxian</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					<img class="mp" src="./components/members/old/LSX.png" alt="LSX">
+				  </div>
+				</div>
+				<div class="card mid-top">
+				  <div class="contents">
+					<div class="hidden">wooooah！</div>
+					<img class="mp2" src="./components/members/old/LSX2.png" alt="LSX">
+				  </div>
+				</div>
+				<div class="card bottom">
+				  <div class="contents">
+					<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+				  </div>
+				</div>
+				<div class="card shadow"></div>
+			  </a>
+		  <!--梁淑贤-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Hu Boming</h3>Group Construction Tech
-					  <img class="mp" src="HBM.png" alt="HBM" >
+					  <h3 data-tr-zh="胡 博 明">Hu Boming</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+					  <img class="mp" src="./components/members/old/HBM.png" alt="HBM" >
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/HBM2.png" alt="HBM" >
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！&nbsp;</div>
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Postgraduate</div>
+
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--胡博明-->
+
 			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Deng Meihui</h3>Group Communication
-					  <img class="mp" src="DMH.png" alt="DMH">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="周 忠 瑞">Zhou Zhongrui</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/ZZR.png" alt="ZZR">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Landscape&nbsp; &nbsp;Architecture</div>
+					<div class="card mid-top">
+						<div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/ZZR2.png" alt="ZZR">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑技术与科学 硕士研究生">Architecture Tech and Science Postgraduate</div>
 					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Nice to meet you!&nbsp;</div>
 					</div>
-				  </div>
-				  <div class="card shadow"></div>
+					<div class="card shadow"></div>
 				</a>
-	  
+			<!--周忠瑞-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong></h2>
-					  <h3>Huang Mingxuan&nbsp;</h3>Group Communication
-					  <img class="mp" src="HMX.png" alt="HMX">
+					  <h3 data-tr-zh="黄 明 铉">Huang Mingxuan</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+					  <img class="mp" src="./components/members/old/HMX.png" alt="HMX">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Landscape Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Nice to meet you!</div>
+					  <img class="mp2" src="./components/members/old/HMX2.png" alt="HMX">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Nice to meet you!</div>
+						<div class="hidden" data-tr-zh="风景园林 本科生">Landscape Architecture Undergraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--黄明铉-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Zhang Yueqi</h3>Group Communication
-					  <img class="mp" src="ZYQ.png" alt="ZYQ">
+					  <h3 data-tr-zh="朴 成 哲">Piao Chengzhe</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					  <img class="mp" src="./components/members/old/PCZ.png" alt="PCZ">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Landscape Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi</div>
+					    <img class="mp2" src="./components/members/old/PCZ2.png" alt="PCZ">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--朴成哲-->
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Liang Shuxian</h3>Group Architecture Design
-					  <img class="mp" src="LSX.png" alt="LSX">
+					  <h3 data-tr-zh="徐 斐">Xu Fei</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+					  <img class="mp" src="./components/members/old/XF.png" alt="XF">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/XF2.png" alt="XF">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--徐斐-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="王 若 瑾 希">Wang Ruojinxi</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/WRJX.png" alt="WRJX">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/WRJX2.png" alt="WRJX">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--王若瑾希-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="张 玥 琪">Zhang Yueqi</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/ZYQ.png" alt="ZYQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hello！</div>
+						<img class="mp2" src="./components/members/old/ZYQ2.png" alt="ZYQ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden">风景园林 本科生</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--张玥琪-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="陆 亦 霖">Lu Yilin</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/LYL.png" alt="LYL">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LYL2.png" alt="LYL">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--陆亦霖-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="郑 凯 翔">Zhen Kaixiang</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/ZKX.png" alt="ZKX">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/ZKX2.png" alt="ZKX">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="土木工程 硕士研究生">Civil Engineering Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--郑凯翔-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="王 土 坤">Wang Tukun</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/WTK.png" alt="WTK">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/WTK2.png" alt="WTK">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--王土坤-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="张 蔚 杰">Zhang Weijie</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/ZWJ.png" alt="ZWJ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/ZWJ2.png" alt="ZWJ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--张蔚杰-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Lu Yilin</h3>Group Architecture Design
-					  <img class="mp" src="LYL.png" alt="LYL">
+					  <h3 data-tr-zh="徐 凌 芷"></h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					  <img class="mp" src="./components/members/old/XLZ.png" alt="XLZ">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/XLZ2.png" alt="XLZ">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+					  <div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--徐凌芷-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="何 麒 治">He Linzhi</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/HLZ.png" alt="HLZ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/HLZ2.png" alt="HLZ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--何麟治-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="焦 钰 钦">Jiao Yuqin</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/JYQ.png" alt="JYQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/JYQ2.png" alt="JYQ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--焦钰钦-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="赵 帅">Zhao Shuai</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/ZS.png" alt="ZS">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/ZS2.png" alt="ZS">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--赵帅-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Piao Chengzhe</h3>
-					  <img class="mp" src="PCZ.png" alt="PCZ">
+					  <h3 data-tr-zh="闫 瑾">Yan Jin</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					  <img class="mp" src="./components/members/old/YJ.png" alt="YJ">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/YJ2.png" alt="YJ">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--闫瑾-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="王 琼">Wang Qiong</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/WQ.png" alt="WQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/WQ2.png" alt="WQ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--王琼-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="刘 静 怡">Liu Jingyi</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/LJY.png" alt="JYQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LJY2.png" alt="LJY">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑技术与科学 硕士研究生">Architecture Tech and Science Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--刘静怡-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="古 心 悦">Gu Xinyue</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/GXY.png" alt="ZS">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/GXY2.png" alt="GXY">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="城乡规划 本科生">Unban Planning Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--古心悦-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Xu Fei</h3>Group Construction Tech 
-					  <img class="mp" src="XF.png" alt="XF">
+					  <h3 data-tr-zh="朱 姝 妍">Zhu Shuyan</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					  <img class="mp" src="./components/members/old/ZSY.png" alt="ZSY">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/ZSY2.png" alt="ZSY">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+
+					  <div class="hidden" data-tr-zh="建筑学 博士研究生">Architecture Doctoral Student</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--朱姝妍-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="陈 子 朗">Chen Zilang</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/CZL.png" alt="WQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/CZL2.png" alt="CZL">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--陈子朗-->
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="刘 文 静">Liu Wenjing</h3><span data-tr-zh="设 备 性 能 组">Group Equipment</span>
+						<img class="mp" src="./components/members/old/LWJ.png" alt="LWJ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LWJ2.png" alt="LJY">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--刘文静-->
+
+			<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="潘 钰 婷">Pan Yuting</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/PYT.png" alt="PYT">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/PYT2.png" alt="PYT">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="风景园林 本科生">Landscape Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--潘钰婷-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Xu Linzhi</h3>Group Architecture Design
-					  <img class="mp" src="XLZ.png" alt="XLZ">
+					  <h3 aria-details="彭 程 遥">Peng Chengyao</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					  <img class="mp" src="./components/members/old/PCY.png" alt="PCY">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/PCY.png" alt="PCY">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+					  <div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--彭程遥-->
+
 			<a class="stack" href="#">
 				  <div class="card top">
 					<div class="contents">
 					  <h2>Team <strong>SCUT</strong>
 					  </h2>
-					  <h3>Yan Jin</h3>Group Architecture Design
-					  <img class="mp" src="YJ.png" alt="YJ">
+					  <h3 data-tr-zh="陈 冉 鹏">Chen Ranpeng</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+					  <img class="mp" src="./components/members/old/CRP.png" alt="CRP">
 					</div>
 				  </div>
 				  <div class="card mid-top">
 					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+						<div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/CRP2.png" alt="CRP">
 					</div>
 				  </div>
 				  <div class="card bottom">
 					<div class="contents">
-					  <div class="hidden">Hi！</div>
+					  <div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
 					</div>
 				  </div>
 				  <div class="card shadow"></div>
 				</a>
-	  
+			<!--陈冉鹏-->
+
 			<a class="stack" href="#">
-			  <div class="card top">
-				<div class="contents">
-				  <h2>Team <strong>SCUT</strong>
-				  </h2>
-				  <h3>Zhou ZHONGrui</h3>Group Equipment
-				  <img class="mp" src="ZZR.png" alt="ZZR">			
-				</div>
-			  </div>
-			  <div class="card mid-top">
-				<div class="contents">Major: Architecture Tech &amp; Science
-				  <div class="hidden"></div>
-				</div>
-			  </div>
-			  <div class="card mid-bottom">
-				<div class="contents">
-				  <div class="hidden">Grade: Postgraduate</div>
-				</div>
-			  </div>
-			  <div class="card bottom">
-				<div class="contents">
-				  <div class="hidden">Hi！</div>
-				</div>
-			  </div>
-			  <div class="card shadow"></div>
+				<img class="logo" src="./components/members/old/logo.png" alt="logo" style="	position: absolute; top:0em; left:0px;">
 			</a>
-	  
+
 			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Zhu Shuyan</h3>Group Architectrue Design
-					  <img class="mp" src="ZSY.png" alt="ZSY">			
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="刘 汪 洋">Liu Wangyang</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/LWY.png" alt="LWY">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architectrue</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LWY2.png" alt="LWY">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Doctoral Student</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
 					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--刘汪洋-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 aria-details="黄 晏 琪">Huang Yanqi</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/HYQ.png" alt="HYQ">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card shadow"></div>
+					<div class="card mid-top">
+					  <div class="contents">
+						  <div class="hidden">Hi！</div>
+						  <img class="mp2" src="./components/members/old/HYQ2.png" alt="HYQ">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--黄晏琪-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="曾 译 萱">Chen Ranpeng</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/ZYX.png" alt="ZYX">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+							<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/ZYX2.png" alt="ZYX">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--曾译萱-->
+
+			<a class="stack" href="#">
+			</a>
+
+			<a class="stack" href="#">
+				<div class="card top">
+					<div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="江 逸 之">Jiang Yizhi</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+						<img class="mp" src="./components/members/old/JYZ.png" alt="JYZ">
+					</div>
+				</div>
+				<div class="card mid-top">
+					<div class="contents">
+						<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/JYZ2.png" alt="JYZ">
+					</div>
+				</div>
+				<div class="card bottom">
+					<div class="contents">
+						<div class="hidden" data-tr-zh="高分子材料工程 本科生">Polymers Engineering Undergraduate</div>
+					</div>
+				</div>
+				<div class="card shadow"></div>
+			</a>
+			<!--江逸之-->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 aria-details="茌 文 秀 ">Chi Wenxiu</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/CWX.png" alt="CWQ">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						  <div class="hidden">Hi！</div>
+						  <img class="mp2" src="./components/members/old/CWX2.png" alt="CWX">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="风景园林 博士研究生">Landscape Architecture Doctoral Student</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--茌文秀 -->
+
+			  <a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="林 宇 栋">Lin Yudong</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/LYD.png" alt="LYD">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+							<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LYD2.png" alt="LYD">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+							<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--林宇栋-->
+
+			<a class="stack" href="#">
+			</a>
+
+			<a class="stack" href="#">
+					<div class="card top">
+						<div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 data-tr-zh="吴 婧 琳">Wu Jinglin</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+							<img class="mp" src="./components/members/old/WJL.png" alt="WJL">
+						</div>
+					</div>
+					<div class="card mid-top">
+						<div class="contents">
+							<div class="hidden">Hi！</div>
+							<img class="mp2" src="./components/members/old/WJL2.png" alt="WJL">
+						</div>
+					</div>
+					<div class="card bottom">
+						<div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+						</div>
+					</div>
+					<div class="card shadow"></div>
 				</a>
-	  
+				<!--吴婧琳-->
+
 			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Zhang Weijie</h3>Group Communication
-					  <img class="mp" src="ZWJ.png" alt="ZWJ">			
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 aria-details="孟 晗">Meng Han</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/MH.png" alt="MH">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architectrue</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						  <div class="hidden">Hi！</div>
+						  <img class="mp2" src="./components/members/old/MH2.png" alt="MH">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="风景园林 博士研究生">Landscape Architecture Doctoral Student</div>
+					  </div>
 					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
+					<div class="card shadow"></div>
+				  </a>
+			  <!--孟晗 -->
+
 			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Zheng Kaixiang</h3>Group Architecture Tech
-					  <img class="mp" src="ZKX.png" alt="ZKX">			
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="李 明 锴">Li Mingkai</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/LMK.png" alt="LYD">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Civil Engineering</div>
+					<div class="card mid-top">
+					  <div class="contents">
+							<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/LMK2.png" alt="LYD">
+					  </div>
 					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
+					<div class="card bottom">
+					  <div class="contents">
+							<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+					  </div>
 					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
-			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Peng Chengyao</h3>Group Architecture Design
-					  <img class="mp" src="PCY.png" alt="PCY">			
-					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
-					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
-			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Wang Qiong</h3>Group Construction Tech
-					  <img class="mp" src="WQ.png" alt="WQ">			
-					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Undergraduate</div>
-					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
-			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Wang Ruojinxi</h3>Group Equipment
-					  <img class="mp" src="WRJX.png" alt="WRJX">			
-					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
-					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
-			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>He Linzhi</h3>Group Construction Tech
-					  <img class="mp" src="HLZ.png" alt="HLZ">			
-					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
-					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
-				</a>
-	  
-			<a class="stack" href="#">
-				  <div class="card top">
-					<div class="contents">
-					  <h2>Team <strong>SCUT</strong>
-					  </h2>
-					  <h3>Chen Ranpeng</h3>Group Construction Tech
-					  <img class="mp" src="CRP.png" alt="CRP">			
-					</div>
-				  </div>
-				  <div class="card mid-top">
-					<div class="contents">
-					  <div class="hidden">Major: Architecture</div>
-					</div>
-				  </div>
-				  <div class="card mid-bottom">
-					<div class="contents">
-					  <div class="hidden">Grade: Postgraduate</div>
-					</div>
-				  </div>
-				  <div class="card bottom">
-					<div class="contents">
-					  <div class="hidden">Hi！</div>
-					</div>
-				  </div>
-				  <div class="card shadow"></div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--李明锴-->
+
+			  <a class="stack" href="#">
 				</a>
 
+				<a class="stack" href="#">
+						<div class="card top">
+							<div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="凌 恺 童 ">Lin Kaitong</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+								<img class="mp" src="./components/members/old/LKT.png" alt="LKT">
+							</div>
+						</div>
+						<div class="card mid-top">
+							<div class="contents">
+								<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/LKT2.png" alt="LKT">
+							</div>
+						</div>
+						<div class="card bottom">
+							<div class="contents">
+								<div class="hidden" data-tr-zh="会计 本科生">Accounting Undergraduate</div>
+							</div>
+						</div>
+						<div class="card shadow"></div>
+					</a>
+					<!--凌恺童 -->
+
+				<a class="stack" href="#">
+						<div class="card top">
+						  <div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 aria-details="郑 向 清">Zhen Xiangqing</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+							<img class="mp" src="./components/members/old/ZXQ.png" alt="ZXQ">
+						  </div>
+						</div>
+						<div class="card mid-top">
+						  <div class="contents">
+							  <div class="hidden">Hi！</div>
+							  <img class="mp2" src="./components/members/old/ZXQ2.png" alt="ZXQ">
+						  </div>
+						</div>
+						<div class="card bottom">
+						  <div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+						  </div>
+						</div>
+						<div class="card shadow"></div>
+					  </a>
+				  <!--郑向清 -->
+
+				<a class="stack" href="#">
+						<div class="card top">
+						  <div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 data-tr-zh="胡 耀 文">Hu Yaowen</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+							<img class="mp" src="./components/members/old/HYW.png" alt="HYW">
+						  </div>
+						</div>
+						<div class="card mid-top">
+						  <div class="contents">
+								<div class="hidden">Hi！</div>
+							<img class="mp2" src="./components/members/old/HYW2.png" alt="HYW">
+						  </div>
+						</div>
+						<div class="card bottom">
+						  <div class="contents">
+								<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+						  </div>
+						</div>
+						<div class="card shadow"></div>
+					  </a>
+				  <!--胡耀文-->
+
+				<a class="stack" href="#">
+				</a>
+
+					<a class="stack" href="#">
+							<div class="card top">
+								<div class="contents">
+									<h2>Team <strong>SCUT</strong>
+									</h2>
+									<h3 data-tr-zh="陈 铭 熙">Chen Mingxi</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+									<img class="mp" src="./components/members/old/CMX.png" alt="CMX">
+								</div>
+							</div>
+							<div class="card mid-top">
+								<div class="contents">
+									<div class="hidden">Hi！</div>
+									<img class="mp2" src="./components/members/old/CMX2.png" alt="CMX">
+								</div>
+							</div>
+							<div class="card bottom">
+								<div class="contents">
+									<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+								</div>
+							</div>
+							<div class="card shadow"></div>
+						</a>
+						<!--陈铭熙 -->
+
+					<a class="stack" href="#">
+							<div class="card top">
+							  <div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 aria-details="朱 佳 学">Zhu Jiaxue</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+								<img class="mp" src="./components/members/old/ZJX.png" alt="ZJX">
+							  </div>
+							</div>
+							<div class="card mid-top">
+							  <div class="contents">
+								  <div class="hidden">Hi！</div>
+								  <img class="mp2" src="./components/members/old/ZJX2.png" alt="ZJX">
+							  </div>
+							</div>
+							<div class="card bottom">
+							  <div class="contents">
+								<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+							  </div>
+							</div>
+							<div class="card shadow"></div>
+						  </a>
+					  <!--朱佳学 -->
+
+					<a class="stack" href="#">
+							<div class="card top">
+							  <div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="黄 浩">Huang Hao</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+								<img class="mp" src="./components/members/old/HH.png" alt="HH">
+							  </div>
+							</div>
+							<div class="card mid-top">
+							  <div class="contents">
+									<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/HH2.png" alt="HH">
+							  </div>
+							</div>
+							<div class="card bottom">
+							  <div class="contents">
+								<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+							  </div>
+							</div>
+							<div class="card shadow"></div>
+						  </a>
+					  <!--黄浩-->
+
+					<a class="stack" href="#">
+					</a>
+
+					<a class="stack" href="#">
+						<div class="card top">
+							<div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="陈 泳 澜">Chen Yonglan</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+								<img class="mp" src="./components/members/old/CYL.png" alt="CYL"">
+							</div>
+						</div>
+						<div class="card mid-top">
+							<div class="contents">
+								<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/CYL2.png" alt="CYL"">
+							</div>
+						</div>
+						<div class="card bottom">
+							<div class="contents">
+								<div class="hidden" data-tr-zh="广告学 本科生">Advertising Undergraduate</div>
+							</div>
+						</div>
+						<div class="card shadow"></div>
+					</a>
+					<!--陈泳澜 -->
+
+					<a class="stack" href="#">
+							<div class="card top">
+							  <div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 aria-details="赵 晓 莺">Zhao Xiaoying</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+								<img class="mp" src="./components/members/old/ZXY.png" alt="ZXY">
+							  </div>
+							</div>
+							<div class="card mid-top">
+							  <div class="contents">
+								  <div class="hidden">Hi！</div>
+								  <img class="mp2" src="./components/members/old/ZXY2.png" alt="ZXY">
+							  </div>
+							</div>
+							<div class="card bottom">
+							  <div class="contents">
+								<div class="hidden" data-tr-zh="风景园林 博士研究生">Landscape Architecture Doctoral Student</div>
+							  </div>
+							</div>
+							<div class="card shadow"></div>
+						  </a>
+					  <!--赵晓莺 -->
+
+					<a class="stack" href="#">
+						<div class="card top">
+							<div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 data-tr-zh="黄 展 辉">Huang Zhanhui</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+							<img class="mp" src="./components/members/old/HZH.png" alt="HZH">
+							</div>
+						</div>
+						<div class="card mid-top">
+							<div class="contents">
+								<div class="hidden">Hi！</div>
+							<img class="mp2" src="./components/members/old/HZH2.png" alt="HZH">
+							</div>
+						</div>
+						<div class="card bottom">
+							<div class="contents">
+								<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+							</div>
+						</div>
+						<div class="card shadow"></div>
+						</a>
+					<!--黄展辉-->
+
+					<a class="stack" href="#">
+					</a>
+
+					<a class="stack" href="#">
+						<div class="card top">
+							<div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="刘 天 娇">Liu Tianjiao</h3><span data-tr-zh="宣 传 运 营 组">Group Communication</span>
+								<img class="mp" src="./components/members/old/LTJ.png" alt="LTJ"">
+							</div>
+						</div>
+						<div class="card mid-top">
+							<div class="contents">
+								<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/LTJ2.png" alt="LTJ"">
+							</div>
+						</div>
+						<div class="card bottom">
+							<div class="contents">
+								<div class="hidden" data-tr-zh="广告学 本科生">Advertising Undergraduate</div>
+							</div>
+						</div>
+						<div class="card shadow"></div>
+					</a>
+					<!--刘天娇 -->
+
+
+
+						<a class="stack" href="#">
+								<div class="card top">
+								  <div class="contents">
+									<h2>Team <strong>SCUT</strong>
+									</h2>
+									<h3 aria-details="谢 瑞 英 ">Xie Ruiying</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+									<img class="mp" src="./components/members/old/XRY.png" alt="XRY">
+								  </div>
+								</div>
+								<div class="card mid-top">
+								  <div class="contents">
+									  <div class="hidden">Hi！</div>
+									  <img class="mp2" src="./components/members/old/XRY2.png" alt="XRY">
+								  </div>
+								</div>
+								<div class="card bottom">
+								  <div class="contents">
+									<div class="hidden" data-tr-zh="风景园林 硕士研究生">Landscape Architecture Postgraduate</div>
+								  </div>
+								</div>
+								<div class="card shadow"></div>
+							  </a>
+						  <!--谢瑞英  -->
+
+						<a class="stack" href="#">
+							<div class="card top">
+								<div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="谭 智 贤">Tan Zhixian</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+								<img class="mp" src="./components/members/old/TZX.png" alt="TZX">
+								</div>
+							</div>
+							<div class="card mid-top">
+								<div class="contents">
+									<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/TZX2.png" alt="TZX">
+								</div>
+							</div>
+							<div class="card bottom">
+								<div class="contents">
+									<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+								</div>
+							</div>
+							<div class="card shadow"></div>
+							</a>
+						<!--谭智贤-->
+
+					<a class="stack" href="#">
+					</a>
+
+					<a class="stack" href="#">
+					</a>
+
+
+
+					<a class="stack" href="#">
+						<div class="card top">
+						  <div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 aria-details="邓 思 华">Deng Sihua</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+							<img class="mp" src="./components/members/old/DSH.png" alt="DSH">
+						  </div>
+						</div>
+						<div class="card mid-top">
+						  <div class="contents">
+							  <div class="hidden">Hi！</div>
+							  <img class="mp2" src="./components/members/old/DSH2.png" alt="DSH">
+						  </div>
+						</div>
+						<div class="card bottom">
+						  <div class="contents">
+							<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+						  </div>
+						</div>
+						<div class="card shadow"></div>
+					  </a>
+				  <!--邓思华  -->
+
+						<a class="stack" href="#">
+							<div class="card top">
+								<div class="contents">
+								<h2>Team <strong>SCUT</strong>
+								</h2>
+								<h3 data-tr-zh="王 嘉 颖">Wang Jiaying</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+								<img class="mp" src="./components/members/old/WJY.png" alt="WJY">
+								</div>
+							</div>
+							<div class="card mid-top">
+								<div class="contents">
+									<div class="hidden">Hi！</div>
+								<img class="mp2" src="./components/members/old/WJY2.png" alt="WJY">
+								</div>
+							</div>
+							<div class="card bottom">
+								<div class="contents">
+									<div class="hidden" data-tr-zh="风景园林 本科生">Landscape Architecture Undergraduate</div>
+								</div>
+							</div>
+							<div class="card shadow"></div>
+							</a>
+						<!--王嘉颖-->
+
+					<a class="stack" href="#">
+					</a>
+
+					<a class="stack" href="#">
+					</a>
+
+					<a class="stack" href="#">
+						<div class="card top">
+						  <div class="contents">
+							<h2>Team <strong>SCUT</strong>
+							</h2>
+							<h3 aria-details="江 逸 妍">Jiang Yiyan</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+							<img class="mp" src="./components/members/old/JYY.png" alt="JYY">
+						  </div>
+						</div>
+						<div class="card mid-top">
+						  <div class="contents">
+							  <div class="hidden">Hi！</div>
+							  <img class="mp2" src="./components/members/old/JYY2.png" alt="JYY">
+						  </div>
+						</div>
+						<div class="card bottom">
+						  <div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+						  </div>
+						</div>
+						<div class="card shadow"></div>
+					  </a>
+				  <!--江逸妍-->
+
+				  <a class="stack" href="#">
+					<div class="card top">
+						<div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 data-tr-zh="袁 晶 晶">Yuan Jingjing</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+						<img class="mp" src="./components/members/old/YJJ.png" alt="YJJ">
+						</div>
+					</div>
+					<div class="card mid-top">
+						<div class="contents">
+							<div class="hidden">Hi！</div>
+						<img class="mp2" src="./components/members/old/YJJ2.png" alt="YJJ">
+						</div>
+					</div>
+					<div class="card bottom">
+						<div class="contents">
+							<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+						</div>
+					</div>
+					<div class="card shadow"></div>
+					</a>
+				<!--袁晶晶-->
+
+				<a class="stack" href="#">
+				</a>
+
+				<a class="stack" href="#">
+				</a>
+
+				<a class="stack" href="#">
+					<div class="card top">
+					  <div class="contents">
+						<h2>Team <strong>SCUT</strong>
+						</h2>
+						<h3 aria-details="史 诺">Shi Nuo</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+						<img class="mp" src="./components/members/old/SN.png" alt="SN">
+					  </div>
+					</div>
+					<div class="card mid-top">
+					  <div class="contents">
+						  <div class="hidden">Hi！</div>
+						  <img class="mp2" src="./components/members/old/SN2.png" alt="SN">
+					  </div>
+					</div>
+					<div class="card bottom">
+					  <div class="contents">
+						<div class="hidden" data-tr-zh="建筑学 硕士研究生">Architecture Postgraduate</div>
+					  </div>
+					</div>
+					<div class="card shadow"></div>
+				  </a>
+			  <!--史诺-->
+
+			  <a class="stack" href="#">
+				<div class="card top">
+					<div class="contents">
+					<h2>Team <strong>SCUT</strong>
+					</h2>
+					<h3 data-tr-zh="卢 宇">Lu Yu</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+					<img class="mp" src="./components/members/old/LY.png" alt="LY">
+					</div>
+				</div>
+				<div class="card mid-top">
+					<div class="contents">
+						<div class="hidden">Hi！</div>
+					<img class="mp2" src="./components/members/old/LY2.png" alt="LY">
+					</div>
+				</div>
+				<div class="card bottom">
+					<div class="contents">
+						<div class="hidden" data-tr-zh="土木工程 本科生">Civil Engineering Undergraduate</div>
+					</div>
+				</div>
+				<div class="card shadow"></div>
+				</a>
+			<!--卢宇-->
+
+			<a class="stack" href="#">
+			</a>
+
+			<a class="stack" href="#">
+			</a>
+
+			<a class="stack" href="#">
+				<div class="card top">
+				  <div class="contents">
+					<h2>Team <strong>SCUT</strong>
+					</h2>
+					<h3 aria-details="修 文 文">Xiu Wenwen</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+					<img class="mp" src="./components/members/old/XWW.png" alt="XWW">
+				  </div>
+				</div>
+				<div class="card mid-top">
+				  <div class="contents">
+					  <div class="hidden">Hi！</div>
+					  <img class="mp2" src="./components/members/old/XWW2.png" alt="XWW">
+				  </div>
+				</div>
+				<div class="card bottom">
+				  <div class="contents">
+					<div class="hidden" data-tr-zh="建筑学 本科生">Architecture Undergraduate</div>
+				  </div>
+				</div>
+				<div class="card shadow"></div>
+			  </a>
+		  <!--修文文-->
+
+		  <a class="stack" href="#">
+			<div class="card top">
+				<div class="contents">
+				<h2>Team <strong>SCUT</strong>
+				</h2>
+				<h3 data-tr-zh="叶 国 纬">Ye Guowei</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+				<img class="mp" src="./components/members/old/YGW.png" alt="YGW">
+				</div>
+			</div>
+			<div class="card mid-top">
+				<div class="contents">
+					<div class="hidden">Hi！</div>
+				<img class="mp2" src="./components/members/old/YGW2.png" alt="YGW">
+				</div>
+			</div>
+			<div class="card bottom">
+				<div class="contents">
+					<div class="hidden" data-tr-zh="土木工程 本科生">Civil Engineering Undergraduate</div>
+				</div>
+			</div>
+			<div class="card shadow"></div>
+			</a>
+		<!--叶国纬-->
+
+		<a class="stack" href="#">
+		</a>
+
+		<a class="stack" href="#">
+		</a>
+
+		<a class="stack" href="#">
+			<div class="card top">
+			  <div class="contents">
+				<h2>Team <strong>SCUT</strong>
+				</h2>
+				<h3 aria-details="钟 佳 烨">Zhong Jiaye</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+				<img class="mp" src="./components/members/old/ZJY.png" alt="ZJY">
+			  </div>
+			</div>
+			<div class="card mid-top">
+			  <div class="contents">
+				  <div class="hidden">Hi！</div>
+				  <img class="mp2" src="./components/members/old/ZJY2.png" alt="ZJY">
+			  </div>
+			</div>
+			<div class="card bottom">
+			  <div class="contents">
+				<div class="hidden" data-tr-zh="城乡规划 本科生">Urban Planning Undergraduate</div>
+			  </div>
+			</div>
+			<div class="card shadow"></div>
+		  </a>
+	  <!--钟佳烨-->
+
+	  <a class="stack" href="#">
+		<div class="card top">
+			<div class="contents">
+			<h2>Team <strong>SCUT</strong>
+			</h2>
+			<h3 data-tr-zh="叶 心 成">Ye Xincheng</h3><span data-tr-zh="建 造 技 术 组">Group Construction Tech</span>
+			<img class="mp" src="./components/members/old/YXC.png" alt="YXC">
+			</div>
 		</div>
+		<div class="card mid-top">
+			<div class="contents">
+				<div class="hidden">Hi！</div>
+			<img class="mp2" src="./components/members/old/YXC2.png" alt="YXC">
+			</div>
+		</div>
+		<div class="card bottom">
+			<div class="contents">
+				<div class="hidden" data-tr-zh="土木工程 本科生">Civil Engineering Undergraduate</div>
+			</div>
+		</div>
+		<div class="card shadow"></div>
+		</a>
+	<!--叶心成-->
+
+		<a class="stack" href="#">
+		</a>
+
+		<a class="stack" href="#">
+		</a>
+
+		<a class="stack" href="#">
+			<div class="card top">
+			  <div class="contents">
+				<h2>Team <strong>SCUT</strong>
+				</h2>
+				<h3 aria-details="陆 筱 慧">Lu Xiaohui</h3><span data-tr-zh="建 筑 设 计 组">Group Architecture Design</span>
+				<img class="mp" src="./components/members/old/LXH.png" alt="LXH">
+			  </div>
+			</div>
+			<div class="card mid-top">
+			  <div class="contents">
+				  <div class="hidden">Hi！</div>
+				  <img class="mp2" src="./components/members/old/LXH2.png" alt="LXH">
+			  </div>
+			</div>
+			<div class="card bottom">
+			  <div class="contents">
+				<div class="hidden" data-tr-zh="风景园林 本科生">Landscape Architecture Doctoral Student</div>
+			  </div>
+			</div>
+			<div class="card shadow"></div>
+		  </a>
+	  <!--陆筱慧-->
+
+	</div>
+	</div>
 	</main>
 </div>

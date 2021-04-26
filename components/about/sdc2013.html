@@ -1,0 +1,350 @@
+<style>
+    .rank-main {
+        background-color: #6f8777;
+        position: absolute;
+        width: 23%;
+        height: 100%; 
+        margin-left: 100px;
+    }
+    .rank-title {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .rank-title .rank-logo {
+        width: 80px;
+    }
+    .rank-title .rank-text {
+        font-size: 40px;
+        width: 300%;
+        justify-content: left !important;
+        text-align: left;
+        text-decoration: none;
+    }
+    .rank-box{
+        position: relative;
+
+    }
+    .rank-logo {
+        width: 70px;
+        margin: 30px;
+    }
+    .text-group {
+        margin-top: 40px;
+    }
+    .rank-text {
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        color: white;
+    }
+    .rank-hidden{
+        display: none;   
+    }
+
+    .rank-hidden .rank-text {
+        text-decoration: none;
+        color: black;
+    }
+    .hover-bg {
+        background-color: white;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        box-shadow: 1px 1px 20px rgb(100, 100, 100);
+        border-radius: 3px;
+    }
+    /* p1结束 */
+
+
+    .p2 .title {
+        font-size: 50px;
+        color: #6d8778;
+        text-align: right;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-right: 10px;
+    }
+
+    .p2 .info {
+        position: absolute;
+        right: 0px;
+        margin-right: 10px;
+        width: 40%;
+        font-size: 20px;
+        text-align: justify;
+    }
+    .p2 .info .text-info {
+        color: black;
+    }
+
+
+    .scroll-img {
+        width: 100%;
+        margin-top: 50px;
+        position: absolute;
+        right: 0px;
+        margin-right: 10px;
+        box-shadow: 1px 1px 15px rgb(155, 155, 155);
+    }
+    /* 第二页结束 */
+
+
+    .p3 .col-md-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .logotext {
+        margin-top: 10px;
+        font-weight: 800;
+        color: #505050;
+    }
+
+    /* 第三页滚动post */
+    .post-slider {
+        width: 100%;
+        position: relative;
+        margin-top: 2em;
+    }
+    .post-slider .prev{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50px;
+        font-size: 5em;
+        color: white;
+        z-index: 1000;
+    }
+    .post-slider .next{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 50px;
+        font-size: 5em;
+        color: white;
+        z-index: 1000;
+    }
+    .post-slider .post-wrapper {
+        width: 120%;
+        height: auto;
+        padding: 20px;
+        margin: 0px auto;
+        overflow: hidden;
+        z-index: -9999;
+        margin-left: -100px;
+
+    }
+    a, a:link, a:hover {
+        text-decoration: none;
+        color: #626262;
+    }
+
+    .card {
+        overflow: hidden;
+        padding: 10px;
+        background-color: white;
+    }
+
+    /* 第三页结束 */
+
+
+
+</style>
+
+<div class="p1" style="width: 100%; height: 900px; position: relative;">
+    <div class="rank-main" >
+        <div class="rank-title">
+            <div class="rank-box row" style=" display: flex; justify-content: center; align-items: center;">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank.png" alt="" ></div>
+                <div class="col-md-8" style="margin-left: 15px;">
+                    <div class="rank-text">SDC2018 LONG-PLAN</div>
+                    <div class="rank-text">The 2rd Prize</div>
+                </div>
+            </div>           
+        </div>
+        <div class="rank-box row rank" onmouseover="showInfo('bg1')" onmouseout="hideInfo('bg1')">
+            <div class="rank-shown" id="bg1bg1">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank1.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第一名">First price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg1">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank1.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10; margin-top: 7px;" >
+                    <div class="rank-text" data-tr-zh="建筑设备">Construction equipment</div>
+                    <div class="rank-text" data-tr-zh="能源平衡">Energy balance</div>
+                    <div class="rank-text" data-tr-zh="市场引力">Marketing</div>
+                    <div class="rank-text" data-tr-zh="家庭娱乐">Family entertainment</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+        <div class="rank-box row rank" onmouseover="showInfo('bg2')" onmouseout="hideInfo('bg2')">
+            <div class="rank-shown" id="bg2bg2">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank2.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第二名">Second price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg2">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank2.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10;">
+                    <div class="rank-text" data-tr-zh="工程设计">Market potential</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+        <div class="rank-box row rank" onmouseover="showInfo('bg3')" onmouseout="hideInfo('bg3')">
+            <div class="rank-shown" id="bg3bg3">
+                <div class="col-md-4"><img class="rank-logo" src="/assets/about/rank3.png" alt="" ></div>
+                <div class="col-md-8 text-group">
+                    <div class="rank-text" data-tr-zh="单项赛事">Individuing event</div>
+                    <div class="rank-text" data-tr-zh="第三名">Third price</div>
+                </div>
+            </div>
+            <div class="rank-hidden" id="bg3">
+                <div class="col-md-4" style="z-index: 10;"><img class="rank-logo" src="/assets/about/rank3.png" alt="" ></div>
+                <div class="col-md-8 text-group" style="z-index: 10;">
+                    <div class="rank-text" data-tr-zh="建筑设计">Architecture Design</div>
+                    <div class="rank-text" data-tr-zh="宣传推广">Comunication</div>
+                </div>
+                <div class="hover-bg" style="z-index: 1;"></div>
+            </div>   
+        </div>
+
+
+    </div>
+    <img src="/assets/about/sdc2013.jpg" alt="" width="100%" style="position: absolute; top: 50%; transform: translateY(-50%); z-index: -9999;">
+</div>
+
+<div class="p2" style="margin-top: 100px; margin-bottom: 100px; position: relative;">
+    
+    <div class="container" style="position: relative; height: 900px; width: 100%;">
+        <img src="/assets/about/sdc2013s.jpg" alt="" style="height: 100%; position: absolute; left: 0px;">
+        <ul id="vertical" style="width: 100%; position: relative;">
+            <li data-thumb = "/assets/about/sdc2013s1.jpg" data-src = "/assets/about/sdc2013s1.jpg">
+                <div class="title" data-tr-zh="微气候调节">Microclimate Regulation</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="关于建筑的中庭，在夏季时打开玻 璃门，庭内引入循环水成为水庭， 蒸发带动通风和水体吸热，为炎炎 夏日带来自然凉爽；冬季时关闭天 窗和玻璃门，庭内水体放干露出鹅 卵石，中庭成为阳光房，可充分吸 收阳光使冬日的室内温暖宜人。 如 此以来，房间达到了冬暖夏凉的自 然被动式温度调节，大大节省了能 源的消耗。">
+                        We designed a sunshine room,which can fully absorb sunlight with closed windows and doors in winter,and fully ventilate in a open space with opened windows in summer. The photovoltaic power system is out of the main building, in order to facilitate the rapid construction and be conducive to the roof ventilation as well as heat dissipation.At the same time, the sunshine room serves as a harmonious cozy house. We can decorate the interior with enjoyable flowers or plants, then invite some close friends to sit together, admiring the beauty of nature.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2013s1.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+            <li data-thumb = "/assets/about/sdc2013s2.jpg" data-src = "/assets/about/sdc2013s2.jpg">
+                <div class="title" data-tr-zh="空气隔热">Air Insulation</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="光伏太阳能屋顶没有直接贴设在屋 面上，而是通过支架架起，中间形 成空气隔层，空气的穿梭流动有利 于高温状态下太阳能板的散热，以 确保太阳能系统良好运行。同时空 气隔层在夏季还能起到防止阳光高 温直射的室内隔热作用，达到环保 节能的目的。">
+                        The roof is divided into two layers. The first layer, supported by some brackets laid on the second layer, is covered with photovoltaic solar energy panels. The space between the two layers allows air to flow, providing air currents that benefit the heat dissipation of the solar energy panels in high temperature, ensuring the smooth operation of the solar energy system.The first layer also serve as blinds that shield the house from sunshine, preventing greenhouse effect of the house and thus reducing the consumption of energy.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2013s2.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+            <li data-thumb = "/assets/about/sdc2013s3.jpg" data-src = "/assets/about/sdc2013s3.jpg">
+                <div class="title" data-tr-zh="墙体保温">Wall Insulation</div>
+                <div class="info" >
+                    <div class="text-info" data-tr-zh="建筑的外墙构造采用了甘蔗纤维 加工的聚氨酯泡沫。甘蔗渣是制 糖工业的副产物， 大部分在糖 厂被直接烧掉，造成资源的严重 浪费。我们重新利用甘蔗渣，将 其液化，并通过一系列反应制成 保温性能好的聚氨酯保温材料， 并运用于墙体保温，实现废弃材 料的重新利用。">
+                        The thermal insulation of the building wall is composed by the polyurethane foam ,which is made of sugar cane fiber. The bagasse is a byproduct of the sugar industry, and most of the sugar mills are directly burned, resulting in a serious of wasted resources. Through a series of reactions, we re-use the bagasse to make good insulation properties of polyurethane insulation as wall materials, which is a realization of re-use of waste materials.
+                    </div>                 
+                    <div class="scroll-img"><img src="/assets/about/sdc2013s3.jpg" alt="" width="100%"></div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<div class="p3">
+    <div class="post-slider">
+        <i class="fa fa-angle-left prev"></i>
+        <i class="fa fa-angle-right next"></i>
+        <div class="post-wrapper">
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlonme.com" class="card-container">
+                    <div class="card"  data-target="#read-more1">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201301.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlon.gov/index.html" class="card-container">
+                    <div class="card"  data-target="#read-more2">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201302.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="http://www.sdchina.org.cn/" class="card-container">
+                    <div class="card"  data-target="#read-more3">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201303.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlonme.com" class="card-container">
+                    <div class="card"  data-target="#read-more4">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201304.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="post col-md-4">
+                <a href="https://www.solardecathlonme.com" class="card-container">
+                    <div class="card"  data-target="#read-more4">
+                        <div class="card-head" >
+                            <img class="card-img" src="/assets/about/sdc201305.jpg" width="100%">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // hover改变信息
+    function showInfo(el) {
+        document.getElementById(el ).style.display = "block";
+        document.getElementById(el + el).style.display = "none";
+    }
+    
+    function hideInfo(el) {
+        document.getElementById(el).style.display = "none";
+        document.getElementById(el + el).style.display = "block";
+    }
+    // hover改变信息结束
+    
+    // 滚动组件
+    $('.post-wrapper').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $('.next'),
+        prevArrow: $('.prev'),
+    });
+    // 滚动组件结束
+
+
+    // 垂直滚动组件
+    $(document).ready(function() {
+        $('#vertical').lightSlider();
+    })
+    
+</script>
