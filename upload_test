@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf ~/.qshell/qupload
+rm upload.log
+qshell qupload upload_test.conf
